@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Создание первой 3D - модели</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_T_Flex.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">1. Создание первой 3D - модели</h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+					<h3>Создадим 3D — модель простой детали (её чертёж мы делали в курсе изучения BricsCAD)</h3>
+					<img class="image" src="RisT_Flex1/Cherteg_Detali.png">
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Запустим T-Flex.При запуске окроется окно <i>Приветствие</i>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/Privetstvie.png">
+						<figcaption class="nadpis_v_figure">Подробную справку по любой команде T - Flex можно получить, нажав клавишу <i>F1</i> после запуска команды.</figcaption>
+
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Кликните по элементу управления <i>Настройка</i> в верхней части окна
+						</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/Menu_Nastroyka.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Кликните по пункту <i>Настройка</i> меню и поставте галочку на
+							<i>Режим ленты</i></figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/Vibor_lenti.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выберите <i>3D Деталь</i> в окне <i>Создать новый документ</i>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/Sozdat_Detal.png">
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Откроется следующее окно</i></figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/Okno.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Отметьте в панели <i>Селектор</i> опцию <br><i>Выбирать элементы всех типов
+						</i></figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/Selector.png">
+					</figure>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Сделайте щелчок <i>ПКМ</i> (правой клавишей мыши) на рабочей плоскости <i>Вид слева</i> и в открывшемся меню выберите <i>Чертить на рабочей плоскости</i>
+						</i></figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/1.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Плоскость развернётся паралельно экрану. Выберите <i>Построить окружность</i> на панели <i>Построения</i> и кликните в центре плоскости. В появившееся слева окно
+						 <i>Параметры окружности</i> введите радиус окружности (30мм).</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/2.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+				<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure"></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/3.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<img class="kart_v_figure_mal" src="RisT_Flex1/4.png">
+						<figcaption class="nadpis_v_figure">Нажать <i>Enter</i> для завершения построения окружности</figcaption>
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Кликните по элементу управления <i>Изображение</i>
+						(панель <i>Построения</i> ) ... </figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/5.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">... и выберите <i>ЛКМ</i> (левой клавишей мыши) окружность.
+					</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/6.png">
+						<figcaption class="nadpis_v_figure">Окружность обведётся линией</figcaption>
+					</figure>
+
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Сделайте щелчок <i>ПКМ</i> и в открывшемся меню выберите <i>Завершить</i>
+						</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/7.png">
+						<figcaption class="nadpis_v_figure">Мы вернёмся в 3D - пространство.<br>
+							<ul>
+								Несколько слов о том как в нём перемещаться:<br><br>
+								<li>приближать и удалять изображение можно вращая колёсико мыши;</li>
+								<li>перемещать — зажав колёсико;</li>
+								<li>поворот изображения осуществляется c нажатой левой кнопкой мыши.</li>
+							</ul>
+						</figcaption>
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<img class="kart_v_figure_mal" src="RisT_Flex1/8.png">
+						<figcaption class="nadpis_v_figure">
+
+						</figcaption>
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Придадим объём нашей окружности с помощью выдавливания контура на заданное расстояние.<br> Воспользуемся инструментом <i>Выталкивание</i>. После выбора команды слева появится окно параметров, где укажем длину выталкивания (20мм) и выделим контур окружности щелчком по нему <i>ЛКМ</i>.
+						Для завешения нажать <i>Enter</i> или галочку над окном параметров. Для выхода из команды нажать <i>Esc</i>
+						или крестик над окном параметров.
+						</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/9.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выбрать команду</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/10.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Указать длину выталкивания</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/11.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Теперь построим второй цилиндрический сегмент детали.<br>
+							В качестве плоскости для построения окружности выберем грань на торце созданного нами цилиндра. Сделаем на ней щелчок <i>ПКМ</i> и выберем в открывшемся меню <i>Чертить на грани</i>. </figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/12.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Повторив действия, которые мы производили при построении первого элемента построим цилиндр диаметром 40мм и длиной 40мм.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/13.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Обратим внимание на <i>Дерево модели</i>, расположенное с левой стороны окна. Там отображабтся все элементы модели.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/14.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выполним отверстие со шпоночным пазом. Сделаем эскиз на грани.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/15.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Построим окружность с радиусом 10мм.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/16.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выполним разметку шпоночного паза. Воспользуемся инструментом
+							<i>Прямая</i>. Из предложенных вариантов построения прямых (на появившейся слева узкой панели) выберем две взаимно перпендикулярные прямые.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/17.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выберем центальную точку <i>ЛКМ</i> и клавишу <i>Esc</i> для приостановки дальнейшего построения прямых.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/18.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Построим вертикальную прямую, смещённую относительно центральной на 11,5мм. Сделаем щелчок <i>ЛКМ</i> по исходной прямой и движением мыши указать направление смещения.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/19.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В окне параметров зададим расстояние смещения (в качестве разделителя использовать точку) и нажать клавишу <i>Enter</i>, для приостановки построения <i>Esc</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/20.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Аналогично построим две горизонтальные прямые со смещением от центральной на 3мм в обе стороны</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/21.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выполним обводку необходимого контура линией изображения. Запустим команду <i>Изображение</i> и последовательно начнём указывать точки на прямых участках.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/22.png">
+					</figure>
+					</div>
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Дойдя до окружности укажем точку на ней...</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/23.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">... а затем последнюю точку оружности и клавишу <i>Esc</i> для приостановки команды.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/24.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выйдем из эскиза щёлкнув <i>ПКМ</i> и выбрав пункт <i>Завершить</i>.
+						</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/25.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Сделаем ненужную на данный момент плоскость 5 невидимой. Щёлкнув по ней
+							<i>ПКМ</i> выберем в контексном меню <i>Видимость — Погасить</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/26.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Объединим две операции выталкивания в одно тело. Выберем <i>Булева — Сложение</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/27.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">И укажем исходные тела на модели или в дереве построения. Для завершения щёлкнем по галочке.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/28.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выполним вырез в детали. Воспользуемся инструментом
+						<i>Выталкивание</i>.</	figcaption>
+					<img class="kart_v_figure_bol" src="RisT_Flex1/29.png">
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В параметрах в раскрывающемся меню выберем длину выталкивания
+						 <i>Через всё</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/30.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В качестве булевой операции выберем <i>Вычитание</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/31.png">
+					</figure>
+					</div>
+				</div>
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Щёлкнуть по кнопке <i>Выбрать исходное тело для булевой операции</i> и указать нашу деталь (непосредственно на виде или в дереве модели)...</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/32.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">... и щёлкнуть по зелёной галочке для завершения. В детали появится появится отверстие с вырезом под шпонку как результат вычитания одного тела из другого.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/33.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Создадим фаску 3 х 45 град. Щёлкнем инструмент <i>Сглаживание</i> и выберем в раскрывающемся меню <i>Рёбер</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/34.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В раскрывающемся меню <i>Параметры</i> выберем <i>Фаска (длина — угол).</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/35.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Укажем длину фаски 3мм, угол оставим по умолчанию 45 град.</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/36.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Щёлкнем по круговому ребру детали...</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/37.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">... и зелёную галочку для завершения. На детали образовалась фаска.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/38.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выполним скругление. По аналогии с предыдущей операцией выберем инструмент <i>Сглаживание — Рёбер</i>, а в меню <i>Параметры</i> выберем <i>Скругление</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/39.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Укажем радиус скругления 5мм</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/40.png">
+					</figure>
+				</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Щёлкнем по круговому ребру...</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/41.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">... и по зелёной галочке для завершения. На детали добавится скругление.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/42.png">
+					<figcaption class="nadpis_v_figure">Сохраним нашу деталь под названием <i>Колесо</i></figcaption>
+					</figure>
+					</div>
+					<div class="perehod_glavi">
+					<p><a href="T_Flex_Dopolnit_Nastroyki.html"> Следующая глава ►</a></p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+
+</html>

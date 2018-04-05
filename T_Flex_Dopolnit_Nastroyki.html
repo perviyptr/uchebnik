@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Дополнительные настройки модели</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_T_Flex.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">2. Дополнительные настройки модели</h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Уберём видимость построенных нами эскизов. Выделим в дереве модели
+						 3D — профили и сделав щелчок <i>ПКМ</i> выберем в меню <i>Видимость — Погасить.</i> Названия погашенных компонентов в дереве модели становятся серого цвета.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/43.png">
+					</figure>
+
+					<div class="perehod_glavi">
+					<p><a href="T_Flex_Perviy_Cherteg.html"> ◄ Предыдущая глава</a></p>
+					</div>
+
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Аналогично можно погасить видимость рабочих плоскостей.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/44.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Настроим параметры детали. Сделаем двойной щелчок <i>ЛКМ</i> на
+							<i>Тело1</i> в дереве модели или щёлкнув по нему <i>ПКМ</i> выберем в контексном меню <i>Параметры</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/45.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Изменим имя тела на <i>Колесо</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/46.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Изменим материал детали. По умолчанию материал - сталь. Для выбора другого материала надо зайти в окно <i>Материалы</i>, нажав клавиши <i>Alt + 8</i> или открыв вкладку
+						 <i>Приветствие</i> зайти в <i>Окна</i> и выбрать <i>Материалы</i></figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/47.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В открывшемся окне отображаются три библиотеки материалов:
+						<i>Металлы, Неметаллы, Покрытия</i>. Если окно пустое после щелчка <i>ПКМ</i> выберите
+						<i>Открыть библиотеку</i> и добавте нужные библиотеки.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/48.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Раскроем библиотеку <i>Металлы</i> и выберем нужный материал (например бронзу) и сделаем по ней щелчок <i>ПКМ</i>. В открывшемся меню выберем <i>Применить к модели</i>.
+						</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/49.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Отметим нужные пункты в появившемся окне и нажмём <i>ОК</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/50.png">
+					</figure>
+
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Наша деталь станет бронзовой ...</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/51.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">... и в дерево модели добавится бронза</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/52.png">
+					</figure>
+
+					</div>
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Определим массо-инерционные характеристики детали. Зайдем в меню
+						<i>Измерение</i>, выберем <i>Характеристики</i> и выделим деталь.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/53.png">
+					</figure>
+					</div>
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Щёлнем по галочке и в появившемся окне <i>Расчёт</i>. Получим все массо-инерционные характеристики детали.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/54.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Создадим новую систему координат (<i>ЛСК</i>), которая нам понадобится для вставки в сборку. Создадим сначала 3D - узел. Запустим команду 3D - узел, а как способ создания выберем
+						<i>В центре эллиптического ребра</i> </figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/55.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Укажем круговое ребро и щёлкнем по зелёной галочке.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/56.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Запустим команду <i>ЛСК</i>, выберем созданный 3D - узел, в параметре
+						<i>Внешняя</i> зададим <i>На все уровни</i> и щёлкнем по галочке. Параметр <i>На все уровни</i> обеспечивает видимость <i>ЛСК</i> при вставке детали как сборочной единицы в другой чертёж.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/57.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Иногда есть необходимость создать 3D - узел в центре тяжести тела. Тогда опять запустим команду <i>3D - узел</i>, в качестве способа создания зададим <i>В центре масс</i>, выделим тело, щёлкнув по нему и для завершения по галочке.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/58.png">
+					</figure>
+
+					<div class="perehod_glavi">
+					<p><a href="T_Flex_Sborka.html"> Следующая глава ►</a></p>
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+
+</html>

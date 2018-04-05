@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Настройка панелей инструментов в BricsCAD</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_BricsCad.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">4. Настройка панелей инструментов</h3>
+
+			<div id="slides">
+
+
+				<div class="active"><br>
+					<ul id="text_Po_Centru">
+						<li>Вы можете не делать то, о чём рассказывается в этой главе, но кому нравится, чтобы на панели не было лишних на данный момент инструментов (или вам надо их добавить, чтобы не искать команду в меню) советую изучить эту тему;</li>
+						<li>при первом запуске BricsCAD на панелях инструментов у вас появится очень много команд, которыми вы будете пользоваться очень редко, а некоторые возможно никогда не будете использовать;</li>
+						<li>по своему опыту знаю, что достаточно иметь набор инструментов, который показан на панелях в следующей  главе (см. <i>Справка по основным командам)</i>;</li>
+						<li>для того, чтобы вы могли настроить панели инструментов по своему усмотрению я расскажу как это сделать.</li>
+						<li>настроим для примера панель инструментов <i>Черчение</i>.</li>
+					</ul><br>
+					<h3>Посмотрите слайды по настройке панелей инструментов на последующих страницах (кнопка "Вперёд")</h3><br>
+
+					<div class="perehod_glavi">
+					<p><a href="Uroki_BricsCad_Cherteg_Detali.html"> ◄ Предыдущая глава</a></p>
+					</div>
+
+				</div>
+
+
+				<div>
+					<h3>Панель инструментов "Черчение" 	(до настройки)</h3>
+					<img class="image_nastr_paneley" src="Ris4/1.png">
+				</div>
+
+				<div>
+					<h3>ПКМ по панели инструментов и выбираем в открывшемся меню пункт "Настроить"</h3>
+					<img class="image_nastr_paneley" src="Ris4/2.png">
+				</div>
+
+				<div>
+					<h3>Выбираем закладку "Панели инструментов"</h3>
+					<img class="image_nastr_paneley" src="Ris4/3.png">
+				</div>
+
+
+				<div>
+					<h3>Находим нужную нам панель инструментов (в нашем случае "Черчение") и раскрываем её.<br>
+					Там будет отображён весь список инструментов, которые присутствуют в данное время на панели</h3>
+					<img class="image_nastr_paneley" src="Ris4/4.png">
+				</div>
+
+
+				<div>
+					<h3>Удалим инструмент "Маска."<br>
+					Сделам щелчок ПКМ по нему и выберем в раскрывшемся меню "Удалить"</h3>
+					<img class="image_nastr_paneley" src="Ris4/5.png">
+				</div>
+
+
+				<div>
+					<h3>Удалим выпадающую панель "Многоугольник."<br>
+					Сделам щелчок ПКМ по ней и выберем в раскрывшемся меню "Удалить выпадающую панель"</h3>
+					<img class="image_nastr_paneley" src="Ris4/6.png">
+				</div>
+
+
+				<div>
+					<h3>Теперь добавим инструмент "Прямоугольник."<br>
+					Сделам щелчок ПКМ и выберем в раскрывшемся меню "Добавить инструмент"</h3>
+					<img class="image_nastr_paneley" src="Ris4/7.png">
+				</div>
+
+
+				<div>
+					<h3>В открывшемся окне выберем "Добавить существующий инструмент"<br> и раскроем панель с существующими инструментами (в нашем случае "Черчение")</h3>
+					<img class="image_nastr_paneley" src="Ris4/8.png">
+				</div>
+
+
+				<div>
+					<h3>В раскрывшемся списке выберем "Прямоугольник" и нажмём "ОК"</h3>
+					<img class="image_nastr_paneley" src="Ris4/9.png">
+				</div>
+
+
+				<div>
+					<h3>Теперь добавим выпадающую панель.<br>
+						После щелчка ПКМ выберем в раскрывшемся меню
+						"Добавить выпадающую панель"</h3>
+					<img class="image_nastr_paneley" src="Ris4/10.png">
+				</div>
+
+
+				<div>
+					<h3>В открывшееся окно введём название необходимой нам раскрывающейся панели (например "Дуга") и нажмём "ОК"</h3>
+					<img class="image_nastr_paneley" src="Ris4/11.png">
+				</div>
+
+
+				<div>
+					<h3>Щёлкнуть ПКМ по появившейся надписи "Дуга" и выбрать пункт "Добавить инструмент "
+ 						в нижней части открывшегося меню</h3>
+					<img class="image_nastr_paneley" src="Ris4/12.png">
+				</div>
+
+
+				<div>
+					<h3>Затем последовательно выбираем и добавляем в раскрывающееся меню нужные нам инструменты.
+						По завершению нажать "ОК"</h3>
+					<img class="image_nastr_paneley" src="Ris4/13.png">
+
+					<div class="perehod_glavi">
+					<p><a href="Uroki_BricsCad_Spravka_po_Komandam.html"> Следующая глава ►</a></p>
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+
+</html>

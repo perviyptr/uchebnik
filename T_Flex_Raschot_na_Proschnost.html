@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Пример выполнения статического расчёта на прочность в T - Flex</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_T_Flex.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">5. Пример выполнения статического расчёта на прочность в T - Flex</h3>
+
+			<h3>При выполнении профессиональных расчётов изучите справку по командам меню "Анализ" T - FlexCAD<br>
+			(клавиша F1 при запущенной команде)</h3>
+
+			<div id="slides">
+
+				<div class="active">
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выполним проверку на прочность консольной площадки габаритом 1000мм х 1000мм (2швеллера №12 с настилом из листа S = 3мм и торцовой зашивкой из листа S = 5мм). Площадка должна выдерживать нагрузку 250кг.<br>Следует учесть, что при построении модели площадки результаты всех операций должны быть объединены в одно тело при помощи булевой операции <i>Сложение</i>.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/83.png">
+					</figure>
+
+				<div class="perehod_glavi">
+				<p><a href="T_Flex_Chertoz.html"> ◄ Предыдущая глава</a></p>
+				</div>
+
+				</div>
+
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Зайдём в меню <i>Анализ</i> и выберем <i>Создать задачу — Конечно-элементный анализ</i>. Выберем тело для анализа и кликнем по галочке.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/84.png">
+					</figure>
+
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Установим бегункои параметры сетки и кликнем по галочке.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/85.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Созданная сетка</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/86.png">
+					</figure>
+
+				</div>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выберем <i>Полное закрепление</i> и укажем грань (за которую крепиться консольная площадка).</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/87.png">
+					</figure>
+
+				</div>
+
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выберем <i>Сила — Давление</i> и укажем грань, на которую действует нагрузка.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/88.png">
+					</figure>
+
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Укажем значение давления и завершим ввод.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/89.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Кликнем команду <i>Расчёт</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/90.png">
+					</figure>
+
+				</div>
+
+				</div>
+
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">По окончании расчёта в дереве модели можно будет найти и открыть результаты.</figcaption>
+						<img class="kart_v_figure_mal" src="RisT_Flex1/91.png">
+					</figure>
+
+				</div>
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Откроем результат расчёта <i>коэффициент запаса по эквивалентным напряжениям </i>. Слева от модели расположена цветовая шкала, по которой примерно видно какое значение коэффициента запаса в определённом месте модели. Если щёлкнуть по любому месту модели появится точное значение коэффициента запаса для этого места.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/92.png">
+					</figure>
+
+				</div>
+
+
+
+				<div>
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">А по этой эпюре можно легко определить деформации, возникающие при нагрузке. Принцип её использования аналогичен предыдущей. Например для нашей модели деформация в центре площадки составляет 1,127мм.</figcaption>
+						<img class="kart_v_figure_bol" src="RisT_Flex1/93.png">
+					</figure>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Создание сборки</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_Inventor.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">1. Создание сборки</h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Создадим сборку детали <i>Колесо</i> с деталью <i>Ось</i>. Модель детали
+						<i>Ось</i> можно создать как отдельную деталь по аналогии с деталью <i>Колесо</i>, с последующей вставкой в сборку, а можно создать её по месту. Этот способ и рассмотрим ниже.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/22.png">
+					</figure>
+
+					<div class="perehod_glavi">
+					<p><a href="Uroki_Inventor_Sozdanie_Pervoy_Modeli.html"> ◄ Предыдущая глава</a></p>
+					</div>
+
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Создадим 3D - сборку. <i>Файл — Создать — Сборка</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/23.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Вставим в сборку деталь <i>Колесо</i> через <i>Вставить — Вставить компонент</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/24.png">
+					</figure>
+
+				</div>
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Создадим новую деталь <i>Ось</i>. Зайдем в <i>Создать компонент...</i></figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/25.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">...и сохраним его под именем <i>Ось</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/26.png">
+					</figure>
+				</div>
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Снизу окна появится запрос <i>Укажите плоскость для создания компонента
+						</i>. Укажите грань на детали.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/27.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В дереве модели деталь <i>Колесо</i> закрасится серым цветом (станет неактивной) и появится деталь <i>Ось</i>, которую можно создавать в обычном порядке.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/28.png">
+					</figure>
+				</div>
+				</div>
+
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Создадим эскиз. В качестве плоскости для эскиза укажем грань детали
+						<i>Колесо</i>.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/29.png">
+					</figure>
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Построим два элемента выдавливания и фаски по аналогии с тем, как мы проводили построения для детали <i>Колесо</i>. (<i>Ось</i> для наглядности покрашена в зелёный цвет.)
+						 </figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/30.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Приступим к созданию шпоночной канавки на детали <i>Ось</i>. В качестве плоскости для создания эскиза выберем грань шпоночной канавки на детали <i>Колесо.</i></figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/31.png">
+					</figure>
+				</div>
+				</div>
+
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Можно временно погасить видимость детали <i>Колесо</i>. Щёлкните
+						по <i>Колесо</i> на дереве модели и уберите галочку с <i>Видимость</i>.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/32.png">
+					</figure>
+				</div>
+
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Спроецирум контуры детали <i>Ось</i> на плоскость эскиза.
+							Зайдём в команду <i>Проецирование геометрии</i>...</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/33.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">...и выберем оба выдавливания.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/34.png">
+					</figure>
+				</div>
+				</div>
+
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Развернём деталь с помощью видового куба рабочей плоскостью к нам и построим точку на оси детали в произвольном месте по длине (это будет центальная точка паза).</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/35.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Поставим размер до неё и изменим его на 30мм. Точка станет в нужном месте.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/36.png">
+					</figure>
+				</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Зайдём в команду <i>Прямоуголниик — По двум точкам и центру</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/37.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Построим прямоугольник, указав сначала центр в построенной точке, затем ещё одну точку в произвольном месте.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/38.png">
+					</figure>
+				</div>
+				</div>
+
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Укажем размеры прямоугольника по размерам канавки.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/39.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Выберем команду <i>Сопряжение</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/40.png">
+					</figure>
+
+				</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Установим радиус сопряжения 3мм и укажем поочерёдно угловые отрезки.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/41.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Завершим эскиз.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/42.png">
+					</figure>
+				</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Вызовем команду <i>Выдавливание</i>, укажем глубину выдавливания 6мм с вычитанием и нажмём <i>ОК</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/43.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В результате получим шпоночную канавку. Видимость плоскости для построения эскиза погасим.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/44.png">
+					</figure>
+				</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Щёлкнем в свободном месте окна и в контексном меню выберем
+						<i>Закончить редактирование</i>.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/45.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Вернём видимость колесу. (<i>ПКМ</i> по <i>Колесо</i> в дереве модели и выбрать <i>Видимость</i>).</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/46.png">
+					</figure>
+
+				</div>
+				<div class="perehod_glavi">
+					<p><a href="Uroki_Inventor_Sozdanie_Scherteza.html"> Следующая глава ►</a></p>
+				</div>
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+
+</html>

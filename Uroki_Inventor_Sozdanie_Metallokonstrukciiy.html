@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Создание металлоконструкции в Inventor</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_Inventor.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">1. Создание металлоконструкций с помощью <i>Генератора рам</i></h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Создадим металлоконструкцию, изображённую на рисунке ниже, используя
+							<i>Генератор рам</i>, встроенный в программу Inventor.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/66.png">
+					</figure>
+					<div class="perehod_glavi">
+					<p><a href="Uroki_Inventor_Sozdanie_Scherteza.html"> ◄ Предыдущая глава</a></p>
+					</div>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">
+							<ul>
+								<li>Создадим сборку и сохраним её;</li>
+								<li>Создадим компонент, назовём его например <i>Металлоконструкция</i>;</li>
+							</ul>
+						</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/67.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">На запрос <i>Укажите плоскость для создания компонента</i> укажем в дереве модели плоскость  <i>XZ — Вид сверху</i></figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/68.png">
+					</figure>
+
+				</div>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">
+							<ul>
+								<li>Выберем <i>Создать 2D - экиз</i>, в качестве плоскости для создания — <i>Вид сверху</i>;</li>
+								<li>начертим прямоугольник <i>По центру и двум точкам</i>;</li>
+								<li>укажем размеры прямоугольника 1000 х 1000 и завершим эскиз.</li>
+							</ul>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/69.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">
+							<ul>
+								Создадим плоскоть, параллельную плоскости построения эскиза со смещением 1500мм:
+								<li>зайдём в <i>Рабочие плоскости</i>;</li>
+								<li>выберем в раскрывающемся меню <i>Плоскость — Смещение относительно плоскости</i>.</li>
+							</ul>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/70.png">
+					</figure>
+				</div>
+
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выберем исходную плоскость, укажем расстояние смещения и щёлкнем по галочке.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/71.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Создадим эскиз на соданной плоскости (щелчок <i>ПКМ</i> по ней и выбрать
+						<i>Новый эскиз</i>.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/72.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">
+							<ul>
+								<li>Построим эскиз, аналогичный предыдущему и завершим его;</li>
+								<li>Зайдём в создание эскизов и выберем <i>Создать 3D - эскиз</i>.</li>
+							</ul>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/73.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Зайдем в команду <i>Отрезок</i>, соединим между собой все вершины прямоугольников и завершим 3D - эскиз.<br>
+						(<i>ПКМ</i> и выбрать <i>Принять 3D - эскиз</i>.)<br>
+						Затем опять <i>ПКМ</i> и выбрать <i>Закончить редактирование</i>.
+						</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/74.png">
+					</figure>
+				</div>
+
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">
+							<ul>
+								Запустим <i>Генератор рам:</i>
+								<li>зайдём в пункт меню <i>Проектирование</i>;</li>
+								<li>выберем <i>Вставить профиль</i>;</li>
+								<li>в открывшемся окне выберем <i>DIN — Швеллер — U100 — Сталь углеродистая</i>;</li>
+								<li>справа в окне можно настроить ориентацию профиля (оставим пока по умолчанию).</li>
+							</ul>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/75.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выберем отрезок эскиза — на нём появится контур швеллера. Если
+							нас не устраивает его ориентация, можно её изменить и нажать <i>Применить</i>, а затем <i>ОК</i>
+							в окне для параметров сохранения профиля (при желании можно дать ему новое имя).
+							</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/76.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Добавим аналогично швеллер ко всем отрезкам верхнего и нижнего основания.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/77.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Зайдём в команду <i>Стык</i>, выберем поочерёдно два профиля и нажмём
+						<i>Применить</i>. Произойдёт обрезка профиля по линии стыка. Выполним это действие для всех стыков.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/78.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">
+							<ul>
+								Опять запустим <i>Генератор рам:</i>
+								<li>команда <i>Вставить профиль;</i></li>
+								<li>в открывшемся окне выберем <i>DIN — Труба — 48,3 х 8 — Сталь углеродистая</i>;</li>
+								<li>добавим профиль к вертикальным отрезкам (по аналогии со швеллерами).</li>
+							</ul>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/79.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">
+							<ul>
+								Выполним обрезку выступающих частей труб.
+								<li>Команда <i>Обрезка и удлинение;</i></li>
+							</ul>
+						</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/80.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Выберем сначала все трубы, а затем, переключив выбор на грани выберем грань, до которой надо обрезать трубы и нажмём <i>Применить.</i></figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/81.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<figure class="kart_s_nadpisju_bol">
+						<figcaption class="nadpis_v_figure">Повторим эту операцию с нижними участками труб.</figcaption>
+						<img class="kart_v_figure_bol" src="Ris_Inventor/82.png">
+					</figure>
+				</div>
+
+
+				<div>
+					<div class="dla_viravnivanija_figure">
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">Погасим видимость эскизов</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/84.png">
+					</figure>
+					<figure class="kart_s_nadpisju_mal">
+						<figcaption class="nadpis_v_figure">В итоге получим модель нашей металлоконструкции.</figcaption>
+						<img class="kart_v_figure_mal" src="Ris_Inventor/83.png">
+					</figure>
+				</div>
+				</div>
+
+
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+
+</html>

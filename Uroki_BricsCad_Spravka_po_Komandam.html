@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Уроки BricsCAD - справка по командам</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<link rel="stylesheet" href="./fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_BricsCad.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">5. Справка по основным командам</h3>
+
+			<div id="slides">
+
+				<div class="active">
+				<div class="knopki_dla_uvelish">
+				<button id="uvelish" onclick="Uvelishit()">Увеличить рисунок</button>
+				<button id="umensh" onclick="Umenshit()">Уменьшить рисунок</button>
+				</div>
+				<img class="image" id="perechen" src="Ris2/Perechen_Komand.png">
+
+				<div class="perehod_glavi">
+				<p><a href="Nastroyka_Paneli_Instrumentov.html"> ◄ Предыдущая глава</a></p>
+				</div>
+
+				</div>
+
+
+
+				<div>
+					<h3 class="zagl">5.1. Панель инструментов <i>Черчение</i></h3>
+				<p>В этом разделе я помещу справку по основным командам <i>BricsCAD</i><br>
+					В тексте использованы следующие сокращения:<br>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+				</p>
+					<img class="image_panel" id="perechen" src="Ris2/Panel_Shershenie.png">
+
+				</div>
+
+
+
+				<div>
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Pramougolnik2.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>ввод в <i>КС</i> буквы "d" для дальнейшего ввода размеров (<i>ПКМ</i>);</li>
+						<li>ввод в <i>КС</i> длины прямоугольника (<i>ПКМ</i>);</li>
+						<li>ввод в <i>КС</i> высоты прямоугольника (<i>ПКМ</i>);</li>
+						<li>выбор положения первой вершины <i>ЛКМ</i>;</li>
+						<li>щелчок <i>ЛКМ</i> в любом месте окна;</li>
+					</ul>
+				</div>
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group1" href="Ris3/Prjamougolnik/1.png"><img src="Ris3/Prjamougolnik/1.png" alt=""/></figure></a>
+				<a class="grouped_elements" rel="group1" href="Ris3/Prjamougolnik/2.png"><img src="Ris3/Prjamougolnik/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group1" href="Ris3/Prjamougolnik/3.png"><img src="Ris3/Prjamougolnik/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group1" href="Ris3/Prjamougolnik/4.png"><img src="Ris3/Prjamougolnik/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group1" href="Ris3/Prjamougolnik/5.png"><img src="Ris3/Prjamougolnik/5.png" alt=""/></a>
+				<a class="grouped_elements" rel="group1" href="Ris3/Prjamougolnik/6.png"><img src="Ris3/Prjamougolnik/6.png" alt=""/></a>
+				</div>
+				</div>
+
+
+
+
+				<div>
+
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Polilinia2.png">
+					<ul id="text_V_komandah">
+						<h3>Полилиния –</h3><h4> это сложный примитив, состоящий из одного или нескольких связанных между собой прямолинейных и дуговых сегментов. Все эти сегменты представляют собой единый объект.</h3>
+						<h3>Расположение - панель инструментов "Черчение"</h4>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>указание начальной точки;</li>
+						<li>ввод в <i>КС</i> буквы <i>"W"</i></i></i> для дальнейшего выбора толщины полилинии (<i>ПКМ</i></i>);</li>
+						<li>ввод в <i>КС</i> толщины полилинии в начале (<i>ПКМ</i>);</li>
+						<li>при постоянной ширине полилинии <i>ПКМ</i>;</li>
+						<li>указание последовательно следующих точек;</li>
+						<li>перед дуговым участком набрать латинскую <i>"A"</i> (<i>ПКМ</i>);</li>
+						<li>перед прямолинейным участком после дугового набрать <i>"L"</i> (<i>ПКМ</i>);</li>
+						<li>указание последовательно следующих точек;</li>
+						<li>для построения замкнутой полилинии перед последним участком набрать латинскую <i>"C"</i>.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/1.png"><img src="Ris3/Polilinija/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/2.png"><img src="Ris3/Polilinija/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/3.png"><img src="Ris3/Polilinija/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/4.png"><img src="Ris3/Polilinija/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/5.png"><img src="Ris3/Polilinija/5.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/6.png"><img src="Ris3/Polilinija/6.png" alt=""/></a>
+				</div>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/7.png"><img src="Ris3/Polilinija/7.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/8.png"><img src="Ris3/Polilinija/8.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/9.png"><img src="Ris3/Polilinija/9.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/10.png"><img src="Ris3/Polilinija/10.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris3/Polilinija/11.png"><img src="Ris3/Polilinija/11.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Splain.png">
+					<ul id="text_V_komandah">
+						<h3>Cплайн — </h3> <h4>это гладкая кривая, которая строится на основе некоторого множества точек.<br>
+						Основное применение в BricsCAD — построение линий разрыва</h4>
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>указание <i>ЛКМ</i> начальной точки;</li>
+						<li>указание <i>ЛКМ</i> последовательно следующих точек;</li>
+						<li>после указания последней точки <i>ПКМ</i>;</li>
+						<li>указание <i>ЛКМ</i> направления касательной к первой точке;</li>
+						<li>указание <i>ЛКМ</i> направления касательной к последней точке;</li>
+						<li>можно после указания последней точки выполнить три раза <i>ПКМ.</i> </li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group3" href="Ris3/Splain/1.png"><img src="Ris3/Splain/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group3" href="Ris3/Splain/2.png"><img src="Ris3/Splain/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group3" href="Ris3/Splain/3.png"><img src="Ris3/Splain/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group3" href="Ris3/Splain/4.png"><img src="Ris3/Splain/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+				<div>
+
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Pramaja.png">
+					<ul id="text_V_komandah">
+						<h3>Прямая—</h3><h4>это бесконечная линия. В BricsCAD применяется как линия разметки</h4>
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>указать точку на прямой;</li>
+						<li>указать направление(вторую точку)(<i>ПКМ</i>);</li>
+						<li>можно набрать в <i>КС</i> латинскую <i>H</i> и указать одну точку для построения горизонтальной прямой;
+						<br>Таким способом удобно строить много горизонтальных прямых, последовательно указывая точки.
+						</li>
+						<li>можно набрать в <i>КС</i> <i>V</i> и указать одну точку для построения вертикальной прямой;
+						<br>Таким способом удобно строить много горизонтальных прямых, последовательно указывая точки;
+						<li>Также можно набрать в <i>КС</i> <i>Р</i> для построения прямой параллельной заданной.
+						</li>
+						</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group4" href="Ris3/Prjamaja/1.png"><img src="Ris3/Prjamaja/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris3/Prjamaja/2.png"><img src="Ris3/Prjamaja/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris3/Prjamaja/3.png"><img src="Ris3/Prjamaja/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris3/Prjamaja/4.png"><img src="Ris3/Prjamaja/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris3/Prjamaja/5.png"><img src="Ris3/Prjamaja/5.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Mnogougolnik2.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>ввод в <i>КС</i> числа сторон многоугольника (<i>ПКМ</i>);</li>
+						<li>указание центра многоугольника;</li>
+						<li>указание <i>ЛКМ</i> положения средней точки одной из сторон или одной из вершин;</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group5" href="Ris3/Mnogougolnik/1.png"><img src="Ris3/Mnogougolnik/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group5" href="Ris3/Mnogougolnik/2.png"><img src="Ris3/Mnogougolnik/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group5" href="Ris3/Mnogougolnik/3.png"><img src="Ris3/Mnogougolnik/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Otrezok2.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>указание начальной точки;</li>
+						<li>указание следующей точки или направления и длины в <i>КС</i>;</li>
+						<li>завершить (<i>ПКМ</i> или <i>ENTER</i>) или строить следующий</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group6" href="Ris3/Otrezok/1.png"><img src="Ris3/Otrezok/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group6" href="Ris3/Otrezok/2.png"><img src="Ris3/Otrezok/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group6" href="Ris3/Otrezok/3.png"><img src="Ris3/Otrezok/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+				<div>
+
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Duga2.png">
+					<ul id="text_V_komandah">
+						<h3>Дуга —</h3><h4>это часть окружности. В BricsCAD строится с помощью команды <i>Дуга</i> или как полилиния</h4>
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать вариант создания дуги(задать начальную точку или указать центр дуги,<br>
+							 предварительно набрав в <i>КС</i> латинскую <i>"C"</i>; </li>
+						<li>в продолжение первого варианта после выбора начальной точки набрать в <i>КС</i> букву <i>"R"</i> (<i>ПКМ</i>) и записать значение радиуса дуги в <i>КС</i>(ПКМ); </li>
+						<li>указать конечную точку дуги;</li>
+						<li>в продолжение второго варианта после указания центра дуги, указать начальную и конечную точку дуги.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group7" href="Ris3/Duga/1.png"><img src="Ris3/Duga/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group7" href="Ris3/Duga/2.png"><img src="Ris3/Duga/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group7" href="Ris3/Duga/3.png"><img src="Ris3/Duga/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Okruznost2.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>указание центра окружности;</li>
+						<li>ввод в <i>КС</i> значения радиуса окружности (или диаметра после ввода в <i>КС</i> латинской <i>"D"</i>);</li>
+						<li><i>ПКМ</i>;</li>
+						<li>есть также варианты построения окружности по двум и трём точкам, по двум касательным и радиусу;</li>
+						<li>для выбора варианта построения по точкам ввести в <i>КС</i>  <i>"2p"</i><br>(по 2 точкам) или
+						"<i>3p</i>" (по 3 точкам) и следовать дальнейшим указаниям <i>КС</i>;</li>
+						<li>для выбора варианта построения по двум касательным и радиусу ввести в <i>КС</i> "<i>ttr</i>" и следовать
+						дальнейшим указаниям <i>КС</i>;</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group8" href="Ris3/Okruznost/1.png"><img src="Ris3/Okruznost/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group8" href="Ris3/Okruznost/2.png"><img src="Ris3/Okruznost/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group8" href="Ris3/Okruznost/3.png"><img src="Ris3/Okruznost/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group8" href="Ris3/Okruznost/4.png"><img src="Ris3/Okruznost/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group8" href="Ris3/Okruznost/5.png"><img src="Ris3/Okruznost/5.png" alt=""/></a>
+				<a class="grouped_elements" rel="group8" href="Ris3/Okruznost/6.png"><img src="Ris3/Okruznost/6.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Elips.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>эллипс можно построить указывая последовательно две крайние точки на одной из осей,
+						 а затем одну точку на второй оси(или задав их значения в КС);</li>
+						<li>по второму варианту эллипс можно построить указав сначала его центр
+						(для этого ввести предварительно в <i>КС</i> латинскую <i>"C" (ПКМ)</i>), а затем по одной точке на каждой из его осей,
+					</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group9" href="Ris3/Elips/1.png"><img src="Ris3/Elips/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group9" href="Ris3/Elips/2.png"><img src="Ris3/Elips/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group9" href="Ris3/Elips/3.png"><img src="Ris3/Elips/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group9" href="Ris3/Elips/4.png"><img src="Ris3/Elips/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Shtrihovka.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>откроется окно выбора параметров(см. слайды ниже);</li>
+						<li>выберите тип штриховки (для машиностроительных чертежей ANSI31);</li>
+						<li>запишите масштаб штриховки (обычно от 0,5 до 1 масштаба чертежа);</li>
+						<li>выберите <i>"Указать точки в пределах контура"</i> и щёлкните  <i>ЛКМ</i> внутри контура, который необходимо заштриховать (контур должен быть обязательно замкнутым!);</li>
+						<li>если контур представляет собой замкнутую полилинию можно кликнуть по <i>"Укажите объекты"</i> в окне параметров и выбрать контур.
+						</li>
+						<li>нажмите <i>ОК</i>.</li>
+					</li>
+					</ul>
+
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group10" href="Ris3/Shtrihovka/1.png"><img src="Ris3/Shtrihovka/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group10" href="Ris3/Shtrihovka/2.png"><img src="Ris3/Shtrihovka/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group10" href="Ris3/Shtrihovka/3.png"><img src="Ris3/Shtrihovka/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group10" href="Ris3/Shtrihovka/4.png"><img src="Ris3/Shtrihovka/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group10" href="Ris3/Shtrihovka/5.png"><img src="Ris3/Shtrihovka/5.png" alt=""/></a>
+				<a class="grouped_elements" rel="group10" href="Ris3/Shtrihovka/6.png"><img src="Ris3/Shtrihovka/6.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Text.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>указание <i>ЛКМ</i> точки для создания текста;</li>
+						<li>при необходимости указывается в командной строке угол поворота текста (по умолчанию 0 град)(<i>ПКМ</i>);</li>
+						<li>набор текста и двойной щелчок <i>ПКМ</i>.</li>
+
+					</li>
+					</ul>
+
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group11" href="Ris3/Text/1.png"><img src="Ris3/Text/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group11" href="Ris3/Text/2.png"><img src="Ris3/Text/2.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Mnogostroscniy_text.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Черчение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>создание рамки в нужном месте чертежа, <i>ЛКМ</i> в двух точках по диагонали;</li>
+						<li>на поле чертежа появится контур рамки с курсором для ввода текста и меню для редактирования вводимого текста (см. слайды ниже);</li>
+						<li>ввод текста (<i>ОК</i> в меню);</li>
+						<li>при необходимости редактирования текста активизируем меню для редактирования, щёлкнув два раза по тексту
+					 <i>ЛКМ.</i></li>
+
+					</li>
+					</ul>
+
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group12" href="Ris3/Mnostroshcniy_text/1.png"><img src="Ris3/Mnostroshcniy_text/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group12" href="Ris3/Mnostroshcniy_text/2.png"><img src="Ris3/Mnostroshcniy_text/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group12" href="Ris3/Mnostroshcniy_text/3.png"><img src="Ris3/Mnostroshcniy_text/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+
+
+
+
+				<div>
+					<h3 class="zagl">5.2. Панель инструментов <i>Изменение</i></h3>
+					<img class="image_panel" id="perechen" src="Ris2/Panel_Izmenenie.png">
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Peremestit.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать объекты для перемещения с помощью <i>ЛКМ</i> (<i>ПКМ</i>);</li>
+						<li>указать <i>ЛКМ</i> начальную и конечную точку для перемещения.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group13" href="Ris3/Peremestit/1.png"><img src="Ris3/Peremestit/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group13" href="Ris3/Peremestit/2.png"><img src="Ris3/Peremestit/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group13" href="Ris3/Peremestit/3.png"><img src="Ris3/Peremestit/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Kopirovat.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать объекты для копирования с помощью <i>ЛКМ</i> (<i>ПКМ</i>);</li>
+						<li>указать <i>ЛКМ</i> начальную и конечные точки для копирования.<br>
+						Можно создавать множество копий.</li>
+						<li><i>ПКМ</i> для завершения</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group14" href="Ris3/Kopirovat/1.png"><img src="Ris3/Kopirovat/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group14" href="Ris3/Kopirovat/2.png"><img src="Ris3/Kopirovat/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group14" href="Ris3/Kopirovat/3.png"><img src="Ris3/Kopirovat/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Podobie.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>С помощью команды <i>Подобие</i> можно строить прямые и кривые смещённые на заданное расстояние от исходных;</li>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>указать в <i>КС</i> расстояние смещения (<i>ПКМ</i>);</li>
+						<li>указать <i>ЛКМ</i> исходную линию;</li>
+						<li>указать направление смещения(щелчок <i>ЛКМ</i> в свободном месте с нужной стороны).<br>
+						Можно создавать множество подобных линий;</li>
+						<li><i>ПКМ</i> для завершения</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group15" href="Ris3/Podobie/1.png"><img src="Ris3/Podobie/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group15" href="Ris3/Podobie/2.png"><img src="Ris3/Podobie/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group15" href="Ris3/Podobie/3.png"><img src="Ris3/Podobie/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Mashtabirovat.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать объекты для масштабирования с помощью <i>ЛКМ</i> (<i>ПКМ</i>);</li>
+						<li>указать <i>ЛКМ</i> базовую точку;</li>
+						<li>указать в <i>КС</i> масштабный коэффициент;</li>
+						<li><i>ПКМ</i> для завершения.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group16" href="Ris3/Mashtabirovat/1.png"><img src="Ris3/Mashtabirovat/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group16" href="Ris3/Mashtabirovat/2.png"><img src="Ris3/Mashtabirovat/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group16" href="Ris3/Mashtabirovat/3.png"><img src="Ris3/Mashtabirovat/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Povernut.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать объекты для поворота с помощью <i>ЛКМ</i> (<i>ПКМ</i>);</li>
+						<li>указать <i>ЛКМ</i> базовую точку (центр поворота);</li>
+						<li>указать угол в <i>КС</i> (против часовой стрелки) (<i>ПКМ</i>).</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group17" href="Ris3/Povernut/1.png"><img src="Ris3/Povernut/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group17" href="Ris3/Povernut/2.png"><img src="Ris3/Povernut/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group17" href="Ris3/Povernut/3.png"><img src="Ris3/Povernut/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group17" href="Ris3/Povernut/4.png"><img src="Ris3/Povernut/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Zerkalo.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать объекты для симметрии с помощью <i>ЛКМ</i> (<i>ПКМ</i>);</li>
+						<li>выбрать <i>ЛКМ</i> первую точку оси симметрии;</li>
+						<li>выбрать вторую точку оси симметрии.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group18" href="Ris3/Zerkalo/1.png"><img src="Ris3/Zerkalo/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group18" href="Ris3/Zerkalo/2.png"><img src="Ris3/Zerkalo/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group18" href="Ris3/Zerkalo/3.png"><img src="Ris3/Zerkalo/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Massiv.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать объект для создания массива с помощью <i>ЛКМ</i> (<i>ПКМ</i>);</li>
+						<li>выбрать тип массива — если прямоугольный (<i>ПКМ</i>);</li>
+						<li>задать число строк массива (количество элементов по высоте)(<i>ПКМ</i>);</li>
+						<li>задать число столбцов массива (количество элементов по ширине)(<i>ПКМ</i>);</li>
+						<li>задать в <i>КС</i> расстояние между строками (<i>ПКМ</i>);</li>
+						<li>задать в <i>КС</i> расстояние между столбцами (<i>ПКМ</i>);</li><br>
+						<li>если надо создать круговой(полярный) массив после выбора объекта (<i>ПКМ</i>);</li>
+						<li>ввести в <i>КС</i> латинскую <i>P</i> (<i>ПКМ</i>);</li>
+						<li>выбрать центральную точку массива (<i>ПКМ</i>);</li>
+						<li>указать в <i>КС</i> число элементов массива (<i>ПКМ</i>);</li>
+						<li>ввести в <i>КС</i> угол заполнения элеметами массива (+ против часовой стрелки, - по часовой стрелке)<br> (по умолчанию полный круг — 360град) (<i>ПКМ</i>);</li>
+						<li>ответить на запрос <i>КС</i>  "Поворачивать объекты относительно центра?"<br>
+						если поворачивать (<i>ПКМ</i> — по умолчанию)<br>
+						если не поворачивать ввести в <i>КС</i> латинскую <i>N</i>.</li>
+
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<h3>Прямоугольный массив</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/1.png"><img src="Ris3/Massiv/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/2.png"><img src="Ris3/Massiv/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/3.png"><img src="Ris3/Massiv/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/4.png"><img src="Ris3/Massiv/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/5.png"><img src="Ris3/Massiv/5.png" alt=""/></a>
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/6.png"><img src="Ris3/Massiv/6.png" alt=""/></a>
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/7.png"><img src="Ris3/Massiv/7.png" alt=""/></a>
+				<a class="grouped_elements" rel="group19" href="Ris3/Massiv/8.png"><img src="Ris3/Massiv/8.png" alt=""/></a>
+				</div>
+				<h3>Полярный массив</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group20" href="Ris3/Massiv/9.png"><img src="Ris3/Massiv/9.png" alt=""/></a>
+				<a class="grouped_elements" rel="group20" href="Ris3/Massiv/10.png"><img src="Ris3/Massiv/10.png" alt=""/></a>
+				<a class="grouped_elements" rel="group20" href="Ris3/Massiv/11.png"><img src="Ris3/Massiv/11.png" alt=""/></a>
+				<a class="grouped_elements" rel="group20" href="Ris3/Massiv/12.png"><img src="Ris3/Massiv/12.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Obrezat.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать <i>ЛКМ</i> линию, до которой надо обрезать другую линию(можно сразу несколько линий с помощью рамки)(<i>ПКМ</i>);</li>
+						<li>выбрать <i>ЛКМ</i> линии для обрезки с нужной стороны (можно сразу несколько линий с помощью рамки)
+						(<i>ПКМ</i>);</li>
+						<li><i>ПКМ</i> для выхода из команды;</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group21" href="Ris3/Obrezat/1.png"><img src="Ris3/Obrezat/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group21" href="Ris3/Obrezat/2.png"><img src="Ris3/Obrezat/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group21" href="Ris3/Obrezat/3.png"><img src="Ris3/Obrezat/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group21" href="Ris3/Obrezat/4.png"><img src="Ris3/Obrezat/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Prodlit.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать <i>ЛКМ</i> линию, до которой надо продлить другую линию(можно сразу несколько линий с помощью рамки)(<i>ПКМ</i>);</li>
+						<li>выбрать <i>ЛКМ</i> линии для продления с нужной стороны (можно сразу несколько линий с помощью рамки)
+						(<i>ПКМ</i>);</li>
+						<li><i>ПКМ</i> для выхода из команды;</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group22" href="Ris3/Prodlit/1.png"><img src="Ris3/Prodlit/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group22" href="Ris3/Prodlit/2.png"><img src="Ris3/Prodlit/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group22" href="Ris3/Prodlit/3.png"><img src="Ris3/Prodlit/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group22" href="Ris3/Prodlit/4.png"><img src="Ris3/Prodlit/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Faska.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>ввод в <i>КС</i> латинской буквы <i>D</i> для дальнейшего указания размера фаски (<i>ПКМ</i>);<br></li>
+						<li>ввод в <i>КС</i> размера фаски по первому направлению (<i>ПКМ</i>);</li>
+						<li>ввод в <i>КС</i> размера фаски по второму направлению (<i>ПКМ</i>)<br>
+							если фаска под 45 град просто (<i>ПКМ</i>);</li>
+						<li>указать первую из линий, на которых строится фаска;</li>
+						<li>указать вторую линию;</li>
+						<li>если объектом для построения фаски является полилиния, после выбора размеров фаски ввести в <i>КС</i>
+						латинскую <i>Р</i> <i>ПКМ</i>; </li>
+						<li>указать полилинию.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group23" href="Ris3/Faska/1.png"><img src="Ris3/Faska/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group23" href="Ris3/Faska/2.png"><img src="Ris3/Faska/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group23" href="Ris3/Faska/3.png"><img src="Ris3/Faska/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group23" href="Ris3/Faska/4.png"><img src="Ris3/Faska/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group23" href="Ris3/Faska/5.png"><img src="Ris3/Faska/5.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Skruglit.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>ввод в <i>КС</i> буквы <i>R</i> для дальнейшего указания радиуса скругления (<i>ПКМ</i>);<br></li>
+						<li>ввод в <i>КС</i> радиуса скругления (<i>ПКМ</i>);</li>
+						<li>указать первую из линий, на которых строится скругление;</li>
+						<li>указать вторую линию;</li>
+						<li>если объектом для построения фаски является полилиния, после указания радиуса скругления ввести в
+						<i>КС</i> латинскую <i>Р</i> <i>ПКМ</i>; </li>
+						<li>указать полилинию.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group24" href="Ris3/Skruglit/1.png"><img src="Ris3/Skruglit/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group24" href="Ris3/Skruglit/2.png"><img src="Ris3/Skruglit/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group24" href="Ris3/Skruglit/3.png"><img src="Ris3/Skruglit/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group24" href="Ris3/Skruglit/4.png"><img src="Ris3/Skruglit/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Redaktirovat_Poliliniu.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<p>Команда содержит много разных функций редактирования.Подробно опишу только функцию изменения толщины полилинии, как наиболее часто употребляемую;</p>
+						<li>после запуска команды указать <i>ЛКМ</i> линию для редактирования.<br>
+						Для выбора нескольких линий одновременно набрать в <i>КС</i> латинскую букву <i>М</i>;</li>
+						<li>если выбранный объект не является полилинией преобразуйте его в полилинию, ответив <i>Yes</i>
+						 на появившейся запрос (<i>ПКМ</i>);</li>
+						<li>для выбора режима редактирования толщины полилинии наберите <i>W</i> в <i>КС</i> (<i>ПКМ</i>);</li>
+						<li>введите в <i>КС</i> новую толщину полилинии;</i></li>
+						<li><i>ПКМ</i> для завершения.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group25" href="Ris3/Redaktirovat_Poliliniju/1.png"><img src="Ris3/Redaktirovat_Poliliniju/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group25" href="Ris3/Redaktirovat_Poliliniju/2.png"><img src="Ris3/Redaktirovat_Poliliniju/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group25" href="Ris3/Redaktirovat_Poliliniju/3.png"><img src="Ris3/Redaktirovat_Poliliniju/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group25" href="Ris3/Redaktirovat_Poliliniju/4.png"><img src="Ris3/Redaktirovat_Poliliniju/4.png" alt=""/></a>
+				</div>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group25" href="Ris3/Redaktirovat_Poliliniju/5.png"><img src="Ris3/Redaktirovat_Poliliniju/5.png" alt=""/></a>
+				<a class="grouped_elements" rel="group25" href="Ris3/Redaktirovat_Poliliniju/6.png"><img src="Ris3/Redaktirovat_Poliliniju/6.png" alt=""/></a>
+				<a class="grouped_elements" rel="group25" href="Ris3/Redaktirovat_Poliliniju/7.png"><img src="Ris3/Redaktirovat_Poliliniju/7.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Rasclenit.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Изменение"</h3>
+						<p>Команда служит для разбивки блоков на отдельные объекты</p>
+						<h3>Порядок действий</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбрать <i>ЛКМ</i> объекты для расчленения;</li>
+						<li><i>ПКМ</i> для завершения.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group26" href="Ris3/Raschlenit/1.png"><img src="Ris3/Raschlenit/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group26" href="Ris3/Raschlenit/2.png"><img src="Ris3/Raschlenit/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group26" href="Ris3/Raschlenit/3.png"><img src="Ris3/Raschlenit/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+
+				<div>
+					<h3 class="zagl">5.3. Панель инструментов <i>Размеры</i></h3>
+					<img class="image_panel" id="perechen" src="Ris2/Panel_Razmeri.png">
+				</div>
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Lineyniy_Razmer.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Размеры"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбор <i>ЛКМ</i> первой точки для простановки размера;</li>
+						<li>выбор <i>ЛКМ</i> второй точки для простановки размера;</li>
+						<li>движением мышки выбирается нужный отступ размерной линии <i>(ЛКМ)</i>.</li>
+
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group27" href="Ris3/Lineyniy_Razmer/1.png"><img src="Ris3/Lineyniy_Razmer/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group27" href="Ris3/Lineyniy_Razmer/2.png"><img src="Ris3/Lineyniy_Razmer/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group27" href="Ris3/Lineyniy_Razmer/3.png"><img src="Ris3/Lineyniy_Razmer/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group27" href="Ris3/Lineyniy_Razmer/4.png"><img src="Ris3/Lineyniy_Razmer/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Paralelniy_Razmer.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Размеры"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбор <i>ЛКМ</i> первой точки для простановки размера;</li>
+						<li>выбор <i>ЛКМ</i> второй точки для простановки размера;</li>
+						<li>движением мышки выбирается нужный отступ размерной линии <i>(ЛКМ)</i>.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group28" href="Ris3/Paralelniy_Razmer/1.png"><img src="Ris3/Paralelniy_Razmer/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group28" href="Ris3/Paralelniy_Razmer/2.png"><img src="Ris3/Paralelniy_Razmer/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group28" href="Ris3/Paralelniy_Razmer/3.png"><img src="Ris3/Paralelniy_Razmer/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group28" href="Ris3/Paralelniy_Razmer/4.png"><img src="Ris3/Paralelniy_Razmer/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Radius.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Размеры"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбор <i>ЛКМ</i> дуги или окружности для простановки размера;</li>
+						<li>движением мышки выбирается нужное положение размерной линии <i>(ЛКМ)</i>.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group29" href="Ris3/Radius/1.png"><img src="Ris3/Radius/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group29" href="Ris3/Radius/2.png"><img src="Ris3/Radius/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group29" href="Ris3/Radius/3.png"><img src="Ris3/Radius/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Diametr.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Размеры"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбор <i>ЛКМ</i> дуги или окружности для простановки размера;</li>
+						<li>движением мышки выбирается нужное положение размерной линии <i>(ЛКМ)</i>.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group30" href="Ris3/Diametr/1.png"><img src="Ris3/Diametr/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group30" href="Ris3/Diametr/2.png"><img src="Ris3/Diametr/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group30" href="Ris3/Diametr/3.png"><img src="Ris3/Diametr/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Uglovoy_Razmer.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Размеры"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<p>Построение углового размера между отрезками:</p>
+						<li>указать <i>ЛКМ</i> первый отрезок;</li>
+						<li>указать <i>ЛКМ</i> второй отрезок;</li>
+						<li>движением мышки выбирается нужное положение размерной лини, <i>(ЛКМ)</i>.</li>
+						<p>Построение углового размера между бесконечными линиями:</p>
+						<li>после запуска команды <i>ПКМ;</i></li>
+						<li>указать <i>ЛКМ</i> вершину угла;</li>
+						<li>указать <i>ЛКМ</i> точку на первой линии;</li>
+						<li>указать <i>ЛКМ</i> точку на второй линии;</li>
+						<li>движением мышки выбирается нужное положение размерной<br> линии, <i>(ЛКМ)</i>.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group31" href="Ris3/Uglovoy_Razmer/1.png"><img src="Ris3/Uglovoy_Razmer/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group31" href="Ris3/Uglovoy_Razmer/2.png"><img src="Ris3/Uglovoy_Razmer/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group31" href="Ris3/Uglovoy_Razmer/3.png"><img src="Ris3/Uglovoy_Razmer/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group31" href="Ris3/Uglovoy_Razmer/4.png"><img src="Ris3/Uglovoy_Razmer/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					<i>КС</i> — командная строка;<br>
+					</p>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Marker_Centra.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Размеры"</h3>
+						<h3>Порядок создания</h3>
+						<li>запуск команды (<i>ЛКМ</i> по значку);</li>
+						<li>выбор <i>ЛКМ</i> дуги или окружности;</li>
+						<li>в центре окружности появится перекрестие.</li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group32" href="Ris3/Marker/1.png"><img src="Ris3/Marker/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group32" href="Ris3/Marker/2.png"><img src="Ris3/Marker/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group32" href="Ris3/Marker/3.png"><img src="Ris3/Marker/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+
+
+
+
+
+				<div>
+					<h3 class="zagl">5.4. Панель инструментов <i>Стандартная</i></h3>
+					<img class="image_panel" id="perechen" src="Ris2/Panel_Standartnaja.png"><br>
+					<div class="text_komandi">
+					<ul id="text_V_komandah">
+						<h3>Команды</h3>
+						<li><i>Открыть</i></li>
+						<li><i>Сохранить</i></li>
+						<li><i>Печать</i></li>
+						<li><i>Вырезать</i></li>
+						<li><i>Копировать</i></li>
+						<li><i>Вставить</i></li>
+						<p>в дополнительных объяснениях не нуждаются.<br>
+						Они работают по аналогии с другими приложениями Windows.<br><br>
+						Остальные команды панели инструментов <i>Стандартная</i> рассмотрим подробнее.</p>
+					</ul>
+				</div>
+				</div>
+
+
+
+				<div>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Sozdat.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Стандартная"</h3>
+						<li>По клику на значке команды открывается шаблон чертежа, выбранный по умолчанию;</li>
+						<li>для выбора шаблона по умолчанию надо зайти в меню <i>Файл — Создать</i> и в открывшемся окне(см. риунок ниже) отметить пункт <i>Использовать шаблон по умолчанию;</i> </li>
+						<li>дальнейшая процедура создания шаблона чертежа описана в первой части данного учебника.</li>
+					</ul>
+				</div>
+				<img class="image" src="Ris2/Naznaschenie_Shablona_po_Umolschaniy.png">
+				</div>
+
+
+
+				<div>
+					<p>
+					<i>ЛКМ</i> — щелчок левой кнопкой мыши;<br>
+					<i>ПКМ</i> — щелчок правой кнопкой мыши;<br>
+					</p>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Kopirovat_Svoystva.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Стандартная"</h3>
+						Команда <i>Копировать свойства</i> позволяет скопировать все свойства объекта.<br>
+						Для линии это:
+						<li>цвет;</li>
+						<li>слой;</li>
+						<li>тип линии;</li>
+						<li>масштаб типа линии;</li>
+						<li>толщина линии.</li>
+						Для текста дополнительно:
+						<li>стиль текста;</li>
+						<li>тип выравнивания;</li>
+						<li>высота;</li>
+						<li>угол поворота;</li>
+						<li>сжатие;</li>
+						<li>наклон.</li><br>
+						Для присвоения свойств достаточно выбрать <i>ЛКМ</i> сначала объект для копирования свойств, а затем объекты для присвоения свойств (<i>ПКМ</i>).
+
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по созданию (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group33" href="Ris3/Kopirovat_Svoystva/1.png"><img src="Ris3/Kopirovat_Svoystva/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group33" href="Ris3/Kopirovat_Svoystva/2.png"><img src="Ris3/Kopirovat_Svoystva/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group33" href="Ris3/Kopirovat_Svoystva/3.png"><img src="Ris3/Kopirovat_Svoystva/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group33" href="Ris3/Kopirovat_Svoystva/4.png"><img src="Ris3/Kopirovat_Svoystva/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Provodnik.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Стандартная"</h3>
+						<i>Проводник по чертежам</i> позволяет выполнить все необходимые настройки стилей.<br>
+						 О настройке текстового и размерного стиля расказано в части <i>2.Подготовка чертежа к работе</i> данного учебника.<br>
+						 Остальные настройки применяются редко. Как я уже писал ранее, в задачу данного учебного пособия не входит изучение всех функций программы (для этого есть учебники и справка), а только оказать помощь в начальном освоении.
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по настройке текстового и размерного стиля(щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group34" href="Ris3/Provodnik/1.png"><img src="Ris3/Provodnik/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group34" href="Ris3/Provodnik/2.png"><img src="Ris3/Provodnik/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group34" href="Ris3/Provodnik/3.png"><img src="Ris3/Provodnik/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group34" href="Ris3/Provodnik/4.png"><img src="Ris3/Provodnik/4.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+				<div>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Parametri_znak.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Стандартная"</h3>
+						Окно <i>Параметры</i> позволяет выполнить все необходимые настройки окна и параметров программы.<br>
+						Для примера на слайдах внизу показан выбор цвета фона рабочего окна:<br>
+						<li>открыть оно <i>Параметры;</i></li>
+						<li>открыть вкладку <i>Параметры программы;</i></li>
+						<li>зайти в закладку <i>Экран;</i></li>
+						<li>выбрать нужный фон пространства <i>модели.</i></li>
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды по выбору цвета фона (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group35" href="Ris3/Parametri/1.png"><img src="Ris3/Parametri/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group35" href="Ris3/Parametri/2.png"><img src="Ris3/Parametri/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group35" href="Ris3/Parametri/3.png"><img src="Ris3/Parametri/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group35" href="Ris3/Parametri/4.png"><img src="Ris3/Parametri/4.png" alt=""/></a>
+				</div>
+
+
+				</div>
+
+
+
+				<div>
+				<div class="text_komandi">
+					<img class="image_V_komandah" src="Ris2/Svoystva.png">
+					<ul id="text_V_komandah">
+						<h3>Расположение - панель инструментов "Стандартная"</h3>
+						Окно <i>Свойства</i> позволяет выполнить все настройки свойств объектов.<br>
+						Открыть его можно кликнув по значку на панели или двойным щелчком левой кнопки мыши по объекту.
+						Для примера на слайдах внизу показан текст и размер с открытыми окнами свойств для них.<br>
+						В окне свойств можно поменять любые свойства объектов.
+					</ul>
+				</div>
+
+				<h3>Просмотреть слайды (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group36" href="Ris3/Svoystva/1.png"><img src="Ris3/Svoystva/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group36" href="Ris3/Svoystva/2.png"><img src="Ris3/Svoystva/2.png" alt=""/></a>
+				<a class="grouped_elements" rel="group36" href="Ris3/Svoystva/3.png"><img src="Ris3/Svoystva/3.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+				<div>
+					<h3 class="zagl">5.5.Строка состояния</h3>
+				<div class="text_komandi">
+					<ul id="text_V_komandah">
+						<li>Строка состояния управляет включением и выключением различных режимов черчения с помощью набора кнопок-переключателей:<br>
+						Серый цвет текста на кнопке означает, что соответствующий этой кнопке режим выключен.<br>
+						Черный цвет текста на кнопке означает, что соответствующий этой кнопке режим включен.</li>
+						<li>Не буду разбирать все функции кнопок, а посоветую перед началом работы над чертежём включить следующие кнопки:<br>
+						<i>П.ТРАС</i> (полярная трасировка) — даст возможность строить выровненные вертикальные и горизонтальные линии(можно настроить и другой угол);</li>
+						<i>ПРИВЯЗКА</i> (привязка) — включает совмещение характерных точек объектов.
+						<li>при щелчке правой кнопкой мыши по кнопкам строки состояния отображается контекстное меню, которые содержат одинаковый набор доступных опций:
+						Включить, Выключить и Параметры.</li>
+						<li>ниже на слайдах показаны окна параметров полярной трассировки и объектной привязки.</li>
+
+					</ul>
+				</div>
+				<img class="image" src="Ris2/Stroka_Sostojanija.png">
+
+				<h3>Просмотреть слайды (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group37" href="Ris3/Stroka_Sostojanija/1.png"><img src="Ris3/Stroka_Sostojanija/1.png" alt=""/></a>
+				<a class="grouped_elements" rel="group37" href="Ris3/Stroka_Sostojanija/2.png"><img src="Ris3/Stroka_Sostojanija/2.png" alt=""/></a>
+				</div>
+
+				<div class="perehod_glavi">
+				<p><a href="Nekotorie_Poleznie_Veschi.html"> Следующая глава ►</a></p>
+				</div>
+
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+<script type="text/javascript">
+	var perechen = document.getElementById('perechen');
+	function Uvelishit(){
+		perechen.style.width ='200%';
+		document.getElementById('uvelish').disabled = true;
+		document.getElementById('umensh').disabled = false;
+	}
+
+	function Umenshit(){
+		perechen.style.width = '85%';
+		document.getElementById('uvelish').disabled = false;
+		document.getElementById('umensh').disabled = true;
+	}
+
+$("a.grouped_elements").fancybox();
+
+</script>
+
+
+
+</body>
+
+
+</html>

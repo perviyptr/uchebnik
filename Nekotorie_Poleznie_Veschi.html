@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Некоторые полезные приёмы при работе в BricsCAD </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<link rel="stylesheet" href="./fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_BricsCad.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">6. Некоторые полезные приёмы при работе в BricsCAD</h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+					<h3>В этой главе я хочу показать некоторые приёмы работы в BricsCad, позволяющие ускорить работу</h3><br>
+					<ul id="text_Po_Centru">
+						<li><a href="Nekotorie_Poleznie_Veschi.html#/2"> Копирование старого текста с последующим его редактированием;</a></a></li>
+						<li><a href="Nekotorie_Poleznie_Veschi.html#/3">преобразование группы элементов в блок с базовой точкой;</a></li>
+						<li><a href="Nekotorie_Poleznie_Veschi.html#/4">использование слоёв для построения элементов;</a></li>
+						<li><a href="Nekotorie_Poleznie_Veschi.html#/5">использование <i>ручек</i> для редактирования;</a></li>
+						<li><a href="Nekotorie_Poleznie_Veschi.html#/6">использование <i>поиска</i> для нахождения текста в чертеже;</a></li>
+						<li><a href="Nekotorie_Poleznie_Veschi.html#/7">поиск групп элементов чертежа по их свойствам.</a></li>
+					</ul>
+
+					<div class="perehod_glavi">
+					<p><a href="Uroki_BricsCad_Spravka_po_Komandam.html"> ◄ Предыдущая глава</a></p>
+					</div>
+
+				</div>
+
+
+
+				<div>
+					<h3>Вместо создания нового текста быстрее и удобнее копировать старый текст.<br>
+					Затем активизировав его двойным щелчком мыши перебить на новый.</h3>
+					<img class="image" src="Ris5/1.png">
+				</div>
+
+
+				<div>
+					<h3>Чтобы преобразовать в блок набор элементов удобно пользоваться командами<br>
+						"Копировать с базовой точкой" и "Вставить как блок" <br>
+						Они расположены в меню "Правка"<br>
+						Блок будет создан на том же месте, где был набор элементов.
+					</h3>
+					<img class="image" src="Ris5/2.png">
+				</div>
+
+
+				<div>
+					<h3>Слои</h3>
+					<ul id="text_Po_Centru">
+						<li>Слои можно представить как стопку прозрачных калек, на каждой из которых начерчено какое-то своё изображение, но в итоге складывается в одно целое;</li>
+						<li>удобство черчения с использованием слоёв состоит в том, что любой слой можно временно заморозить или удалить совсем, сделать невидимым, поменять его свойства;</li>
+						<li>новый слой можно создать, открыв окно редактирования слоёв в <i>Проводнике</i>(см. слайды ниже);</li>
+						<li>выбирать активный слой для черчения на нём можно через раскрывающийся список слоёв (см. слайды ниже).
+						</li>
+					</ul>
+
+					<h3>Просмотреть слайды по использованию слоёв<br> (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group1" href="Ris5/3.png"><img src="Ris5/3.png" alt=""/></a>
+				<a class="grouped_elements" rel="group1" href="Ris5/4.png"><img src="Ris5/4.png" alt=""/></a>
+				<a class="grouped_elements" rel="group1" href="Ris5/5.png"><img src="Ris5/5.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+				<div>
+					<h3>Использование "ручек" для редактирования объектов</h3>
+					<ul id="text_Po_Centru">
+						<li>Если выделить объект, то в его конечных и узловых точках появятся зелёные квадратики
+							(т.н. <i>"ручки"</i>); </li>
+						<li> <i>"ручки"</i> можно использовать для редактирования элементов(изменения их формы и размеров, если элемент является блоком или текстом - для перемещения;</li>
+						<li>у отрезка крайние точки используются для изменения размеров, а средняя для перемещения.</li>
+					</ul>
+
+					<h3>Просмотреть слайды по использованию "ручек"<br> (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group2" href="Ris5/6.png"><img src="Ris5/6.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris5/7.png"><img src="Ris5/7.png" alt=""/></a>
+				<a class="grouped_elements" rel="group2" href="Ris5/8.png"><img src="Ris5/8.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+					<h3>Использование "Найти и заменить"</h3>
+					<ul id="text_Po_Centru">
+						<li>Для поиска,замены и выделения текста на чертеже удобно использовать команду <i>Найти и заменить</i>;</li>
+						<li>команда расположена в меню <i>Правка</i>;</li>
+						<li>порядок работы с командой можно посмотреть на слайдах ниже.</li>
+					</ul>
+
+					<h3>Просмотреть слайды по использованию "Найти и заменить"<br> (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group3" href="Ris5/9.png"><img src="Ris5/9.png" alt=""/></a>
+				<a class="grouped_elements" rel="group3" href="Ris5/10.png"><img src="Ris5/10.png" alt=""/></a>
+				<a class="grouped_elements" rel="group3" href="Ris5/11.png"><img src="Ris5/11.png" alt=""/></a>
+				</div>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group3" href="Ris5/12.png"><img src="Ris5/12.png" alt=""/></a>
+				<a class="grouped_elements" rel="group3" href="Ris5/13.png"><img src="Ris5/13.png" alt=""/></a>
+				<a class="grouped_elements" rel="group3" href="Ris5/14.png"><img src="Ris5/14.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+				<div>
+					<h3>Поиск групп элементов чертежа по их свойствам</h3>
+					<ul id="text_Po_Centru">
+						<li>Для поиска групп элементов чертежа с одинаковыми свойствами удобно использовать окно<br>
+							<i>Быстрого поиска</i>,расположенное внутри окна свойств;</li>
+						<li>порядок работы с командой можно посмотреть на слайдах ниже.</li>
+					</ul>
+
+					<h3>Просмотреть слайды по использованию "Окна быстрого поиска"<br> (щёлкните ЛКМ по любому рисунку, затем значок ► или ◄)</h3><br>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group4" href="Ris5/15.png"><img src="Ris5/15.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris5/16.png"><img src="Ris5/16.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris5/17.png"><img src="Ris5/17.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris5/18.png"><img src="Ris5/18.png" alt=""/></a>
+				</div>
+				<div class="dlja_slajdov">
+				<a class="grouped_elements" rel="group4" href="Ris5/19.png"><img src="Ris5/19.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris5/20.png"><img src="Ris5/20.png" alt=""/></a>
+				<a class="grouped_elements" rel="group4" href="Ris5/21.png"><img src="Ris5/21.png" alt=""/></a>
+				</div>
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+<script type="text/javascript">
+
+$("a.grouped_elements").fancybox();
+
+</script>
+
+
+
+</body>
+
+
+</html>
