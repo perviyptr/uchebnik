@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117113579-1');
+</script>
+	<title>Живая картинка</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_Relax.html" height = '780'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div id="slides">
+
+
+				<div class="active">
+
+					<h3 class="zagl">4. Живая картинка</h3>
+
+					<div id="pole_dla_zapisey">
+					<ul id="zapisi">
+						<li>Нарисуйте <i>живую картинку</i> используя элементы, расположенные ниже.</li>
+						<li>Для рисования выберите нужный элемент щелчком по нему левой кнопкой мыши, а затем проведите
+						курсором по ячейкам клетчатого поля с нажатой левой кнопкой мыши.</li>
+						<li>Для вставки фрагмента щёлкните левой кнопкой мыши по выбранному фрагменту, а затем по ячейке клетчатого поля.</li>
+						<li>Для стирания щёлкните по первому пустому фрагменту слева, а затем по нужному фрагменту на поле, либо проведите курсором по всем элементам с нажатой левой кнопкой мыши.</li>
+						<li>Для полного обновления нажмите клавишу <i>F5.</i></li>
+					</ul>
+					</div>
+					<div id="pole_dla_vstavki_obrazcov"></div>
+					<div id="pole_dla_risovanija"></div>
+
+
+					<script type="text/javascript">
+			var imageUrls = [
+				'data:image/gif; base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+				'Ris9/1.gif',
+				'Ris9/3.gif',
+				'Ris9/4.gif',
+				'Ris9/5.gif',
+				'Ris9/6.gif',
+				'Ris9/11.gif',
+				'Ris9/12.gif',
+				'Ris9/13.gif',
+				'Ris9/14.gif',
+				'Ris9/15.gif',
+				'Ris9/16.gif',
+				'Ris9/17.gif',
+				'Ris9/18.gif',
+				'Ris9/19.gif',
+				'Ris9/20.gif',
+				'Ris9/21.gif',
+				'Ris9/22.gif',
+				'Ris9/23.gif',
+				'Ris9/24.gif',
+				'Ris9/25.PNG',
+				'Ris9/26.PNG',
+				'Ris9/27.PNG',
+				'Ris9/28.PNG',
+				'Ris9/29.PNG',
+				'Ris9/30.PNG',
+				'Ris9/31.PNG',
+				'Ris9/32.PNG',
+				'Ris9/33.PNG',
+				'Ris9/34.PNG',
+				'Ris9/35.PNG',
+				'Ris9/36.PNG',
+				'Ris9/37.PNG',
+				'Ris9/38.PNG',
+				'Ris9/39.PNG',
+				'Ris9/40.PNG',
+
+			];
+
+			var brush = imageUrls[0];
+
+			function createImage(src) {
+				var image = document.createElement('img');
+				image.classList.add('obrazec');
+				image.src = src;
+				return image;
+			}
+
+			var pole_dla_vstavki_obrazcov = document.getElementById('pole_dla_vstavki_obrazcov');
+
+			imageUrls.forEach(function (src) {
+				var image = createImage(src);
+
+				image.addEventListener('mousedown', function () {
+					if (event.which !== 1) {
+						return;
+					}
+
+					brush = src;
+				});
+
+				pole_dla_vstavki_obrazcov.appendChild(image);
+			});
+
+			document.body.appendChild(document.createElement('br'));
+
+			for (var i = 0; i < 403; ++i) {
+				var image = createImage(imageUrls[0]);
+
+				image.addEventListener('mouseup', function (event) {
+					if (event.which !== 1) {
+						return;
+					}
+
+					event.preventDefault();
+					this.src = brush;
+				});
+
+				image.addEventListener('mousemove', function (event) {
+					if (event.which !== 1) {
+						return;
+					}
+
+					event.preventDefault();
+					this.src = brush;
+				});
+
+				image.addEventListener('dragstart', function () {
+					event.preventDefault();
+				});
+
+				var pole_dla_risovanija =  document.getElementById('pole_dla_risovanija');
+				pole_dla_risovanija.appendChild(image);
+				image.classList.add('dla_risovanija');
+			}
+		</script>
+
+					<div class="perehod_glavi">
+					<p><a href="Pjatnashki.html"> ◄ Назад</a></p>
+					<p><a href="Risovalka.html"> Далее ►</a></p>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+
+</body>
+
+
+</html>

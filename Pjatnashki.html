@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117113579-1');
+</script>
+	<title>Пятнашки и пазлы</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+
+
+	<link href="css/style.css" rel="stylesheet" />
+    <link href="css/image-puzzle.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/image-puzzle.js"></script>
+
+</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_Relax.html" height = '780'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+
+
+			<div id="slides">
+
+
+			<div class="active">
+
+			<h3 class="zagl">2. Игра <i>Пятнашки</i></h3>
+
+			<div id="pole_dla_ishodnie_kartinki">
+				<img id="ishodnie_kartinki" src="Ris9/pjatnashki.JPG">
+				<ul id="nadpis_k_sostavit_kartinku">
+					<li>Цель игры — расставить числа от 1 до 15 по порядку как показано на рисунке слева, перемещая их поочерёдно в пустое поле.</li>
+					<li>Для перемещения чисел щёлкните левой кнопкой мыши по любому из чисел, находящимся рядом с пустым полем.</li>
+					<li>Для начала новой игры щёлкните по кнопке <i>Новая игра</i></li>
+				</ul>
+			</div>
+
+			<div id="dla_pjatnachek">
+			<div id="box" onmousedown ='return false'></div>
+			<button id="reset">Новая игра</button>
+			</div>
+
+		<script type="text/javascript">
+
+		var arr = [], box, ei,ej;
+		function swap(arr,i1,j1,i2,j2){
+			t = arr[i1][j1];
+			arr[i1][j1] = arr[i2][j2];
+			arr[i2][j2] = t;
+		}
+		window.onload = function() {
+			box = document.getElementById("box");
+			newGame();
+			document.getElementById("reset").onclick = newGame;
+		}
+		function cellClick(event) {
+			var event = event || window.event,
+				el = event.srcElement || event.target,
+				i = el.id.charAt(0),
+				j = el.id.charAt(2);
+			if((i == ei && Math.abs(j - ej) == 1) || (j == ej && Math.abs(i - ei) == 1)){
+				document.getElementById(ei + " " + ej).innerHTML = el.innerHTML;
+				el.innerHTML = "";
+				ei = i;
+				ej = j;
+				var q = true;
+				for(i = 0; i < 4; ++i)
+					for(j = 0; j < 4; ++j)
+						if(i + j != 6 && document.getElementById(i + " " + j).innerHTML != i*4 + j 		+ 1){
+							q = false;
+							break;
+						}
+						if(q) alert("Победа!");
+					}
+		}
+		function newGame(){
+			for(i = 0; i < 4; ++i){ //заполнение числами от 1 до 15
+				arr[i] = []
+				for(j = 0; j < 4; ++j){
+					if(i + j != 6)
+						arr[i][j] = i * 4 + j + 1;
+					else
+						arr[i][j] = "";
+				}
+			}
+			ei = 3;
+			ej = 3;
+			for(i = 0; i < 1600; ++i)
+				switch(Math.round(3*Math.random())){
+					case 0: if(ei != 0) swap(arr,ei,ej,--ei,ej); break; // up
+					case 1: if(ej != 3) swap(arr,ei,ej,ei, ++ej); break; // right
+					case 2: if(ei != 3) swap(arr,ei,ej,++ei,ej); break; // down
+					case 3: if(ej != 0) swap(arr,ei,ej,ei,--ej); // left
+				}
+			var table = document.createElement("table"),
+				tbody = document.createElement("tbody");
+			table.appendChild(tbody);
+			for(i = 0; i < 4; ++i){
+				var row = document.createElement("tr");
+				for(j = 0; j < 4; ++j){
+					var cell = document.createElement("td");
+						cell.id = i + " " + j;
+						cell.onclick = cellClick;
+						cell.innerHTML = arr[i][j];
+						row.appendChild(cell);
+
+				}
+				tbody.appendChild(row);
+			}
+			if(box.childNodes.length == 1)
+				box.removeChild(box.firstChild);
+				box.appendChild(table);
+		}
+
+
+		</script>
+
+					<div class="perehod_glavi">
+					<p><a href="Sostavit_kartinku.html"> ◄ Назад</a></p>
+					</div>
+
+
+				</div>
+
+
+
+
+
+				<div>
+
+			<div id="collage">
+        		<h2>3. Пазлы (собрать картинку из мелких деталей)</h2>
+        		<hr/>
+        		<div id="playPanel" style="padding:5px;display:none;">
+            	<h3 id="imgTitle"></h3>
+            	 <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Число шагов:</div><div class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        Время: <span id="timerPanel"></span> сек
+                    </div>
+                    <img id="actualImage" />
+                    <div>Восстановите картинку слева, перетаскивая её части левой кнопкой мыши.<br>
+                    	При восстановлении картинки <i>Квадрат</i> попробуйте перетаскивать части поочерёдно в белое поле.</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="medium" checked="checked" value="4" />
+                    </p>
+                    <div>
+                        <button id="newPhoto" type="button" class="btn">Следующая картинка</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">Игра закончена!</h2>
+                <br />
+                Количество шагов: <span class="stepCount">0</span>
+                <br />
+                Время: <span class="timeCount">0</span>сек<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Играть сначала</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var images = [
+                { src: 'images/kvadrat.jpg', title: 'Квадрат'},
+                { src: 'images/vasilevskiy.jpg', title: 'Васильевский остров'},
+                { src: 'images/petropalovka.jpg', title: 'Петропаловская крепость'},
+                { src: 'images/petergof.jpg', title: 'Петeргоф'},
+                { src: 'images/anichkov_most.jpg', title: 'Аничков мост'},
+                { src: 'images/bankovskiy_most.jpg', title: 'Банковский мост'},
+                { src: 'images/krondshtat.jpg', title: 'Крондштад'},
+                { src: 'images/egipetskiy_most.jpg', title: 'Египетский мост'},
+                { src: 'images/narvskie_vorota.jpg', title: 'Нарвские ворота'},
+                { src: 'images/pavlovsk.jpg', title: 'Павловск'},
+                { src: 'images/nu_pogodi.jpg', title: 'Кадр из мультфильма "Ну погоди!"'},
+                { src: 'images/prostokvashino.jpg', title: 'Кадр из мультфильма "Трое из "Простоквашино"'},
+                { src: 'images/vini_puh.jpg', title: 'Кадр из мультфильма "Винни Пух"'},
+                { src: 'images/masha_i_medved.jpg', title: 'Кадр из мультфильма "Маша и медведь"'},
+
+            ];
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(images, gridSize);
+                $('#newPhoto').click(function () {
+                    var gridSize = $('#levelPanel :radio:checked').val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+            });
+            function rules() {
+                alert('Re arrange the image parts in a way that it correctly forms the picture. \nThe no. of steps taken will be counted');
+            }
+            function about() {
+                alert('Developed by Anurag Gandhi. \nHe can be contacted at: soft.gandhi@gmail.com');
+            }
+        </script>
+    </div>
+
+    				<div class="perehod_glavi">
+					<p><a href="Jivaja_kartinka.html"> Далее ►</a></p>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>

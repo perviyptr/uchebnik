@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117113579-1');
+</script>
+	<title>Рисовалка</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_Relax.html" height = '780'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+
+			<div id="slides">
+
+
+				<div class="active">
+
+					<h3 class="zagl">5. Рисовалка</h3>
+
+					<div id="pole_dla_zapisey2">
+					<ul id="zapisi2">
+						<li>Для рисования выберите нужный цвет щелчком по нему левой кнопкой мыши, а затем проведите
+						курсором по полю с нажатой левой кнопкой мыши.</li>
+						<li>В зависимости от скорости движения мыши можно получить разные линии.</li>
+						<li>Для стирания щёлкните по первому фрагменту слева, а затем проведите курсором по элементам
+						рисунка с нажатой левой кнопкой мыши.</li>
+						<li>Для полного обновления нажмите клавишу <i>F5.</i></li>
+					</ul>
+					</div>
+					<div id="pole_dla_vstavki_obrazcov2"></div>
+					<div id="pole_dla_risovanija2"></div>
+
+
+					<script type="text/javascript">
+			var imageUrls2 = [
+				'data:image/gif; base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+				'Ris9/41.PNG',
+				'Ris9/25.PNG',
+				'Ris9/26.PNG',
+				'Ris9/27.PNG',
+				'Ris9/28.PNG',
+				'Ris9/29.PNG',
+				'Ris9/30.PNG',
+				'Ris9/31.PNG',
+			];
+
+			var brush2 = imageUrls2[0];
+			function createImage(src) {
+				var image = document.createElement('img');
+				image.classList.add('obrazec2');
+				image.src = src;
+				return image;
+			}
+
+			var pole_dla_vstavki_obrazcov2 = document.getElementById('pole_dla_vstavki_obrazcov2');
+
+			imageUrls2.forEach(function (src) {
+				var image = createImage(src);
+
+				image.addEventListener('mousedown', function () {
+					if (event.which !== 1) {
+						return;
+					}
+
+					brush2 = src;
+				});
+
+				pole_dla_vstavki_obrazcov2.appendChild(image);
+			});
+
+			document.body.appendChild(document.createElement('br'));
+
+			for (var i = 0; i < 4500; ++i) {
+				var image = createImage(imageUrls2[0]);
+
+				image.addEventListener('mouseup', function (event) {
+					if (event.which !== 1) {
+						return;
+					}
+
+					event.preventDefault();
+					this.src = brush2;
+				});
+
+				image.addEventListener('mousemove', function (event) {
+					if (event.which !== 1) {
+						return;
+					}
+
+					event.preventDefault();
+					this.src = brush2;
+				});
+
+				image.addEventListener('dragstart', function () {
+					event.preventDefault();
+				});
+
+				var pole_dla_risovanija2 =  document.getElementById('pole_dla_risovanija2');
+				pole_dla_risovanija2.appendChild(image);
+				image.classList.add('dla_risovanija2');
+			}
+
+		</script>
+
+					<div class="perehod_glavi">
+					<p><a href="Jivaja_kartinka.html"> ◄ Назад</a></p>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+
+
+
+</body>
+
+
+</html>
