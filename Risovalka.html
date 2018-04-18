@@ -2,6 +2,94 @@
 <html>
 <head>
 	<meta charset="utf-8">
+
+
+<style type="text/css">
+
+#dla_paneley{
+    width: 850px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.paneli {
+   border: dotted 1px;
+   text-align: center;
+   color: rgb(99, 5, 99);
+   background-color: rgb(247, 215, 247);
+   border-radius: 20px;
+}
+
+p{
+    margin: 0;
+}
+
+#CanvasContainer{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+canvas {
+    display: block;
+    border: solid 1px;
+    margin:auto;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+#dla_knopok{
+    width: 870px;
+    display: block;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#dla_knopok button {
+    padding: 6px;;
+    margin: 10px;
+    font-size: 14px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    color: rgb(99, 5, 99);
+}
+
+img{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    margin-bottom: 10px;
+    border: 2px groove rgb(250, 7, 222);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    cursor: pointer;
+}
+
+
+img:hover {
+    border: 2px groove rgb(56, 172, 235);
+    background: white;
+}
+
+
+img.Selected {
+    border: 3px groove rgb(40, 7, 250);
+}
+
+#savedCopyContainer {
+    display: none;
+}
+
+
+</style>
+
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
 <script>
@@ -42,90 +130,129 @@
 
 					<h3 class="zagl">5. Рисовалка</h3>
 
-					<div id="pole_dla_zapisey2">
-					<ul id="zapisi2">
-						<li>Для рисования выберите нужный цвет щелчком по нему левой кнопкой мыши, а затем проведите
-						курсором по полю с нажатой левой кнопкой мыши.</li>
-						<li>В зависимости от скорости движения мыши можно получить разные линии.</li>
-						<li>Для стирания щёлкните по первому фрагменту слева, а затем проведите курсором по элементам
-						рисунка с нажатой левой кнопкой мыши.</li>
-						<li>Для полного обновления нажмите клавишу <i>F5.</i></li>
-					</ul>
-					</div>
-					<div id="pole_dla_vstavki_obrazcov2"></div>
-					<div id="pole_dla_risovanija2"></div>
+
+					<div id="dla_paneley" onmousedown="return false">
+<div class="paneli" onmousedown="return false">
+        <p>Цвет</p>
+        <img src="Ris10/cherniy_karandash.JPG" onmousedown="return false" onclick = "changeColor('rgb(0,0,0)', this)">
+        <img src="Ris10/krasniy_karandash.JPG" onmousedown="return false" onclick = "changeColor('rgb(255,0,0)', this)">
+        <img src="Ris10/oranjeviy_karandash.JPG" onmousedown="return false" onclick="changeColor('rgb(255,128,0)', this)">
+        <img src="Ris10/jeltiy_karandash.JPG" onmousedown="return false" onclick="changeColor('rgb(255,255,0)', this)">
+        <img src="Ris10/zeleniy_karandash.JPG" onmousedown="return false" onclick="changeColor('rgb(0,255,0)', this)">
+        <img src="Ris10/goluboy_karandash.JPG" onmousedown="return false" onclick="changeColor('rgb(128,255,255)', this)">
+        <img src="Ris10/siniy_karandash.JPG" onmousedown="return false" onclick="changeColor('rgb(0,0,255)', this)">
+        <img src="Ris10/fioletoviy_karandash.JPG" onmousedown="return false" onclick="changeColor('rgb(255,128,255)', this)">
+</div>
+
+<div class="paneli" onmousedown="return false">
+        <p>Ластик</p>
+        <img id="lastik" src="Ris10/lastik.JPG" onmousedown="return false" onclick = "changeColor('rgb(255,255,255)', this)">
+</div>
+
+<div class="paneli" onmousedown="return false">
+        <p>Толщина линий и ластика</p>
+        <img src="Ris10/tolchina1.JPG" onmousedown="return false" onclick="changeThickness(5, this)">
+        <img src="Ris10/tolchina2.JPG" onmousedown="return false" onclick="changeThickness(10, this)">
+        <img src="Ris10/tolchina3.JPG" onmousedown="return false" onclick="changeThickness(15, this)">
+        <img src="Ris10/tolchina4.JPG" onmousedown="return false" onclick="changeThickness(20, this)">
+        <img src="Ris10/tolchina5.JPG" onmousedown="return false" onclick="changeThickness(50, this)">
+</div>
 
 
-					<script type="text/javascript">
-			var imageUrls2 = [
-				'data:image/gif; base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-				'Ris9/41.PNG',
-				'Ris9/25.PNG',
-				'Ris9/26.PNG',
-				'Ris9/27.PNG',
-				'Ris9/28.PNG',
-				'Ris9/29.PNG',
-				'Ris9/30.PNG',
-				'Ris9/31.PNG',
-			];
 
-			var brush2 = imageUrls2[0];
-			function createImage(src) {
-				var image = document.createElement('img');
-				image.classList.add('obrazec2');
-				image.src = src;
-				return image;
-			}
 
-			var pole_dla_vstavki_obrazcov2 = document.getElementById('pole_dla_vstavki_obrazcov2');
+</div>
 
-			imageUrls2.forEach(function (src) {
-				var image = createImage(src);
 
-				image.addEventListener('mousedown', function () {
-					if (event.which !== 1) {
-						return;
-					}
+<div id = "CanvasContainer">
+        <canvas id="drawingCanvas" width="880" height="600"></canvas>
+</div>
 
-					brush2 = src;
-				});
+<div id = "dla_knopok">
+        <button onclick="clearCanvas()">Очистить</button>
+</div>
 
-				pole_dla_vstavki_obrazcov2.appendChild(image);
-			});
 
-			document.body.appendChild(document.createElement('br'));
+<script type="text/javascript">
+var canvas;
+var context;
+var isDrawing;
 
-			for (var i = 0; i < 4500; ++i) {
-				var image = createImage(imageUrls2[0]);
+window.onload = function() {
+      canvas = document.getElementById("drawingCanvas");
+      context = canvas.getContext("2d");
 
-				image.addEventListener('mouseup', function (event) {
-					if (event.which !== 1) {
-						return;
-					}
+      canvas.onmousedown = startDrawing;
+      canvas.onmouseup = stopDrawing;
+      canvas.onmouseout = stopDrawing;
+      canvas.onmousemove = draw;
+   }
 
-					event.preventDefault();
-					this.src = brush2;
-				});
+  var previousColorElement;
 
-				image.addEventListener('mousemove', function (event) {
-					if (event.which !== 1) {
-						return;
-					}
+function changeColor(color, imgElement)
+{
 
-					event.preventDefault();
-					this.src = brush2;
-				});
+	context.strokeStyle = color;
 
-				image.addEventListener('dragstart', function () {
-					event.preventDefault();
-				});
+    imgElement.className = "Selected";
 
-				var pole_dla_risovanija2 =  document.getElementById('pole_dla_risovanija2');
-				pole_dla_risovanija2.appendChild(image);
-				image.classList.add('dla_risovanija2');
-			}
 
-		</script>
+	if (previousColorElement != null)
+       previousColorElement.className = "";
+
+    previousColorElement = imgElement;
+}
+
+var previousThicknessElement;
+
+function changeThickness (thickness, imgElement)
+{
+
+	context.lineWidth = thickness;
+
+
+	imgElement.className = "Selected";
+
+
+	if (previousThicknessElement != null)
+       previousThicknessElement.className = "";
+
+    previousThicknessElement = imgElement;
+}
+
+
+function startDrawing(e) {
+
+	isDrawing = true;
+	context.beginPath();
+	context.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+}
+
+function draw(e) {
+	if (isDrawing == true)
+	{
+		var x = e.pageX - canvas.offsetLeft;
+		var y = e.pageY - canvas.offsetTop;
+
+		context.lineTo(x, y);
+		context.stroke();
+	}
+}
+
+function stopDrawing() {
+    isDrawing = false;
+}
+
+
+function clearCanvas() {
+	context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+
+</script>
+
+
 
 					<div class="perehod_glavi">
 					<p><a href="Jivaja_kartinka.html"> ◄ Назад</a></p>
