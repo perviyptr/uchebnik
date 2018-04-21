@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+
+<style type="text/css">
+#dla_paneley{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(197, 7, 250);
+}
+
+.paneli {
+   width: 100%;
+   border: dotted 1px;
+   text-align: center;
+   color: rgb(99, 5, 99);
+   background-color: rgb(247, 215, 247);
+   margin-bottom: 20px;
+}
+
+p{
+    margin: 0;
+    font-size: 1.3vmax;
+}
+
+canvas {
+    border: solid 3px rgb(247, 215, 247);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 50px;
+    background-image: url(Ris11/1.JPG);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center;
+    background-size: contain;
+}
+
+.paneli>img{
+    width: 25px;
+    height: 25px;
+    margin: 7px;
+    margin-bottom: 7px;
+    border: 2px groove rgb(250, 7, 222);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    cursor: pointer;
+}
+
+
+.paneli>img:hover {
+    border: 2px groove rgb(56, 172, 235);
+    background: white;
+}
+
+
+.paneli>img.Selected {
+    border: 3px groove rgb(40, 7, 250);
+}
+
+#figura {
+  width: 550px;
+  height: 550px;
+  pointer-events: all;
+  opacity: 0.6;
+}
+
+ .tochka {
+    width: 3px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: red;
+    position: absolute;
+    pointer-events: none;
+  }
+
+ .hidden2{
+  background-image:none !important;
+ }
+
+ .centr3{
+  width: 75%;
+  border: solid 1px;
+  box-shadow: 0 28px 56px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color: rgb(255,255,255);
+  padding: 10px;
+  color: rgb(97, 10, 94);
+ }
+
+#pole{
+  width: 90%;
+}
+
+#vibrat_kartinku{
+  cursor: pointer;
+}
+#paneli_dla_vibora_kartinok{
+  width: 90%;
+  height: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  border: dotted 1px;
+  color: rgb(99, 5, 99);
+  background-color: rgb(247, 215, 247);
+}
+#vibrat_kartinku{
+  color: red;
+}
+#vibrat_kartinku:hover{
+  color: rgb(44, 89, 4);
+}
+#dla_canvasa_s_panelami{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+</style>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117113579-1');
+</script>
+	<title>Геометрическая раскраска</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_Relax.html" height = '780'></iframe>
+
+		</div>
+
+		<div class="centr3">
+
+			<div id="slides">
+
+
+				<div class="active">
+
+					<h3>6. Геометрическая раскраска</h3>
+
+          <div id ="pole">
+          <ul id="zapisi">
+            <li>Попробуйте нарисовать узор или закрасить картинку построением многоугольников с заливкой цветом.</li>
+             <li>Для построения контура многоугольника щёлкайте левой кнопкой мыши в вершинах, для построения замыкающей линии
+             сделайте щелчок правой кнопкой мыши в последней вершине.</li>
+           <li>Цвет заливки можно выбирать на панели или включить случайный выбор.</li>
+           <li>Убрать часть изображения можно указав точками контур для удаления. В конечной точке щелчёк правой кнопкой мыши. Чтобы продолжить рисование щёлкните по любому цвету заливки.<br> Для удаления всего обновить страницу (клавиша <i>F5).</i></li>
+           <li>Для выбора картинки для раскраски отметьте один из вариантов точкой.</i></li>
+          </ul>
+          </div>
+
+ <div id = "paneli_dla_vibora_kartinok" onmousedown="return false">
+        <p><input name="kartinka" class="radio" id="kartinka1" type="radio" checked></p>
+        <p><input name="kartinka" class="radio" id="kartinka2" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka3" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka4" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka5" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka6" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka7" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka8" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka9" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka10" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka11" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka12" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka13" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka14" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka15" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka16" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka17" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka18" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka19" type="radio"></p>
+        <p><input name="kartinka" class="radio" id="kartinka20" type="radio"></p>
+</div>
+
+<div id="dla_canvasa_s_panelami">
+<div id="dla_paneley" onmousedown="return false">
+<div class="paneli" onmousedown="return false">
+        <p>Переключатель</p>
+       <p><input name="perekluchatel" id="perekluchatel1" type="radio" checked>Выбор цвета</p>
+       <p><input name="perekluchatel" id="perekluchatel2" type="radio">Случайный выбор цвета</p>
+</div>
+<div class="paneli" onmousedown="return false">
+        <p>Цвет заливки</p>
+        <img src="Ris11/cherniy_karandash.JPG" onmousedown="return false" onclick = "changeColor('source-over', 'rgb(0,0,0)', this)">
+        <img src="Ris11/krasniy_karandash.JPG" onmousedown="return false" onclick = "changeColor('source-over', 'rgb(255,0,0)', this)">
+        <img src="Ris11/oranjeviy_karandash.JPG" onmousedown="return false" onclick="changeColor('source-over', 'rgb(255,128,0)', this)">
+        <img src="Ris11/jeltiy_karandash.JPG" onmousedown="return false" onclick="changeColor('source-over', 'rgb(255,255,0)', this)"><br>
+        <img src="Ris11/zeleniy_karandash.JPG" onmousedown="return false" onclick="changeColor('source-over', 'rgb(0,255,0)', this)">
+        <img src="Ris11/goluboy_karandash.JPG" onmousedown="return false" onclick="changeColor('source-over', 'rgb(128,255,255)', this)">
+        <img src="Ris11/siniy_karandash.JPG" onmousedown="return false" onclick="changeColor('source-over', 'rgb(0,0,255)', this)">
+        <img src="Ris11/fioletoviy_karandash.JPG" onmousedown="return false" onclick="changeColor('source-over', 'rgb(255,128,255)', this)">
+</div>
+<div class="paneli" onmousedown="return false">
+        <p>Стереть рамкой</p>
+        <img id="lastik" src="Ris11/lastik.JPG" onmousedown="return false" onclick = "changeColor('destination-out', 'rgb(255,255,255)', this)">
+</div>
+<div class="paneli" onmousedown="return false">
+        <p>Убрать/показать разметку</p>
+        <img id="ubrat_razmetku" src="Ris11/ubrat_razmetku.JPG" onmousedown="return false">
+</div>
+
+</div>
+
+<canvas id="canvas" width="580" height="580"></canvas>
+
+ <script type="text/javascript">
+
+const canvas = document.getElementById("canvas");
+var vibrat = document.getElementsByClassName('radio');
+for(let i = 0; i < vibrat.length; ++i){
+vibrat[i].addEventListener('click', Vibor_kartinki);
+function Vibor_kartinki(){
+canvas.style.backgroundImage = 'url(Ris11/' + (i + 1) + '.JPG)';
+}
+}
+
+var perekluchatel1 = document.getElementById('perekluchatel1');
+var perekluchatel2 = document.getElementById('perekluchatel2');
+
+const ctx = canvas.getContext('2d');
+
+  canvas.addEventListener('click', onClick);
+  canvas.addEventListener('contextmenu', zavershit);
+
+ var previousColorElement;
+
+function changeColor(copmositeOperation, color, imgElement)
+{
+  ctx.globalCompositeOperation = copmositeOperation;
+  ctx.fillStyle = color;
+
+    imgElement.className = "Selected";
+
+
+  if (previousColorElement != null)
+       previousColorElement.className = "";
+
+    previousColorElement = imgElement;
+}
+
+
+function getMousePos(event) {
+  return {
+    x: event.pageX - canvas.offsetLeft,
+    y: event.pageY - canvas.offsetTop,
+  };
+}
+
+let started = false;
+
+function onClick(event) {
+  const pos = getMousePos(event);
+
+  if (started) {
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+  } else {
+    ctx.beginPath();
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 1;
+    ctx.moveTo(pos.x, pos.y);
+  }
+
+  started = true;
+}
+
+var ubrat_razmetku = document.getElementById('ubrat_razmetku');
+ubrat_razmetku.addEventListener('click', Ubrat_razmetku);
+var razmetka = document.getElementById('canvas');
+
+function Ubrat_razmetku(){
+   canvas.classList.toggle('hidden2');
+}
+
+
+function GenerirovatSluchCeloeChislo(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function zavershit(event) {
+  event.preventDefault(); //скрытие контекстного меню
+  if (!started) {
+    return;
+  }
+
+  const pos = getMousePos(event);
+  ctx.lineTo(pos.x, pos.y)
+  ctx.closePath();
+
+  if (perekluchatel2.checked) {
+    ctx.fillStyle = 'rgb(' + GenerirovatSluchCeloeChislo(0, 255) + ',' + GenerirovatSluchCeloeChislo(0, 255) + ','
+     + GenerirovatSluchCeloeChislo(0, 255) + ')';
+  }
+
+  ctx.stroke();
+  ctx.fill();
+  started = false;
+}
+</script>
+
+</div>
+
+
+</body>
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+</html>
