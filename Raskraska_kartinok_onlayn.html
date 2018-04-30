@@ -73,24 +73,21 @@ canvas{
 }
 
 .obchaja_ramka{
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction:row;
   justify-content: center;
   align-items: flex-start;
-  margin: auto;
 }
 
 .dla_risunkov{
-  width:450px;
-  height: 850px;
+  max-width:500px;
   display: flex;
-  flex-direction:column;
-  justify-content: space-around;
+  flex-direction:row;
+  justify-content: space-between;
   align-items: flex-start;
   flex-wrap:wrap;
   align-content:space-around;
-  border: dotted 1px;
 }
 
 #dla_canvasa_i_paneley{
@@ -107,7 +104,8 @@ canvas{
    width: 100px;
    height: 100px;
    cursor: pointer;
-   margin: 30px 30px;
+   margin: 10px;
+   margin-bottom: 70px;
 }
 
 .kartinki:hover{
@@ -142,17 +140,6 @@ i{
 .panel-button-current {
   outline: 5px solid red;
 }
-#nizniy_dla_kartinok{
-  width: 1200px;
-  display: flex;
-  flex-direction:row;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap:wrap;
-  align-content:space-around;
-  border: dotted 1px;
-  margin: 0 auto;
-}
 
   </style>
 </head>
@@ -176,6 +163,11 @@ i{
   <img class = "kartinki" src="Ris12/8.png">
   <img class = "kartinki" src="Ris12/9.png">
   <img class = "kartinki" src="Ris12/10.png">
+  <img class = "kartinki" src="Ris12/11.png">
+  <img class = "kartinki" src="Ris12/12.png">
+  <img class = "kartinki" src="Ris12/13.png">
+  <img class = "kartinki" src="Ris12/14.png">
+  <img class = "kartinki" src="Ris12/15.png">
 </div>
 
 <div id="dla_canvasa_i_paneley">
@@ -225,22 +217,12 @@ i{
 </div>
 
 <div class="dla_risunkov">
-    <img class = "kartinki" src="Ris12/11.png">
-    <img class = "kartinki" src="Ris12/12.png">
-    <img class = "kartinki" src="Ris12/13.png">
-    <img class = "kartinki" src="Ris12/14.png">
-    <img class = "kartinki" src="Ris12/15.png">
+
     <img class = "kartinki" src="Ris12/16.png">
     <img class = "kartinki" src="Ris12/17.png">
     <img class = "kartinki" src="Ris12/18.png">
     <img class = "kartinki" src="Ris12/19.png">
     <img class = "kartinki" src="Ris12/20.png">
-
-</div>
-
-</div>
-
-<div id="nizniy_dla_kartinok">
     <img class = "kartinki" src="Ris12/21.png">
     <img class = "kartinki" src="Ris12/22.png">
     <img class = "kartinki" src="Ris12/23.png">
@@ -251,14 +233,9 @@ i{
     <img class = "kartinki" src="Ris12/28.png">
     <img class = "kartinki" src="Ris12/29.png">
     <img class = "kartinki" src="Ris12/30.png">
-    <img class = "kartinki" src="Ris12/31.png">
-    <img class = "kartinki" src="Ris12/32.png">
-    <img class = "kartinki" src="Ris12/33.png">
-    <img class = "kartinki" src="Ris12/34.png">
 </div>
 
-<h3>Большое спасибо сайту <a href="http://moi-raskraski.ru/">moi-raskraski.ru</a> за картинки.
-</h3>
+</div>
 
 
 <script type="text/javascript">
