@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117113579-1');
+</script>
+	<title>Создание сборки</title>
+	<meta name="description" content="Уроки SolidWorks для начинающих">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_SolidWorks.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">2. Создание сборки</h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создадим сборочный узел из деталей <i>Основание</i> и <i>Крышка</i>, 3D - модели которых мы создали ранее.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/1.png">
+						</figure>
+
+					<div class="perehod_glavi">
+					<p><a href="SolidWorks_ModelDetali.html"> ◄ Предыдущая глава</a></p>
+					</div>
+
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Выберем <i>Создать — Сборка(gost - assy)</i></figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/24.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Щёлкнем по кнопке <i>Обзор</i> и выберем в папке деталь <i>Основание</i></figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/25.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Сделаем щелчёк левой кнопкой мыши в исходной точке для вставки детали.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/26.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Добавим в сборку деталь <i>Крышка</i>.<br>
+							Для этого выберем <i>Вставить компоненты</i></figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/27.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Щёлкнем по кнопке <i>Обзор</i>, выберем в папке деталь <i>Крышка</i> и вставим её в любое свободное место, щёлкнув левой кнопкой мыши.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/28.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Для позиционирования деталей зайдем в команду <i>Условия сопряжения</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/29.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Выберем левой кнопкой мыши исходные точки деталей, а в качестве типа сопряжения
+							<i>Совпадение</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/30.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Добавим сварной шов.<br>
+								Для этого на панели инструментов <i>Сварные детали</i> выберем команду <i>Сварной шов</i> и укажем кромки по которым пройдёт сварка. Катет шва примем равным 5мм.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/31.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">В результате получим следующую 3D - модель.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/32.png">
+						</figure>
+						<div class="perehod_glavi">
+						<p><a href="SolidWorks_SozdanieCherteza.html"> Следующая глава ►</a></p>
+						</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117113579-1');
+</script>
+	<title>Создание чертежа</title>
+	<meta name="description" content="Уроки SolidWorks для начинающих">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_SolidWorks.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">3. Создание чертежа</h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создадим новый документ <i>Создать — Чертёж сборки (gost-assy drw)</i></figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/33.png">
+						</figure>
+
+					<div class="perehod_glavi">
+					<p><a href="SolidWorks_SozdanieSborki.html"> ◄ Предыдущая глава</a></p>
+					</div>
+
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">В открывшемся окне выберем формат A2 по ГОСТ</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/34.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Щёлкнем <i>Обзор</i> и выберем в папке файл модели сборки</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/35.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создадим чертёжные виды, щёлкнув левой кнопкой мыши сначала в месте размещения вида спереди, затем в месте размещения вида сверху.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/36.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Построим разрез. Зайдём во вкладку <i>Расположение видов</i> и выберем команду <i>Разрез</i>. Укажем курсором с щелчком левой кнопкой мыши крайние точки секущей плоскости разреза, а затем место его расположения на чертеже.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/37.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Построим узел в увеличенном масштабе. Зайдём во вкладку <i>Расположение видов</i> и выберем команду <i>Местный вид</i>. Начертим окружность для выбора узла, а затем укажем место его расположения на чертеже.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/38.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Отредактируем штриховку. Для этого щёлкнем по ней и в открывшемся окне установим необходимые параметры.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/39.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Добавим обозначение сварного шва.<br>
+								Вкладка <i>Примечание</i>, команда <i>Обозначение сварного шва</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/40.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Выполним простановку размеров.<br>
+								Вкладка <i>Примечание</i>, команда <i>Автоматическое нанесение размеров</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/41.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Проставим позиции.<br>
+								Вкладка <i>Примечание</i>, команда <i>Позиция</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/42.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Для создания спецификации сделаем щелчёк правой кнопкой мыши по чертежу и в открывшемся контекстном меню выберем <i>Таблицы — Спецификация</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/43.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">В открывшемся окне редактирования выберем шаблон спецификации.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/44.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Вставим спецификацию в чертёж, указав место курсором с щелчком левой кнопкой мыши.
+							</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/45.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Для создания технических требований к чертежу используется команда <i>Заметка</i>
+								вкладки <i>Примечания</i>.
+							</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/46.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Для редактирования основной надписи сделайте щелчёк правой кнопкой мыши по чертежу
+							и выберите в контекстном меню <i>Редактировать основную надпись</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/47.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">После завершения редактирования основной надписи сделайте щелчёк правой кнопкой мыши по чертежу и выберите в контекстном меню <i>Редактировать лист</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/48.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Готовый чертёж</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/49.png">
+						</figure>
+						<div class="perehod_glavi">
+						<p><a href="SolidWorks_ModelDetali_iz_Listovogo_Materiala.html"> Следующая глава ►</a></p>
+						</div>
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+
+</html>

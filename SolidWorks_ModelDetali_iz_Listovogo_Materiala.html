@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117113579-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117113579-1');
+</script>
+	<title>Создание 3D-модели детали из листового материала</title>
+	<meta name="description" content="Уроки SolidWorks для начинающих">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="director.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+	</head>
+
+<body class="main-body">
+
+	<iframe class ="menu" src="menu.html"></iframe>
+
+	<div class="ramka">
+
+		<div class="lev2">
+
+		<iframe class ="oglavlenie" src="oglavlenie_SolidWorks.html" height = '800'></iframe>
+
+		</div>
+
+		<div class="centr2">
+
+			<div class="knopki">
+			<button id="nazad" onclick="ChangeSlide(currentSlide - 1)">◄ Назад</button>
+			<button id="dalee" onclick="ChangeSlide(currentSlide + 1)">Вперёд ►</button>
+			<div id="shetchik"></div>
+			</div>
+
+			<h3 class="zagl">4. Создание 3D-модели детали из листового материала</h3>
+
+			<div id="slides">
+
+
+				<div class="active">
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создадим 3D - модель детали, изготовленной из листа толшиной 3мм (см. рис. ниже)
+							</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/70.png">
+						</figure>
+
+					<div class="perehod_glavi">
+					<p><a href="SolidWorks_SozdanieCherteza.html"> ◄ Предыдущая глава</a></p>
+					</div>
+
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создадим новый чертёж детали</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/50.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создадим эскиз на плоскости <i>Справа</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/51.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Сначала начертим эскиз профиля половины детали.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/53.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Затем воспользуемся командой <i>Зеркально отобразить объекты</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/54.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Если у вас не открыто меню <i>Листовой материал</i>, то откройте его через
+							 <i>Настройки</i> и выберите команду <i>Базовая кромка</i>.<br>
+							 Укажите длину выталкивания по 200мм в обе стороны, толщину и радиус гибки по 3мм.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/55.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создайте новый эскиз на торцовой кромке детали и постройте два прямоугольника с одной стороны детали.<br>
+							Для построения прямоугольников используйте команды <i>Угловой прямоугольник</i> и
+							 <i>Угловой прямоугольник по 3 точкам</i>(для наклонного прямоугольника) меню <i>Эскиз</i>.<br>
+							Укажите размеры и с помощью команды <i>Зеркально отобразить объекты</i> повторите прямоугольники на другой стороне.
+						</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/57.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Воспользовавшись командой <i>Вытянутая бобышка/основание</i> выдавите созданный эскиз на 1мм.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/58.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Для создания отогнутых фланцев на детали активизируйте команду <i>Ребро - кромка</i> меню <i>Листовой материал</i>.<br>
+							Выберите кромки, длину фланцев укажите равной 50мм, при необходимости щёлкните по стрелке реверса для изменения направления.
+							</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/59.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Выполним фаски на фланцах.<br>
+								Зайдите в команду <i>Скругление</i> и в раскрывающемся списке выберите <i>Фаска</i>. Укажите все кромки для снятия фаски и её размер (20мм).</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/60.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Создайте эскиз на фланце для выполнения трёх отверстий на нём.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/61.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Нарисуйте три окружности диаметром 20мм и укажите все необходимые размеры.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/62.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">С помощью команды <i>Вытянутый вырез</i> выполните отвертия.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/63.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Для копирования отверстий на симметричный фланец воспользуемся командой
+							<i>Зеркальное отражение</i>.<br>
+							В качесве плоскости симметрии выберем плоскость <i>Спереди</i> в дереве модели...</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/64.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">...а в качестве скопированных элементов выберем <i>Вырез - вытянуть</i> в дереве модели.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/65.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Теперь отзеркалим все фланцы вместе с отверстиями и фасками на другую сторону детали.
+							<br>
+							В качесве плоскости симметрии выберем плоскость <i>Справа</i> в дереве модели...</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/66.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">...а в качестве скопированных элементов выберем все фланцы вместе с отверстиями и фасками в в дереве модели.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/67.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Для построения развёртки детали воспользуйтесь командой <i>Развёртка</i>
+								меню <i>Листовой материал</i>.<br>
+								Для возвращения модели в исходное состояние опять щёлкните по команде <i>Развёртка</i>.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/68.png">
+						</figure>
+				</div>
+
+				<div>
+						<figure class="kart_s_nadpisju_bol">
+							<figcaption class="nadpis_v_figure">Готовая 3D — модель детали из листового материала.</figcaption>
+							<img class="kart_v_figure_bol" src="Ris_SolidWorks/69.png">
+						</figure>
+						<div class="perehod_glavi">
+					<p><a href="SolidWorks_PoleznieSoveti.html"> Следующая глава ►</a></p>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+
+</html>
