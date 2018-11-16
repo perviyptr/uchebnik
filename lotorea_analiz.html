@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Можно ли выиграть в лоторею? Проверь сам!</title>
+  <meta name="description" content="симулятор лотореи,игры,вероятность выигрыша в лоторею">
+
+	<style>
+    #обновить { font-family: Verdana; font-size: 15px; font-weight: bold; color: rgb(11, 27, 75); text-align: center; border-style: solid; border-color: rgb(16, 20, 161); border-width: 1px; width: 150px; height: 50px; cursor: pointer; display: block;
+     margin: auto;}
+    .текстовоеПоле { border-style: solid; border-color: rgb(0, 6, 255); width: 25px; height: 25px; text-align: center;
+    font-family: Verdana; color: rgb(11, 17, 105); font-weight: bold;}
+    .текстовоеПолеДляСлучайныхЧисел { border-style: solid; border-color: rgb(0, 6, 255); width: 290px; height: 25px; text-align: center; font-weight: bold;}
+    .текстовоеПолеДляЗаполненныхВручную { border-style: solid; border-color: rgb(0, 6, 255); width: 290px; height: 25px; text-align: center; font-weight: bold;}
+    .текстовоеПолеДляУгаданныхНомеров { border-style: solid; border-color: rgb(0, 6, 255); width: 75px; height: 25px; text-align: center; font-weight: bold;}
+    .кнопка { font-family: Verdana; font-size: 15px; font-weight: bold; color: rgb(11, 27, 75); text-align: center; border-style: solid; border-color: rgb(16, 20, 161); border-width: 1px; width: 300px; height: 50px; cursor: pointer; }
+    .заголовок { font-family: Verdana; border-style: none; text-align: center;}
+    .абзац { font-family: Verdana; color: rgb(11, 17, 105); border-style: none; }
+    .большойDiv { border-style: none; }
+    .маленькийDiv { border-style: none; }
+    .radio { width: 25px; height: 25px; }
+    .кнопка:hover { color: rgb(185, 25, 25); }
+    #обновить:hover { color: rgb(185, 25, 25); }
+    #количествоБилетов {width: 50px;}
+	</style>
+</head>
+
+
+<body>
+<div class="holst" style="width: 1250px; background-color: rgb(239, 245, 245);">
+  <h1 class="заголовок" style="color: rgb(48, 64, 161); margin-bottom: 20px;">Можно ли выиграть в лоторею? Проверь сам!</h1>
+
+  <div class="big-div" style="min-height: 100px;">
+      <p class="paragraph-p" style="width: 90%; text-align: justify; margin: auto; margin-bottom: 20px; font-family: Verdana;">С помощью этой простой програмки можно проверить свою удачу на выигрыш в лоторею, не потратив при этом ни копейки.<br>Для этого укажите количество билетов, которые будут участвовать в тираже(по умолчанию 5) и после выбора типа лотореи <br> (6 из 45, 5 из 36 или 7 из 49) щёлкните по кнопке "Сгенерировать случайные номера в билетах". <br><br> Программа предложит вам добавить свои варианты чисел и после щелчка по "ОК" сгенерирует случайные числа во всех билетах<br> (в одном варианте разные для всех билетов, а в другом - одинаковые).<br>Числа в поля раздела "Билеты, заполненные вручную" введите сами через запятую
+      (если не хотите добавлять свои варианты - можно поля оставить пустыми).<br><br> После щелчка по кнопке "Сгенерировать результат тиража" выпадут выигрышные цифры, а после щелчка по кнопке<br> "Определить выигрыш" вы можете увидеть количество угаданных номеров и ваш возможный выигрыш<br> (но скорее всего это будет проигрыш!).<br>
+      Если хотите попробовать ещё раз щёлкните по кнопке "Создать новый набор".<br><br>После этого можно пойти в магазин и на сэкономленные деньги от покупки лоторейных билетов купить что-нибуть полезное!</p>
+    </div>
+
+  <button id="обновить">Создать новый набор</button>
+  <h2 class="заголовок" style="color: rgb(51, 65, 156);">Выбрать лотерею</h2>
+  <div class="большойDiv" style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+    <div class="маленькийDiv" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <p class="абзац" style="font-family: Verdana; font-size: 16px; font-weight: bold; text-align: center; font-style: normal; color: rgb(244, 17, 34);">6 из 45</p>
+      <input type="radio" name="переключатель" class="radio" id="шестьИзСорокаПяти" checked="checked">
+      </div>
+      <div class="маленькийDiv">
+        <div class="маленькийDiv" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <p class="абзац" style="font-family: Verdana; font-size: 16px; font-weight: bold; text-align: center; font-style: normal; color: rgb(244, 17, 34);">5 из 36</p>
+          <input type="radio" name="переключатель" class="radio" id="пятьИзТридцатиШести">
+          </div>
+        </div>
+        <div class="маленькийDiv">
+          <div class="маленькийDiv" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <p class="абзац" style="font-family: Verdana; font-size: 16px; font-weight: bold; text-align: center; font-style: normal; color: rgb(244, 17, 34);">7 из 49</p>
+            <input type="radio" name="переключатель" class="radio" id="семьИзСорокаДевяти">
+            </div>
+          </div>
+        </div>
+        <div class="большойDiv" style="display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+          <h2 class="заголовок" style="color: rgb(51, 65, 156);">Количество билетов</h2>
+          <input type="text" class="текстовоеПоле" id="количествоБилетов" value="5">
+          </div>
+          <div class="большойDiv" style="height: 100px; display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+            <button class="кнопка" id="сгенерироватьСлучайныеНомераВбилетах" style="background-color:rgb(235, 164, 237);" >Сгенерировать случайные номера в билетах</button>
+            <button class="кнопка" id="сгенерироватьРезультатТиража" disabled="disabled">Сгенерировать результат тиража</button>
+            <button class="кнопка" id="определитьВыигрыш" disabled="disabled">Определить выигрыш</button>
+          </div>
+          <div class="большойDiv" style="display: flex; flex-direction: column; justify-content: space-around; align-items: center;">
+            <h2 class="заголовок" style="color: rgb(51, 65, 156);">Результат тиража</h2>
+                <div class="маленькийDiv" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                  <input type="text" class="текстовоеПоле" id="результатТиража" value="" style="width:200px;">
+                </div>
+                        </div>
+                        <h2 class="заголовок" style="color: rgb(51, 65, 156);">Заполненные билеты</h2>
+                        <div class="большойDiv" style="display: flex; flex-direction: row; justify-content: space-between;">
+
+                          <div class="маленькийDiv" style=" display: flex; flex-direction: column; justify-content: flex-start; width: 375px;">
+                            <div class="маленькийDiv" style="display: flex; flex-direction: row; justify-content: space-between;">
+                              <div class="маленькийDiv" style="width: 320px; text-align: center; border-style: double; border-width: 3px;">
+                                <p class="абзац">Случайные числа <br>(во всех билетах разные)</p>
+                              </div>
+                              <div class="маленькийDiv" style="width: 80px; text-align: center; border-style: double; border-width: 3px;">
+                                <p class="абзац" style="font-family: Verdana;">Кол-во угад. номеров</p>
+                              </div>
+                            </div>
+                            <div class="маленькийDiv" style="display: flex; flex-direction: row; justify-content: space-between;">
+                              <div class="маленькийDiv" style="width: 320px;" id="дляРазныхСлучайныхЧисел">
+                              </div>
+                              <div class="маленькийDiv" style="width: 80px;" id="дляКоличестваУгаданныхНомеров1">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="маленькийDiv" style=" display: flex; flex-direction: column; justify-content: flex-start; width: 375px;">
+                            <div class="маленькийDiv" style="display: flex; flex-direction: row; justify-content: space-between;">
+                              <div class="маленькийDiv" style="width: 320px; text-align: center; border-style: double; border-width: 3px;">
+                                <p class="абзац" style="font-family: Verdana;">Случайные числа <br> (во всех билетах одинаковые)</p>
+                              </div>
+                              <div class="маленькийDiv" style="width: 80px; text-align: center; border-style: double; border-width: 3px;">
+                                <p class="абзац" style="font-family: Verdana;">Кол-во угад. номеров</p>
+                              </div>
+                            </div>
+                            <div class="маленькийDiv" style="display: flex; flex-direction: row; justify-content: space-between;">
+                              <div class="маленькийDiv" style="width: 320px;" id="дляОдинаковыхСлучайныхЧисел">
+                              </div>
+                              <div class="маленькийDiv" style="width: 80px;" id="дляКоличестваУгаданныхНомеров2">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="маленькийDiv" style=" display: flex; flex-direction: column; justify-content: flex-start; width: 375px;">
+                            <div class="маленькийDiv" style="display: flex; flex-direction: row; justify-content: space-between;">
+                              <div class="маленькийDiv" style="width: 320px; text-align: center; border-style: double; border-width: 3px;">
+                                <p class="абзац" style="font-family: Verdana;">Билеты, заполненные вручную</p>
+                              </div>
+                              <div class="маленькийDiv" style="width: 80px; text-align: center; border-style: double; border-width: 3px;">
+                                <p class="абзац" style="font-family: Verdana;">Кол-во угад. номеров</p>
+                              </div>
+                            </div>
+                            <div class="маленькийDiv" style="display: flex; flex-direction: row; justify-content: space-between;">
+                              <div class="маленькийDiv" style="width: 320px;" id="дляБилетовЗаполненныхВручную">
+                              </div>
+                              <div class="маленькийDiv" style="width: 80px;" id="дляКоличестваУгаданныхНомеров3">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+  <h2 class="заголовок" style="color: rgb(51, 65, 156); font-family: Arial;">Количество угаданных номеров во всех билетах</h2>
+  <div class="большойDiv" style="min-height: 100px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; color: rgb(33, 55, 137); text-align: center;">
+  <div class="маленькийDiv" style="min-height: 100px; min-width: 100px; border-style: none; width: 300px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px; padding: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">1 номер</p>
+  <input type="text" class="текстовоеПоле" id ="угаданныеСлучайныеРазные1" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center; margin: 0px;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">2 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеРазные2" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left; border-style: none;">3 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеРазные3" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">4 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеРазные4" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">5 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеРазные5" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">6 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеРазные6" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">7 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеРазные7" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  </div>
+  <div class="маленькийDiv" style="min-height: 100px; min-width: 100px; border-style: none; width: 300px;">
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px; padding: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">1 номер</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеОдинаковые1" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center; margin: 0px;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">2 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеОдинаковые2" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">3 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеОдинаковые3" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">4 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеОдинаковые4" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">5 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеОдинаковые5" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">6 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеОдинаковые6" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">7 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеСлучайныеОдинаковые7" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  </div>
+  <div class="маленькийDiv" style="min-height: 100px; min-width: 100px; border-style: none; width: 300px;">
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px; padding: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">1 номер</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеЗаполненныеВручную1" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center; margin: 0px;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">2 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеЗаполненныеВручную2" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">3 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеЗаполненныеВручную3" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">4 номера</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеЗаполненныеВручную4" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">5 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеЗаполненныеВручную5" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">6 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеЗаполненныеВручную6" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  <div class="маленькийDiv" style="min-height: 25px; min-width: 25px; border-style: none; width: 100%; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin: 0px;">
+  <p class="абзац" style="font-family: Verdana; font-weight: bold; color: rgb(25, 51, 145); width: 100px; text-align: left;">7 номеров</p>
+  <input type="text" class="текстовоеПоле" id="угаданныеЗаполненныеВручную7" style="width: 50px; font-family: Verdana; font-weight: bold; color: rgb(12, 44, 161); text-align: center;">
+  </div>
+  </div>
+  </div>
+
+  <h2 class="заголовок" style="color: rgb(51, 65, 156); font-family: Arial;">Сумма выигрыша (проигрыша)</h2>
+  <div class="большойDiv" style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+  <input type="text" class="текстовоеПоле" id="Выигрыш1" style="width: 100px;">
+  <input type="text" class="текстовоеПоле" id="Выигрыш2" style="width: 100px;">
+  <input type="text" class="текстовоеПоле" id="Выигрыш3" style="width: 100px;">
+  </div>
+  </div>
+
+
+     <script type="text/javascript">
+
+        const шестьИзСорокаПяти = document.getElementById('шестьИзСорокаПяти');//radio
+        const пятьИзТридцатиШести = document.getElementById('пятьИзТридцатиШести');//radio
+        const семьИзСорокаДевяти = document.getElementById('семьИзСорокаДевяти');//radio
+        const количествоБилетов = document.getElementById('количествоБилетов');//текстовое поле
+        const сгенерироватьРезультатТиража = document.getElementById('сгенерироватьРезультатТиража');//кнопка
+        const сгенерироватьСлучайныеНомераВбилетах = document.getElementById('сгенерироватьСлучайныеНомераВбилетах');//кнопка
+        const обновить = document.getElementById('обновить');//кнопка
+        const определитьВыигрыш = document.getElementById('определитьВыигрыш');//кнопка
+        const результатТиража = document.getElementById('результатТиража');//текстовые поля
+        const Выигрыш1 = document.getElementById('Выигрыш1');//текстовое поле
+        const Выигрыш2 = document.getElementById('Выигрыш2');//текстовое поле
+        const Выигрыш3 = document.getElementById('Выигрыш3');//текстовое поле
+
+        const угаданныеСлучайныеРазные1 = document.getElementById('угаданныеСлучайныеРазные1');//текстовое поле
+        const угаданныеСлучайныеРазные2 = document.getElementById('угаданныеСлучайныеРазные2');//текстовое поле
+        const угаданныеСлучайныеРазные3 = document.getElementById('угаданныеСлучайныеРазные3');//текстовое поле
+        const угаданныеСлучайныеРазные4 = document.getElementById('угаданныеСлучайныеРазные4');//текстовое поле
+        const угаданныеСлучайныеРазные5 = document.getElementById('угаданныеСлучайныеРазные5');//текстовое поле
+        const угаданныеСлучайныеРазные6 = document.getElementById('угаданныеСлучайныеРазные6');//текстовое поле
+        const угаданныеСлучайныеРазные7 = document.getElementById('угаданныеСлучайныеРазные7');//текстовое поле
+
+        const угаданныеСлучайныеОдинаковые1 = document.getElementById('угаданныеСлучайныеОдинаковые1');//текстовое поле
+        const угаданныеСлучайныеОдинаковые2 = document.getElementById('угаданныеСлучайныеОдинаковые2');//текстовое поле
+        const угаданныеСлучайныеОдинаковые3 = document.getElementById('угаданныеСлучайныеОдинаковые3');//текстовое поле
+        const угаданныеСлучайныеОдинаковые4 = document.getElementById('угаданныеСлучайныеОдинаковые4');//текстовое поле
+        const угаданныеСлучайныеОдинаковые5 = document.getElementById('угаданныеСлучайныеОдинаковые5');//текстовое поле
+        const угаданныеСлучайныеОдинаковые6 = document.getElementById('угаданныеСлучайныеОдинаковые6');//текстовое поле
+        const угаданныеСлучайныеОдинаковые7 = document.getElementById('угаданныеСлучайныеОдинаковые7');//текстовое поле
+
+        const угаданныеЗаполненныеВручную1 = document.getElementById('угаданныеЗаполненныеВручную1');//текстовое поле
+        const угаданныеЗаполненныеВручную2 = document.getElementById('угаданныеЗаполненныеВручную2');//текстовое поле
+        const угаданныеЗаполненныеВручную3 = document.getElementById('угаданныеЗаполненныеВручную3');//текстовое поле
+        const угаданныеЗаполненныеВручную4 = document.getElementById('угаданныеЗаполненныеВручную4');//текстовое поле
+        const угаданныеЗаполненныеВручную5 = document.getElementById('угаданныеЗаполненныеВручную5');//текстовое поле
+        const угаданныеЗаполненныеВручную6 = document.getElementById('угаданныеЗаполненныеВручную6');//текстовое поле
+        const угаданныеЗаполненныеВручную7 = document.getElementById('угаданныеЗаполненныеВручную7');//текстовое поле
+
+        const дляРазныхСлучайныхЧисел = document.getElementById('дляРазныхСлучайныхЧисел');//DIV
+        const дляОдинаковыхСлучайныхЧисел = document.getElementById('дляОдинаковыхСлучайныхЧисел');//DIV
+        const дляБилетовЗаполненныхВручную = document.getElementById('дляБилетовЗаполненныхВручную');//DIV
+        const дляКоличестваУгаданныхНомеров1 = document.getElementById('дляКоличестваУгаданныхНомеров1');//DIV
+        const дляКоличестваУгаданныхНомеров2 = document.getElementById('дляКоличестваУгаданныхНомеров2');//DIV
+        const дляКоличестваУгаданныхНомеров3 = document.getElementById('дляКоличестваУгаданныхНомеров3');//DIV
+        const текстовоеПолеДляЗаполненныхВручную = document.getElementsByClassName('текстовоеПолеДляЗаполненныхВручную');//текст поле
+        let полеВводаСлучайныхЧисел;
+        let полеВыводаКоличестваУгадНомеров;
+        let массивСлучайныхЧиселДляТиража;
+        let массивСлучайныхЧиселБилета = [];
+        let массивСлучайныхЧиселОдинаковыхВоВсехБилетах = [];
+        let максимальноеЧисло = 45;
+        let количествоЧисел = 6;
+
+
+        шестьИзСорокаПяти.addEventListener('click', выборТИражаШестьИзСорокаПяти);
+        function выборТИражаШестьИзСорокаПяти(){
+          максимальноеЧисло = 45;
+          количествоЧисел = 6;
+        }
+        пятьИзТридцатиШести.addEventListener('click', выборТИражапятьИзТридцатиШести);
+        function выборТИражапятьИзТридцатиШести(){
+          максимальноеЧисло = 36;
+          количествоЧисел = 5;
+        }
+        семьИзСорокаДевяти.addEventListener('click', выборТИражасемьИзСорокаДевяти);
+        function выборТИражасемьИзСорокаДевяти(){
+          максимальноеЧисло = 49;
+          количествоЧисел = 7;
+        }
+
+        обновить.addEventListener('click', создатьНовыйНабор);
+        function создатьНовыйНабор(){
+        parent.location = "javascript:location.reload()";
+        }
+
+
+        сгенерироватьСлучайныеНомераВбилетах.addEventListener('click', сгенерироватьНомераВбилетах);
+        function сгенерироватьНомераВбилетах(){
+            сгенерироватьРезультатТиража.disabled = false;
+            сгенерироватьСлучайныеНомераВбилетах.disabled = true;
+            сгенерироватьРезультатТиража.style.backgroundColor = "rgb(235, 164, 237)";
+            сгенерироватьСлучайныеНомераВбилетах.style.backgroundColor = "rgb(217, 217, 204)";
+            массивСлучайныхЧиселОдинаковыхВоВсехБилетах = [];
+
+            for(var i = 0; i < количествоБилетов.value; ++i){
+              полеВводаСлучайныхЧисел = document.createElement('input');
+              полеВводаСлучайныхЧисел.setAttribute('type','text');
+              дляРазныхСлучайныхЧисел.appendChild(полеВводаСлучайныхЧисел);
+              полеВводаСлучайныхЧисел.classList.add("текстовоеПолеДляСлучайныхЧисел");
+
+              const массивСлучайныхЧисел = [];
+                for(var j = 0; j < количествоЧисел;){
+                var случайноеЧисло = Math.floor(Math.random() * (максимальноеЧисло - 1)) + 1;
+                  if (массивСлучайныхЧисел.includes(случайноеЧисло)) {
+                        continue;
+                  }
+                массивСлучайныхЧисел.push(случайноеЧисло);
+                j++;
+               }
+            полеВводаСлучайныхЧисел.value = массивСлучайныхЧисел.join(', ');
+            массивСлучайныхЧиселБилета.push(массивСлучайныхЧисел);
+
+              полеВводаСлучайныхЧисел = document.createElement('input');
+              полеВводаСлучайныхЧисел.setAttribute('type','text');
+              дляБилетовЗаполненныхВручную.appendChild(полеВводаСлучайныхЧисел);
+              полеВводаСлучайныхЧисел.classList.add("текстовоеПолеДляЗаполненныхВручную");
+          }
+
+              полеВводаСлучайныхЧисел = document.createElement('input');
+              полеВводаСлучайныхЧисел.setAttribute('type','text');
+              дляОдинаковыхСлучайныхЧисел.appendChild(полеВводаСлучайныхЧисел);
+              полеВводаСлучайныхЧисел.classList.add("текстовоеПолеДляСлучайныхЧисел");
+
+                for(var j = 0; j < количествоЧисел;){
+                var случайноеЧисло = Math.floor(Math.random() * (максимальноеЧисло - 1)) + 1;
+                  if (массивСлучайныхЧиселОдинаковыхВоВсехБилетах.includes(случайноеЧисло)) {
+                        continue;
+                  }
+                массивСлучайныхЧиселОдинаковыхВоВсехБилетах.push(случайноеЧисло);
+                j++;
+               }
+            полеВводаСлучайныхЧисел.value = массивСлучайныхЧиселОдинаковыхВоВсехБилетах.join(', ');
+
+            for(var k = 1; k < количествоБилетов.value; k++){
+            var clone = полеВводаСлучайныхЧисел.cloneNode(true);
+            дляОдинаковыхСлучайныхЧисел.appendChild(clone);
+            }
+            alert('Если хотите добавить свои варианты чисел до щелчка по кнопке "Сгенерировать результат тиража" заполните поля в "Билеты, заполненные вручную" своими числами через запятую');
+         }
+
+
+
+
+        сгенерироватьРезультатТиража.addEventListener('click', сгенерироватьТираж);
+        function сгенерироватьТираж(){
+          определитьВыигрыш.disabled = false;
+          сгенерироватьРезультатТиража.disabled = true;
+          определитьВыигрыш.style.backgroundColor = "rgb(235, 164, 237)";
+          сгенерироватьРезультатТиража.style.backgroundColor = "rgb(217, 217, 204)";
+          сгенерироватьСлучайныеНомераВбилетах.style.backgroundColor = "rgb(217, 217, 204)";
+          сгенерироватьСлучайныеНомераВбилетах.disabled = true;
+          массивСлучайныхЧиселДляТиража = [];
+          for(var i = 0; i < количествоЧисел;){
+              var случайноеЧисло = Math.floor(Math.random() * (максимальноеЧисло - 1)) + 1;
+                if (массивСлучайныхЧиселДляТиража.includes(случайноеЧисло)) {
+                      continue;
+                }
+              массивСлучайныхЧиселДляТиража.push(случайноеЧисло);
+              i++;
+          }
+          результатТиража.value = массивСлучайныхЧиселДляТиража.join(', ');
+        }
+
+        let n1 = 0;
+        let n2 = 0;
+        let n3 = 0;
+        let n4 = 0;
+        let n5 = 0;
+        let n6 = 0;
+        let n7 = 0;
+        определитьВыигрыш.addEventListener('click', ОпределениеВыигрыша);
+        function ОпределениеВыигрыша(){
+          сгенерироватьСлучайныеНомераВбилетах.disabled = true;
+          определитьВыигрыш.disabled = true;
+          сгенерироватьРезультатТиража.disabled = true;
+          определитьВыигрыш.style.backgroundColor = "rgb(217, 217, 204)";
+          сгенерироватьСлучайныеНомераВбилетах.style.backgroundColor = "rgb(217, 217, 204)";
+          for(var i = 0; i < количествоБилетов.value; ++i){
+              полеВыводаКоличестваУгадНомеров = document.createElement('input');
+              полеВыводаКоличестваУгадНомеров.setAttribute('type','text');
+              дляКоличестваУгаданныхНомеров1.appendChild(полеВыводаКоличестваУгадНомеров);
+              полеВыводаКоличестваУгадНомеров.classList.add("текстовоеПолеДляУгаданныхНомеров");
+
+                количествоУгаданныхНомеров = 0;
+                for (const числоБилета of массивСлучайныхЧиселБилета[i])
+                  for(const числоТиража of массивСлучайныхЧиселДляТиража){
+                    if(числоБилета === числоТиража){
+                      количествоУгаданныхНомеров++;
+                    }
+                }
+                полеВыводаКоличестваУгадНомеров.value = количествоУгаданныхНомеров;
+
+                if (количествоУгаданныхНомеров == 1) {
+                  n1++;
+                }
+                if (количествоУгаданныхНомеров == 2) {
+                  n2++;
+                }
+                if (количествоУгаданныхНомеров == 3) {
+                  n3++;
+                }
+                if (количествоУгаданныхНомеров == 4) {
+                  n4++;
+                }
+                if (количествоУгаданныхНомеров == 5) {
+                  n5++;
+                }
+                if (количествоУгаданныхНомеров == 6) {
+                  n6++;
+                }
+                if (количествоУгаданныхНомеров == 7) {
+                  n7++;
+                }
+           }
+           угаданныеСлучайныеРазные1.value = n1;
+           угаданныеСлучайныеРазные2.value = n2;
+           угаданныеСлучайныеРазные3.value = n3;
+           угаданныеСлучайныеРазные4.value = n4;
+           угаданныеСлучайныеРазные5.value = n5;
+           угаданныеСлучайныеРазные6.value = n6;
+           угаданныеСлучайныеРазные7.value = n7;
+
+
+
+            let n8 = 0;
+            let n9 = 0;
+            let n10 = 0;
+            let n11 = 0;
+            let n12 = 0;
+            let n13 = 0;
+            let n14 = 0;
+           for(var i = 0; i < количествоБилетов.value; ++i){
+              полеВыводаКоличестваУгадНомеров = document.createElement('input');
+              полеВыводаКоличестваУгадНомеров.setAttribute('type','text');
+              дляКоличестваУгаданныхНомеров2.appendChild(полеВыводаКоличестваУгадНомеров);
+              полеВыводаКоличестваУгадНомеров.classList.add("текстовоеПолеДляУгаданныхНомеров");
+
+                количествоУгаданныхНомеров2 = 0;
+                for (const числоБилета2 of массивСлучайныхЧиселОдинаковыхВоВсехБилетах)
+                  for(const числоТиража of массивСлучайныхЧиселДляТиража){
+                    if(числоБилета2 === числоТиража){
+                      количествоУгаданныхНомеров2++;
+                    }
+                }
+                полеВыводаКоличестваУгадНомеров.value = количествоУгаданныхНомеров2;
+                if (количествоУгаданныхНомеров2 == 1) {
+                  n8++;
+                }
+                if (количествоУгаданныхНомеров2 == 2) {
+                  n9++;
+                }
+                if (количествоУгаданныхНомеров2 == 3) {
+                  n10++;
+                }
+                if (количествоУгаданныхНомеров2 == 4) {
+                  n11++;
+                }
+                if (количествоУгаданныхНомеров2 == 5) {
+                  n12++;
+                }
+                if (количествоУгаданныхНомеров2 == 6) {
+                  n13++;
+                }
+                if (количествоУгаданныхНомеров2 == 7) {
+                  n14++;
+                }
+           }
+           угаданныеСлучайныеОдинаковые1.value = n8;
+           угаданныеСлучайныеОдинаковые2.value = n9;
+           угаданныеСлучайныеОдинаковые3.value = n10;
+           угаданныеСлучайныеОдинаковые4.value = n11;
+           угаданныеСлучайныеОдинаковые5.value = n12;
+           угаданныеСлучайныеОдинаковые6.value = n13;
+           угаданныеСлучайныеОдинаковые7.value = n14;
+
+            let n15= 0;
+            let n16= 0;
+            let n17 = 0;
+            let n18 = 0;
+            let n19 = 0;
+            let n20 = 0;
+            let n21 = 0;
+          for(var i = 0; i < текстовоеПолеДляЗаполненныхВручную.length; ++i){
+            var значениеТекстовогоПоляЗаполненногоВручную = текстовоеПолеДляЗаполненныхВручную[i].value;
+            var массивЗначенийЗаполненныхВручную = значениеТекстовогоПоляЗаполненногоВручную.split(',').map(Number);
+
+
+                  полеВыводаКоличестваУгадНомеров = document.createElement('input');
+                  полеВыводаКоличестваУгадНомеров.setAttribute('type','text');
+                  дляКоличестваУгаданныхНомеров3.appendChild(полеВыводаКоличестваУгадНомеров);
+                  полеВыводаКоличестваУгадНомеров.classList.add("текстовоеПолеДляУгаданныхНомеров");
+
+                    количествоУгаданныхНомеров3 = 0;
+                    for (const числоБилета3 of массивЗначенийЗаполненныхВручную)
+                      for(const числоТиража of массивСлучайныхЧиселДляТиража){
+                        if(числоБилета3 === числоТиража){
+                          количествоУгаданныхНомеров3++;
+                        }
+                    }
+                    полеВыводаКоличестваУгадНомеров.value = количествоУгаданныхНомеров3;
+                if (количествоУгаданныхНомеров3 == 1) {
+                  n15++;
+                }
+                if (количествоУгаданныхНомеров3 == 2) {
+                  n16++;
+                }
+                if (количествоУгаданныхНомеров3 == 3) {
+                  n17++;
+                }
+                if (количествоУгаданныхНомеров3 == 4) {
+                  n18++;
+                }
+                if (количествоУгаданныхНомеров3 == 5) {
+                  n19++;
+                }
+                if (количествоУгаданныхНомеров3 == 6) {
+                  n20++;
+                }
+                if (количествоУгаданныхНомеров3 == 7) {
+                  n21++;
+                }
+
+            }
+            угаданныеЗаполненныеВручную1.value = n15;
+            угаданныеЗаполненныеВручную2.value = n16;
+            угаданныеЗаполненныеВручную3.value = n17;
+            угаданныеЗаполненныеВручную4.value = n18;
+            угаданныеЗаполненныеВручную5.value = n19;
+            угаданныеЗаполненныеВручную6.value = n20;
+            угаданныеЗаполненныеВручную7.value = n21;
+
+                if (шестьИзСорокаПяти.checked) {
+                  Выигрыш1.value = (угаданныеСлучайныеРазные2.value * 100) + (угаданныеСлучайныеРазные3.value * 370)
+                  + (угаданныеСлучайныеРазные4.value * 3700) + (угаданныеСлучайныеРазные5.value * 333000)
+                   + (угаданныеСлучайныеРазные6.value * 100000000) - количествоБилетов.value * 100;
+
+                  Выигрыш2.value = (угаданныеСлучайныеОдинаковые2.value * 100) + (угаданныеСлучайныеОдинаковые3.value * 370)
+                    + (угаданныеСлучайныеОдинаковые4.value * 3700) + (угаданныеСлучайныеОдинаковые5.value * 333000)
+                     + (угаданныеСлучайныеОдинаковые6.value * 100000000) - количествоБилетов.value * 100;
+
+                  Выигрыш3.value = (угаданныеЗаполненныеВручную2.value * 100) + (угаданныеЗаполненныеВручную3.value * 370)
+                    + (угаданныеЗаполненныеВручную4.value * 3700) + (угаданныеЗаполненныеВручную5.value * 333000)
+                     + (угаданныеЗаполненныеВручную6.value * 100000000) - количествоБилетов.value * 100;
+                  }
+
+                 if (пятьИзТридцатиШести.checked) {
+                  Выигрыш1.value = (угаданныеСлучайныеРазные2.value * 100) + (угаданныеСлучайныеРазные3.value * 800)
+                  + (угаданныеСлучайныеРазные4.value * 8000) + (угаданныеСлучайныеРазные5.value * 100000)
+                   - количествоБилетов.value * 100;
+
+                  Выигрыш2.value = (угаданныеСлучайныеОдинаковые2.value * 100) + (угаданныеСлучайныеОдинаковые3.value * 800)
+                  + (угаданныеСлучайныеОдинаковые4.value * 8000) + (угаданныеСлучайныеОдинаковые5.value * 100000)
+                   - количествоБилетов.value * 100;
+
+                  Выигрыш3.value = (угаданныеЗаполненныеВручную2.value * 100) + (угаданныеЗаполненныеВручную3.value * 800)
+                  + (угаданныеЗаполненныеВручную4.value * 8000) + (угаданныеЗаполненныеВручную5.value * 100000)
+                   - количествоБилетов.value * 100;
+                 }
+
+                 if (семьИзСорокаДевяти.checked) {
+                  Выигрыш1.value = (угаданныеСлучайныеРазные3.value * 125) + (угаданныеСлучайныеРазные4.value * 1000)
+                   + (угаданныеСлучайныеРазные5.value * 30000)+ (угаданныеСлучайныеРазные6.value * 2850000)
+                   + (угаданныеСлучайныеРазные7.value * 10000000) - количествоБилетов.value * 100;
+
+                  Выигрыш2.value = (угаданныеСлучайныеОдинаковые3.value * 125) + (угаданныеСлучайныеОдинаковые4.value * 1000)
+                   + (угаданныеСлучайныеОдинаковые5.value * 30000)+ (угаданныеСлучайныеОдинаковые6.value * 2850000)
+                   + (угаданныеСлучайныеОдинаковые7.value * 10000000) - количествоБилетов.value * 100;
+
+                  Выигрыш3.value = (угаданныеЗаполненныеВручную3.value * 125) + (угаданныеЗаполненныеВручную4.value * 1000)
+                   + (угаданныеЗаполненныеВручную5.value * 30000)+ (угаданныеЗаполненныеВручную6.value * 2850000)
+                   + (угаданныеЗаполненныеВручную7.value * 10000000) - количествоБилетов.value * 100;
+                 }
+
+        }
+
+
+     </script>
+
+</body>
+</html>
