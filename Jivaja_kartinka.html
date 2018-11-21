@@ -40,7 +40,12 @@
 
 				<div class="active">
 
-					<h3 class="zagl">4. Живая картинка</h3>
+					<h3 class="zagl">5. Живая картинка</h3>
+
+					<div class="perehod_glavi">
+					<p><a href="Pjatnashki.html"> ◄ Назад</a></p>
+					<p><a href="Risovalka.html"> Далее ►</a></p>
+					</div>
 
 					<div id="pole_dla_zapisey">
 					<ul id="zapisi">
@@ -137,7 +142,7 @@
 				});
 
 				image.addEventListener('mousemove', function (event) {
-					if (event.which !== 1) {
+					if (!(event.buttons & 1)) {
 						return;
 					}
 
@@ -154,11 +159,6 @@
 				image.classList.add('dla_risovanija');
 			}
 		</script>
-
-					<div class="perehod_glavi">
-					<p><a href="Pjatnashki.html"> ◄ Назад</a></p>
-					<p><a href="Risovalka.html"> Далее ►</a></p>
-					</div>
 
 				</div>
 
