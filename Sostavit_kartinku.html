@@ -176,7 +176,7 @@
 			imageUrls2.forEach(function (src) {
 				var image = createImage(src);
 
-				image.addEventListener('mousedown', function () {
+				image.addEventListener('mousedown', function (event) {
 					if (event.which !== 1) {
 						return;
 					}
@@ -256,7 +256,7 @@
 			imageUrls3.forEach(function (src) {
 				var image = createImage(src);
 
-				image.addEventListener('mousedown', function () {
+				image.addEventListener('mousedown', function (event) {
 					if (event.which !== 1) {
 						return;
 					}
