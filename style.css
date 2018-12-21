@@ -717,14 +717,16 @@ h1{
 }
 #pole_dla_ishodnie_kartinki{
 	width: 90%;
-	height: 200px;
 	margin: auto;
 	margin-bottom: 10px;
 	border: dotted;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	align-items: flex-start; 
 }
 #ishodnie_kartinki{
-	height: 100%;
-	float: left;
+	height: 300px;
 	margin-right: 20px;
 }
 #pole_dla_vstavki_obrazcov_fragmentov{
@@ -760,14 +762,16 @@ h1{
 }
 #pole_dla_ishodnie_kartinki2{
 	width: 90%;
-	height: 200px;
 	margin: auto;
 	margin-bottom: 10px;
 	border: dotted;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	align-items: flex-start; 
 }
 #ishodnie_kartinki2{
-	height: 100%;
-	float: left;
+	height: 300px;
 	margin-right: 20px;
 }
 #pole_dla_vstavki_obrazcov_fragmentov2{
@@ -787,7 +791,8 @@ h1{
 	margin: auto;
 }
 #nadpis_k_sostavit_kartinku2{
-	font-size: 1.3vmax;
+	/*font-size: 1.3vmax;*/
+	height: 100%;
 }
 
 
@@ -803,14 +808,17 @@ h1{
 }
 #pole_dla_ishodnie_kartinki3{
 	width: 90%;
-	height: 200px;
 	margin: auto;
 	margin-bottom: 10px;
 	border: dotted;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+	align-items: flex-start; 
 }
+
 #ishodnie_kartinki3{
-	height: 100%;
-	float: left;
+	height: 300px;
 	margin-right: 20px;
 }
 #pole_dla_vstavki_obrazcov_fragmentov3{
