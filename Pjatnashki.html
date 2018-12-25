@@ -162,31 +162,38 @@
 
 			<div id="collage">
         		<h2>4. Пазлы (собрать картинку из мелких деталей)</h2>
-        		<hr/>
-        		<div id="playPanel" style="padding:5px;display:none;">
+
+        <div id="playPanel" style="padding:5px;display:none;">
             	<h3 id="imgTitle"></h3>
-            	 <hr />
-            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
-                <ul id="sortable" class="sortable"></ul>
-                <div id="actualImageBox">
-                    <div id="stepBox">
-                        <div>Число шагов:</div><div class="stepCount">0</div>
-                    </div>
-                    <div id="timeBox">
-                        Время: <span id="timerPanel"></span> сек
-                    </div>
-                    <img id="actualImage" />
-                    <div>Восстановите картинку слева, перетаскивая её части левой кнопкой мыши.<br>
-                    	При восстановлении картинки <i>Квадрат</i> попробуйте перетаскивать части поочерёдно в белое поле.</div>
-                    <p id="levelPanel">
-                        <input type="radio" name="level" id="medium" checked="checked" value="4" />
-                    </p>
-                    <div>
-                        <button id="newPhoto" type="button" class="btn">Следующая картинка</button>
-                    </div>
-                </div>
+            	<hr>
+            <div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin:auto; width:95%;">
+	                <ul id="sortable" class="sortable"></ul>
+		                <div id="actualImageBox">
+		                    <div id="stepBox">
+		                        <div>Число шагов:</div><div class="stepCount">0</div>
+		                    </div>
+
+		                    <div id="timeBox">
+		                        Время: <span id="timerPanel"></span> сек
+		                    </div>
+
+		                    <img id="actualImage">
+
+		                    <div>Восстановите картинку слева, перетаскивая её части левой кнопкой мыши.<br>
+		                    	При восстановлении картинки <i>Квадрат</i> попробуйте перетаскивать части поочерёдно в белое поле.
+		                    </div>
+
+		                    <p id="levelPanel">
+		                        <input type="radio" name="level" id="medium" checked="checked" value="4" />
+		                    </p>
+
+			                <div>
+			                     <button id="newPhoto" type="button" class="btn">Следующая картинка</button>
+			                </div>
+		                </div>
             </div>
         </div>
+
         <div id="gameOver" style="display:none;">
             <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
                 <h2 style="text-align:center">Игра закончена!</h2>

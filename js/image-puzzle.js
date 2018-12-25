@@ -47,7 +47,6 @@ var imagePuzzle = {
     },
 
     setImage: function (images, gridSize) {
-        console.log(gridSize);
         gridSize = gridSize || 4; 
         
         console.log(gridSize);
