@@ -979,4 +979,18 @@ td {
   margin-bottom: 5px;
   font-style: italic;
 }
-
+#дляАнимированныхСсылок{
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around; 
+	align-items: center;
+}
+.анимированныеСсылки{
+	width: 150px;
+	height: 150px;
+}
+.анимированныеСсылки:hover{
+	outline: solid 3px red;
+	}
