@@ -8,8 +8,9 @@
 	background-size: contain;
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: space-between;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	text-align: center;
 }
 
 .menu-list > li{
@@ -35,8 +36,7 @@
 }
 
 .ramka{
-	width: 100%;
-	margin: auto;
+	width: 1250px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -202,7 +202,7 @@ i{
 	font-style: initial;
 }
 .menu {
-	width: 100%;
+	width: 1250px;
 	height: 80px;
 	border: none;
 }

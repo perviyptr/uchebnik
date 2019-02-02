@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Расклад "Проблемы на работе"</title>
+	<link rel="stylesheet" type="text/css" href="styleRaskladki.css">
+
+	<style type="text/css">
+		.дляКарты{
+			width: 100px;
+			height: 175px;
+			outline: double 5px rgb(124, 34, 166);
+			background: rgb(240, 240, 160);
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 12px;
+		}
+		.дляДвухНаложенныхКарт{
+			width: 175px;
+			height: 175px;
+			position: relative;
+		}
+		.дляКартыПовёрнутойВерхняя{
+			width: 100px;
+			height: 175px;
+			outline: double 5px rgb(124, 34, 166);
+			background: rgb(240, 240, 160);
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 13px;
+			position: absolute;
+			bottom: -38px;
+			left: 38px;
+			-webkit-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+			z-index: 5000;
+		}
+		.дляКартыНеповёрнутойНижняя{
+			width: 100px;
+			height: 175px;
+			outline: double 5px rgb(124, 34, 166);
+			background: rgb(240, 240, 160);
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 13px;
+			position: absolute;
+			top: 0px;
+			left: 38px;
+		}
+		.обшийДляРаскладок{
+			width: 625px;
+			height: 585px;
+			display: flex;
+			flex-direction: row;
+			justify-content:space-between;
+			align-items: flex-end;
+			margin-right: 50px;
+		}
+		.дляЛевогоРядаКарт{
+			width: 100px;
+			height: 400px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.дляСреднегРядаКарт{
+			width: 175px;
+			height: 485px;
+			display: flex;
+			flex-direction: column;
+			justify-content:space-between;
+			align-items: center;
+			margin-bottom: 100px;
+		}
+		.дляПравогоРядаКарт{
+			width: 100px;
+			height: 400px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="общаяРамка">
+		<div class="дляНадписей">
+		<p><a href="index.html">На главную страницу</a></p>
+		<h2 class="заголовок">Расклад "Проблемы на работе"</h2>
+		<ul class="трактовкаРасклада">
+			<li>Для создания раскладки выбирайте закрытые карты левой кнопкой мыши</li>
+			<li>Показать трактовку — щелчок левой кнопкой по карте</li>
+			<li>Обновить — клавиша F5</li>
+		</ul>
+		</div>
+	<div class="главный">
+	<div id="обшийДляРубашек">
+		<div id="горизонтальнаяКолонка"></div>
+		<div id="дляПоляИвертикальнойКолонки">
+			<div id="вертикальнаяКолонка"></div>
+			<div id="полеДляКарт"></div>
+		</div>
+	</div>
+	<div class="обшийДляРаскладок">
+		<div class="дляЛевогоРядаКарт">
+				<div id="карта3" class="дляКарты" title="3. Положительные стороны вашего нынешнего положения">3. <br>Положительные стороны вашего нынешнего положения</div>
+				<div id="карта4" class="дляКарты" title="4. Обтоятельства, способствующие тому, чтобы остаться на прежнем рабочем месте">4. <br>Обтоятельства, способствующие тому, чтобы остаться на прежнем рабочем месте</div>
+		</div>
+		<div class="дляСреднегРядаКарт">
+				<div id="карта7" class="дляКарты" title="7. Совет">7. Совет</div>
+				<div class="дляДвухНаложенныхКарт">
+					<div id="карта2" class="дляКартыПовёрнутойВерхняя" title="2. Препятствия, с которыми вы столкнулись">2. <br>Препятствия, с которыми вы столкнулись</div>
+					<div id="карта1" class="дляКартыНеповёрнутойНижняя" title="1. Характеристика вашей профессиональной деятельности на настоящий момент">1. <br>Характ. вашей проф. деят. на наст. момент</div>
+				</div>
+		</div>
+		<div class="дляПравогоРядаКарт">
+				<div id="карта6" class="дляКарты" title="6. Чего вам ожидать на новом рабочем месте">6. <br>Чего вам ожидать на новом рабочем месте</div>
+				<div id="карта5" class="дляКарты" title="5. Обстоятельства, которые говорят в пользу того, чтобы сменить работу">5. <br>Обстоятельства, которые говорят в пользу того, чтобы сменить работу</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		let картаРубашка;
+		let дляГоризонтальныхНомеров;
+		let дляВертикальныхНомеров;
+		let максимальноеЧисло = 78;
+		let полеДляКарт = document.getElementById('полеДляКарт');
+		const горизонтальнаяКолонка = document.getElementById('горизонтальнаяКолонка');
+		const вертикальнаяКолонка = document.getElementById('вертикальнаяКолонка');
+		let дляКарты = document.getElementsByClassName('дляКарты');
+		const карты = new Array(78).fill().map((_, i) => i);
+
+		document.addEventListener('mousedown', event => {
+		event.preventDefault();
+		});
+
+		for(let i = 0; i < 78; i++){
+			картаРубашка = document.createElement('img');
+			картаРубашка.src = 'Ris_I_Trakt/Рубашка.jpg';
+			полеДляКарт.appendChild(картаРубашка);
+			картаРубашка.classList.add("картаРубашка");
+			картаРубашка.addEventListener('click', ВставитьКарту);
+			картаРубашка.addEventListener('click', СкрытьКарту);
+		}
+			let k = 0;
+			function СкрытьКарту(event){
+				if (k < 7) {
+					event.target.classList.add('скрытаяКарта');
+				}
+				k++;
+			}
+		for(let i = 0; i < 10; i++){
+			дляГоризонтальныхНомеров = document.createElement('div');
+			горизонтальнаяКолонка.appendChild(дляГоризонтальныхНомеров);
+			дляГоризонтальныхНомеров.classList.add("дляГоризонтальныхНомеров");
+			дляГоризонтальныхНомеров.textContent = i;
+		}
+		for(let i = 0; i < 9; i++){
+			дляВертикальныхНомеров = document.createElement('div');
+			вертикальнаяКолонка.appendChild(дляВертикальныхНомеров);
+			дляВертикальныхНомеров.classList.add("дляВертикальныхНомеров");
+			дляВертикальныхНомеров.textContent = i + 1;
+		}
+
+		let количествоКарт = 0;
+		function ВставитьКарту(){
+			if(количествоКарт > 6) {
+				return;
+			}
+		 	const номер = ДостатьСлучайнуюКарту(карты);
+			const карта = document.createElement('a');
+			карта.setAttribute('href', 'Ris_I_Trakt/' + номер + '.html');
+			карта.setAttribute('target', "_blank");
+			const картинка = document.createElement('img');
+			картинка.src = 'Ris_I_Trakt/' + номер + '.jpg';
+			картинка.classList.add("карты");
+			карта.appendChild(картинка);
+			const контейнерКарты = document.getElementById('карта' + (количествоКарт + 1));
+			контейнерКарты.textContent = '';
+			контейнерКарты.textContent = количествоКарт + 1;
+			контейнерКарты.appendChild(карта);
+
+			if (Math.random() > 0.5) {
+				картинка.style.transform = 'rotate(180deg)';
+			}
+			количествоКарт++;
+		}
+
+		function ДостатьСлучайнуюКарту(карты){
+			return карты.splice(Math.floor(Math.random() * карты.length), 1)[0];
+		}
+
+	</script>
+</body>
+</html>

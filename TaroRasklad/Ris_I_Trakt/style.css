@@ -1,0 +1,34 @@
+
+		.общий{
+			width: 1250px;
+			border: solid 1px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		.картинки{
+			width: 400px;
+			height: 730px;
+			margin: 10px;
+			border-radius: 25px;
+			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		}
+		.трактовка{
+			width: 800px;
+			border: solid 1px;
+			margin: 10px;
+			padding: 20px;
+			font-family: sans-serif;
+			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		}
+		.заголовок{
+			text-align: center;
+			color: rgb(160, 70, 180);
+			margin-top: 0px;
+		}
+		.дляВыделенияПодразделов{
+			color:  rgb(160, 70, 180);
+			font-size: 18px;
+			font-weight: bold;
+		}

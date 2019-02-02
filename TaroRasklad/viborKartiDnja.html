@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Карта дня</title>
+
+	<style type="text/css">
+		#рамка{
+			width: 1250px;
+			background: url('Ris_I_Trakt/fon.jpg');
+		}
+		#обший{
+			width: 500px;
+			height: 860px;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+		#горизонтальнаяКолонка{
+			width: 500px;
+			height: 50px;
+			outline: solid 1px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			background: rgb(250, 180, 200);
+		}
+		#дляПоляИвертикальнойКолонки{
+			width: 500px;
+			height: 860px;
+			outline: solid 1px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		#вертикальнаяКолонка{
+			width: 50px;
+			height: 810px;
+			outline: solid 1px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			background: rgb(250, 180, 200);
+		}
+		#полеДляКарт{
+			width: 450px;
+			height: 810px;
+			outline: solid 1px;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			flex-wrap: wrap;
+			background: #C5FEF1;
+		}
+		.дляГоризонтальныхНомеров{
+			width: 50px;
+			height: 50px;
+			outline: solid 1px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			font-family: sans-serif;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.дляВертикальныхНомеров{
+			width: 50px;
+			height: 90px;
+			outline: solid 1px;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			font-family: sans-serif;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.картаРубашка{
+			width: 50px;
+			height: 90px;
+		}
+		#полеДляПоказаКарты{
+			width: 450px;
+			height: 810px;
+			display: none;
+			background: #C5FEF1;
+		}
+		.дляТекста{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			font-family: sans-serif;
+		}
+		a{
+			font-family: sans-serif;
+			color: #800080;
+		}
+		a:hover{
+			color: #008000;
+		}
+	</style>
+</head>
+<body>
+	<div id="рамка">
+		<div class="дляТекста">
+			<p><a href="index.html">На главную страницу</a></p>
+			<h2>Карта дня</h2>
+			<ul>
+				<li>Для выбора карты щёлкните по ней левой кнопкой мыши</li>
+				<li>Чтобы посмотреть трактовку выбранной карты снова щёлкните по ней</li>
+				<li>Трактовка откроется в отдельном окне</li>
+				<li>Обновить — клавиша F5</li>
+			</ul>
+		</div>
+		<div id="обший">
+			<div id="горизонтальнаяКолонка"></div>
+			<div id="дляПоляИвертикальнойКолонки">
+				<div id="вертикальнаяКолонка"></div>
+				<div id="полеДляКарт"></div>
+				<div id="полеДляПоказаКарты"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let картаРубашка;
+		let дляГоризонтальныхНомеров;
+		let дляВертикальныхНомеров;
+		let максимальноеЧисло = 78;
+		let полеДляКарт = document.getElementById('полеДляКарт');
+		const горизонтальнаяКолонка = document.getElementById('горизонтальнаяКолонка');
+		const вертикальнаяКолонка = document.getElementById('вертикальнаяКолонка');
+		const карты = new Array(78).fill().map((_, i) => i);
+
+		document.addEventListener('mousedown', event => {
+		event.preventDefault();
+		});
+
+		for(let i = 0; i < 78; i++){
+			картаРубашка = document.createElement('img');
+			картаРубашка.src = 'Ris_I_Trakt/Рубашка.jpg';
+			полеДляКарт.appendChild(картаРубашка);
+			картаРубашка.classList.add("картаРубашка");
+			картаРубашка.addEventListener('click', ПоказатьКарту);
+		}
+		for(let i = 0; i < 10; i++){
+			дляГоризонтальныхНомеров = document.createElement('div');
+			горизонтальнаяКолонка.appendChild(дляГоризонтальныхНомеров);
+			дляГоризонтальныхНомеров.classList.add("дляГоризонтальныхНомеров");
+			дляГоризонтальныхНомеров.textContent = i;
+		}
+		for(let i = 0; i < 9; i++){
+			дляВертикальныхНомеров = document.createElement('div');
+			вертикальнаяКолонка.appendChild(дляВертикальныхНомеров);
+			дляВертикальныхНомеров.classList.add("дляВертикальныхНомеров");
+			дляВертикальныхНомеров.textContent = i + 1;
+		}
+		function ПоказатьКарту(){
+			const полеДляПоказаКарты = document.getElementById('полеДляПоказаКарты');
+			const номер = ДостатьСлучайнуюКарту(карты);
+
+			const карта = document.createElement('a');
+			карта.setAttribute('href', 'Ris_I_Trakt/' + номер + '.html');
+			карта.setAttribute('target', "_blank");
+
+			const картинка = document.createElement('img');
+			картинка.src = 'Ris_I_Trakt/' + номер + '.jpg';
+			карта.appendChild(картинка);
+			полеДляПоказаКарты.style.display = 'block';
+			полеДляКарт.style.display = 'none';
+			полеДляПоказаКарты.appendChild(карта);
+
+			if(Math.random() > 0.5){
+				картинка.style.transform = 'rotate(180deg)';
+			}
+		}
+
+		function ДостатьСлучайнуюКарту(карты) {
+			return карты.splice(Math.floor(Math.random() * карты.length), 1)[0];
+		}
+	</script>
+</body>
+</html>

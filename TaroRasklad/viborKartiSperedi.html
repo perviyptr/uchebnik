@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Выбор карты спереди</title>
+	<style type="text/css">
+		.общий{
+			width: 1250px;
+		}
+		#полеДляКарт{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: wrap;
+			background: url('fon.jpg');
+		}
+		#полеДляКарт img{
+			border-radius: 25px;
+			box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+		}
+		.дляВыбранныхКарт img{
+			width: 250px;
+		}
+		.дляПоследнейКарты img{
+			width: 400px;
+		}
+		.примечание{
+			font-family: sans-serif;
+		}
+		.дляНадписей{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content:space-between;
+			align-items: flex-start;
+		}
+		a{
+			font-family: sans-serif;
+			color: #800080;
+		}
+		a:hover{
+			color: #008000;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="общий">
+		<div class="дляНадписей">
+			<p><a href="index.html">На главную страницу</a></p>
+			<ul class ="примечание">
+				<li>Показать следующие карты — щелчок левой кнопкой мыши в свободном поле</li>
+				<li>Выбрать карту — щелчок левой кнопкой мыши по карте</li>
+				<li>Показать трактовку карты — щелчок средней кнопкой мыши по карте или левой кнопкой с нажатой клавишей Ctrl;</li>
+				Трактовка откроется в новой вкладке.
+				<li>Начать сначала — клавиша F5;</li>
+			</ul>
+		</div>
+	<div id="полеДляКарт"></div>
+	</div>
+	<script type="text/javascript">
+		const показатьКарты = document.getElementById('показатьКарты');
+
+document.addEventListener('mousedown', event => {
+	event.preventDefault();
+});
+
+document.addEventListener('click', event => {
+	if (event.which !== 1 || event.ctrlKey) {
+		return;
+	}
+
+	ПоказатьНаборСлучайныхКарт();
+});
+
+const полеДляКарт = document.getElementById('полеДляКарт');
+const количествоКарт = 3;
+let карты = new Array(78).fill().map((_, i) => i);
+let выбранныеКарты = [];
+let картаВыбрана = false;
+let последняяКартаВыбрана = false;
+
+function ВыбратьКарту(event) {
+	if (event.which !== 1 || event.ctrlKey) {
+		return;
+	}
+
+	event.preventDefault();
+	const номер = event.currentTarget.dataset.номер;
+	if (картаВыбрана) {
+		return;
+	}
+
+	event.stopPropagation();
+	выбранныеКарты.push(номер);
+	картаВыбрана = true;
+
+	for (const однаИзВидимыхКарт of [...полеДляКарт.children]) {
+		if (однаИзВидимыхКарт.dataset.номер !== номер) {
+			однаИзВидимыхКарт.remove();
+		}
+	}
+
+	if (!карты.length && выбранныеКарты.length === 1) {
+		полеДляКарт.classList.add("дляПоследнейКарты");
+		последняяКартаВыбрана = true;
+	}
+}
+
+function ПоказатьКарту(карта) {
+	const картаТаро = document.createElement('a');
+	картаТаро.setAttribute('href', 'Ris_I_Trakt/' + карта + '.html');
+	const картинка = document.createElement('img');
+	картинка.src ='Ris_I_Trakt/' + карта + '.jpg';
+	картаТаро.appendChild(картинка);
+	картаТаро.dataset.номер = карта;
+	полеДляКарт.appendChild(картаТаро);
+	return картаТаро;
+}
+
+function ПоказатьНаборСлучайныхКарт(event) {
+	let текущееКоличествоКарт = количествоКарт;
+
+	if (последняяКартаВыбрана) {
+		return;
+	}
+
+	полеДляКарт.innerHTML = '';
+	картаВыбрана = false;
+
+	if (!карты.length) {
+		if (!выбранныеКарты.length) {
+			alert('Карты закончились!');
+			return;
+		}
+
+		alert('Карты закончились. Можно выбрать одну карту или оставить все.');
+		карты = выбранныеКарты;
+		выбранныеКарты = [];
+		текущееКоличествоКарт = карты.length;
+		полеДляКарт.classList.add("дляВыбранныхКарт");
+	}
+
+	for (let i = 0, count = Math.min(текущееКоличествоКарт, карты.length); i < count; i++) {
+		const картаТаро = ПоказатьКарту(ДостатьСлучайнуюКарту(карты));
+		картаТаро.addEventListener('click', ВыбратьКарту);
+	}
+}
+
+ПоказатьНаборСлучайныхКарт();
+
+function ДостатьСлучайнуюКарту(карты) {
+	return карты.splice(Math.floor(Math.random() * карты.length), 1)[0];
+}
+
+	</script>
+</body>
+</html>

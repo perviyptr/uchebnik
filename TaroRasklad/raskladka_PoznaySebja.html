@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Расклад "Познай себя"</title>
+	<link rel="stylesheet" type="text/css" href="styleRaskladki.css">
+
+	<style type="text/css">
+		.дляКарты{
+			width: 100px;
+			height: 175px;
+			outline: double 5px rgb(124, 34, 166);
+			background: rgb(240, 240, 160);
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 13px;
+		}
+		.обшийДляРаскладок{
+			width: 700px;
+			height: 565px;
+			display: flex;
+			flex-direction: column;
+			justify-content:space-between;
+			align-items:center;
+			margin-right: 20px;
+		}
+		.дляВерхнегоРядаКарт{
+			width: 700px;
+			height: 175px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.дляСреднегРядаКарт{
+			width: 580px;
+			height: 175px;
+			display: flex;
+			flex-direction: row;
+			justify-content:space-between;
+			align-items: center;
+		}
+		.дляНижнегоРядаКарт{
+			width: 220px;
+			height: 175px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="общаяРамка">
+		<div class="дляНадписей">
+		<p><a href="index.html">На главную страницу</a></p>
+		<h2 class="заголовок">Расклад «Познай себя»</h2>
+		<ul class="трактовкаРасклада">
+			<li>Для создания раскладки выбирайте закрытые карты левой кнопкой мыши</li>
+			<li>Показать трактовку — щелчок левой кнопкой по карте</li>
+			<li>Обновить — клавиша F5</li>
+		</ul>
+		</div>
+	<div class="главный">
+	<div id="обшийДляРубашек">
+		<div id="горизонтальнаяКолонка"></div>
+		<div id="дляПоляИвертикальнойКолонки">
+			<div id="вертикальнаяКолонка"></div>
+			<div id="полеДляКарт"></div>
+		</div>
+	</div>
+	<div class="обшийДляРаскладок">
+		<div class="дляВерхнегоРядаКарт">
+			<div id="карта1" class="дляКарты" title="1. Прошлые цели" title="">1.<br>Прошлые цели</div>
+			<div id="карта2" class="дляКарты" title="2. Прошлые действия">2. <br>Прошлые действия</div>
+			<div id="карта4" class="дляКарты" title="4. Настоящие цели">4. <br>Настоящие цели</div>
+			<div id="карта5" class="дляКарты" title="5. Настоящие действия">5. <br>Настоящие действия</div>
+			<div id="карта9" class="дляКарты" title="9. Возможные цели в будущем">9. <br>Возможные цели в будущем</div>
+			<div id="карта10" class="дляКарты" title="10. Возможные действия в будущем">10. <br>Возможные действия в будущем</div>
+		</div>
+		<div class="дляСреднегРядаКарт">
+			<div id="карта3" class="дляКарты" title="3. Общая характеристика прошлого" title="">3. <br>Общая характеристика прошлого</div>
+			<div id="карта6" class="дляКарты" title="6. Общее состояние дел на сегодняшний момент">6. <br>Общее состояние дел на сегодняшний момент</div>
+			<div id="карта11" class="дляКарты" title="11. Общая характеристика будущего">11. <br>Общая характеристика будущего</div>
+		</div>
+		<div class="дляНижнегоРядаКарт">
+			<div id="карта7" class="дляКарты" title="7. Влияние прошлого на ваше настоящее" title="">7. <br>Влияние прошлого на ваше настоящее
+			</div>
+			<div id="карта8" class="дляКарты" title="8. Влияние настоящего на ваше будущее">8. <br>Влияние настоящего на ваше будущее</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		let картаРубашка;
+		let дляГоризонтальныхНомеров;
+		let дляВертикальныхНомеров;
+		let максимальноеЧисло = 78;
+		let полеДляКарт = document.getElementById('полеДляКарт');
+		const горизонтальнаяКолонка = document.getElementById('горизонтальнаяКолонка');
+		const вертикальнаяКолонка = document.getElementById('вертикальнаяКолонка');
+		let дляКарты = document.getElementsByClassName('дляКарты');
+		const карты = new Array(78).fill().map((_, i) => i);
+
+		document.addEventListener('mousedown', event => {
+		event.preventDefault();
+		});
+
+		for(let i = 0; i < 78; i++){
+			картаРубашка = document.createElement('img');
+			картаРубашка.src = 'Ris_I_Trakt/Рубашка.jpg';
+			полеДляКарт.appendChild(картаРубашка);
+			картаРубашка.classList.add("картаРубашка");
+			картаРубашка.addEventListener('click', ВставитьКарту);
+			картаРубашка.addEventListener('click', СкрытьКарту);
+		}
+			let k = 0;
+			function СкрытьКарту(event){
+				if (k < 10) {
+					event.target.classList.add('скрытаяКарта');
+				}
+				k++;
+			}
+		for(let i = 0; i < 10; i++){
+			дляГоризонтальныхНомеров = document.createElement('div');
+			горизонтальнаяКолонка.appendChild(дляГоризонтальныхНомеров);
+			дляГоризонтальныхНомеров.classList.add("дляГоризонтальныхНомеров");
+			дляГоризонтальныхНомеров.textContent = i;
+		}
+		for(let i = 0; i < 9; i++){
+			дляВертикальныхНомеров = document.createElement('div');
+			вертикальнаяКолонка.appendChild(дляВертикальныхНомеров);
+			дляВертикальныхНомеров.classList.add("дляВертикальныхНомеров");
+			дляВертикальныхНомеров.textContent = i + 1;
+		}
+
+		let количествоКарт = 0;
+		function ВставитьКарту(){
+			if(количествоКарт > 11) {
+				return;
+			}
+		 	const номер = ДостатьСлучайнуюКарту(карты);
+			const карта = document.createElement('a');
+			карта.setAttribute('href', 'Ris_I_Trakt/' + номер + '.html');
+			карта.setAttribute('target', "_blank");
+			const картинка = document.createElement('img');
+			картинка.src = 'Ris_I_Trakt/' + номер + '.jpg';
+			картинка.classList.add("карты");
+			карта.appendChild(картинка);
+			const контейнерКарты = document.getElementById('карта' + (количествоКарт + 1));
+			контейнерКарты.textContent = '';
+			контейнерКарты.textContent = количествоКарт + 1;
+			контейнерКарты.appendChild(карта);
+
+			if (Math.random() > 0.5) {
+				картинка.style.transform = 'rotate(180deg)';
+			}
+			количествоКарт++;
+		}
+
+		function ДостатьСлучайнуюКарту(карты){
+			return карты.splice(Math.floor(Math.random() * карты.length), 1)[0];
+		}
+
+	</script>
+</body>
+</html>
