@@ -114,6 +114,8 @@ function ПоказатьКарту(карта) {
 	картаТаро.setAttribute('href', 'Ris_I_Trakt/' + карта + '.html');
 	const картинка = document.createElement('img');
 	картинка.src ='Ris_I_Trakt/' + карта + '.jpg';
+	картинка.style.width = '250px';
+	картинка.style.height = '460px';
 	картаТаро.appendChild(картинка);
 	картаТаро.dataset.номер = карта;
 	полеДляКарт.appendChild(картаТаро);
