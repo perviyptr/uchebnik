@@ -228,19 +228,24 @@ function changeThickness (thickness, imgElement)
 }
 
 
-function startDrawing(e) {
+function getCoords(event) {
+  return {
+    x: Math.round(event.offsetX / canvas.clientWidth * canvas.clientWidth),
+    y: Math.round(event.offsetY / canvas.clientHeight * canvas.clientHeight)
+  };
+}
 
+function startDrawing(e) {
 	isDrawing = true;
 	context.beginPath();
-	context.moveTo(e.pageX - canvas.offsetLeft, e.pageY - canvas.offsetTop);
+  const {x, y} = getCoords(e);
+	context.moveTo(x, y);
 }
 
 function draw(e) {
 	if (isDrawing == true)
 	{
-		var x = e.pageX - canvas.offsetLeft;
-		var y = e.pageY - canvas.offsetTop;
-
+		const {x, y} = getCoords(e);
 		context.lineTo(x, y);
 		context.stroke();
 	}

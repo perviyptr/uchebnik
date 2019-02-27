@@ -278,8 +278,8 @@ function changeColor(copmositeOperation, color, imgElement)
 
 function getMousePos(event) {
   return {
-    x: event.pageX - canvas.offsetLeft,
-    y: event.pageY - canvas.offsetTop,
+    x: Math.round(event.offsetX / canvas.clientWidth * canvas.clientWidth),
+    y: Math.round(event.offsetY / canvas.clientHeight * canvas.clientHeight)
   };
 }
 

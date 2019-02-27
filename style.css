@@ -540,7 +540,7 @@ html {
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	box-shadow: inset 0 5px 5px rgba(0,0,0,0.25);
 	border: solid 2px rgb(157, 16, 176);
 }
@@ -550,26 +550,26 @@ html {
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 #dlina, #dlina_treug, #dlina_kr, #dlina_tr, #dlina_yg, #dlina_shvelera, #dlina_dvutavra, #dlina_polosob, #massa_gruza, #massa_gruza2{
 	text-align: center;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	width: 30%;
 	height: 25px;
 	box-shadow: inset 0 5px 5px rgba(0,0,0,0.25);
 }
 #shirina, #shirina_treug, #diam_kr, #diam_tr, #kol_vetvey, #kol_vetvey2{
 	text-align: center;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	width: 30%;
 	height: 25px;
 	box-shadow: inset 0 5px 5px rgba(0,0,0,0.25);
 }
 #tolshina, #tolshina_treug, #tolshina_tr, #ugol, #ugol2{
 	text-align: center;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	width: 30%;
 	height: 25px;
 	box-shadow: inset 0 5px 5px rgba(0,0,0,0.25);
@@ -581,7 +581,7 @@ html {
 	margin: auto;
 	margin-bottom: 20px;
 	text-align: center;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .dla_kartinok_v_raschetah{
@@ -609,7 +609,7 @@ html {
 	margin: auto;
 	width: 60%;
 	height: 25px;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	box-shadow: inset 0 5px 5px rgba(0,0,0,0.25);
 
 
@@ -620,7 +620,7 @@ html {
 }
 
 #dlina_pervogo_plecha, #nagruzka_na_pervoe_plecho, #dlina_vtorogo_plecha, #nagruzka_na_vtoroe_plecho{
-	font-size: 1.4vmax;
+	font-size: 16px;
 	width: 90%;
 	height: 25px;
 	box-shadow: inset 0 5px 5px rgba(0,0,0,0.25);
@@ -633,7 +633,7 @@ html {
 }
 
 #obchaja_nagruzka_na_plechi{
-	font-size: 1.4vmax;
+	font-size: 16px;
 	width: 100%;
 	height: 25px;
 	background-color: rgb(125, 7, 140);
@@ -657,7 +657,7 @@ html {
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	font-size: 1.4vmax;
+	font-size: 16px;
 	box-shadow: inset 0 5px 5px rgba(0,0,0,0.25);
 	border: solid 2px rgb(157, 16, 176);
 }
@@ -751,7 +751,7 @@ h1{
 	margin: auto;
 }
 #nadpis_k_sostavit_kartinku{
-	font-size: 1.3vmax;
+	font-size: 16px;
 }
 
 
@@ -796,7 +796,7 @@ h1{
 	margin: auto;
 }
 #nadpis_k_sostavit_kartinku2{
-	/*font-size: 1.3vmax;*/
+	/*font-size: 16px;*/
 	height: 100%;
 }
 
@@ -843,7 +843,7 @@ h1{
 	margin: auto;
 }
 #nadpis_k_sostavit_kartinku3{
-	font-size: 1.3vmax;
+	font-size: 16px;
 }
 
 
@@ -881,7 +881,7 @@ h1{
 	flex-wrap:wrap;
 }
 #zapisi{
-	font-size: 1.3vmax;
+	font-size: 16px;
 }
 
 .hidden_chast{
@@ -926,7 +926,7 @@ h1{
 	background-color: rgb(87, 4, 87);
 }
 #zapisi2{
-	font-size: 1.3vmax;
+	font-size: 16px;
 }
 
 
