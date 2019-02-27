@@ -41,7 +41,6 @@
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: flex-start;
-
 }
 .lev{
 	width: 20%;
@@ -214,6 +213,12 @@ i{
 .main-body {
 	min-width: 600px;
 }
+
+html {
+	display: table;
+	margin: auto;
+}
+
 .image_komandi{
 	width: 100%;
 	display: block;
