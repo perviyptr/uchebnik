@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Расчёт балок</title>
+    <meta charset="UTF-8">
+    <style>
+        .input-group { margin: 10px 0; }
+        label { display: inline-block; width: 200px; }
+        button {
+            padding: 12px 24px;
+            margin: 20px 0;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 25px;
+            padding: 20px;
+            border: 2px solid #dee2e6;
+            background: #f8f9fa;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+        input, select {
+            padding: 8px;
+            width: 250px;
+            border: 2px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        body {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .note {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .zagolovok {
+            font-size: 1.5em;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+	<p class="zagolovok">Калькулятор балок<p>
+	    <div class="input-group">
+        <label>Тип опор:</label>
+        <select id="supportType">ыыы
+            <option value="simply-supported">Шарнирная</option>
+            <option value="fixed">Заделка</option>
+            <option value="cantilever">Консоль</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Тип нагрузки:</label>
+        <select id="loadType">
+            <option value="concentrated">Сосредоточенная</option>
+            <option value="distributed">Распределённая</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Нагрузка:</label>
+        <input type="number" id="load" step="any" required>
+        <div class="note">Для сосредоточенной нагрузки - кг, для распределенной - кг/м</div>
+    </div>
+
+    <div class="input-group">
+        <label>Длина балки (м):</label>
+        <input type="number" id="length" step="any" required>
+    </div>
+
+    <div class="input-group">
+        <label>Сортамент балки:</label>
+        <select id="sectionType">
+            <option value="circle">Круг сплошной</option>
+            <option value="square">Квадрат сплошной</option>
+            <option value="rectangle">Прямоугольник (пиломатериал)</option>
+            <option value="square_tube">Труба квадратная</option>
+            <option value="rect_tube">Труба прямоугольная</option>
+            <option value="angle">Уголок</option>
+            <option value="channel">Швеллер</option>
+            <option value="I-beam">Двутавр</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Материал:</label>
+        <select id="material">
+            <option value="steel">Сталь (σ=245 МПа)</option>
+            <option value="wood">Дерево (σ=10 МПа)</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>Коэффициент запаса прочности:</label>
+        <input type="number" id="safetyFactor" value="1.5" step="0.1" min="1.1" required>
+        <div class="note">Рекомендуемые значения: 1.5-2.5</div>
+    </div>
+
+    <div class="input-group">
+        <label>Расстояние до точки приложения силы (м):</label>
+        <input type="number" id="distance" step="any" required>
+        <div class="note">Для консоли - расстояние от заделки</div>
+    </div>
+
+    <button onclick="calculate()">Выполнить расчёт</button>
+    <div id="result"></div>
+
+<script>
+// Полные данные сортаментов по ГОСТ
+const profileData = {
+    standard: {
+        "I-beam": [
+            // Двутавры по ГОСТ P57837-2017
+            {name: "Двутавр 10Б1 ГОСТ P57837-2017", W: 34200},
+            {name: "Двутавр 12Б1 ГОСТ P57837-2017", W: 43800},
+            {name: "Двутавр 14Б1 ГОСТ P57837-2017", W: 63300},
+            {name: "Двутавр 16Б1 ГОСТ P57837-2017", W: 87800},
+            {name: "Двутавр 18Б1 ГОСТ P57837-2017", W: 120100},
+            {name: "Двутавр 20Б1 ГОСТ P57837-2017", W: 184400},
+            {name: "Двутавр 20Ш1 ГОСТ P57837-2017", W: 277300},
+            {name: "Двутавр 25Б1 ГОСТ P57837-2017", W: 285300},
+            {name: "Двутавр 25Ш1 ГОСТ P57837-2017", W: 501700},
+            {name: "Двутавр 30Б1 ГОСТ P57837-2017", W: 424000},
+            {name: "Двутавр 30Ш1 ГОСТ P57837-2017", W: 771300},
+            {name: "Двутавр 35Б1 ГОСТ P57837-2017", W: 641300},
+            {name: "Двутавр 35Ш1 ГОСТ P57837-2017", W: 1024000},
+            {name: "Двутавр 40Б1 ГОСТ P57837-2017", W: 1011000},
+            {name: "Двутавр 40Ш1 ГОСТ P57837-2017", W: 1595000},
+            {name: "Двутавр 45Б1 ГОСТ P57837-2017", W: 1286000},
+            {name: "Двутавр 45Ш1 ГОСТ P57837-2017", W: 2548600}
+
+
+        ],
+        "channel": [
+            // Швеллеры по ГОСТ 8240-97
+            {name: "Швеллер 5П ГОСТ 8240-97", W: 9100},
+            {name: "Швеллер 6.5П ГОСТ 8240-97", W: 15000},
+            {name: "Швеллер 8П ГОСТ 8240-97", W: 22500},
+            {name: "Швеллер 10П ГОСТ 8240-97", W: 34900},
+            {name: "Швеллер 12П ГОСТ 8240-97", W: 50800},
+            {name: "Швеллер 14П ГОСТ 8240-97", W: 70400},
+            {name: "Швеллер 16П ГОСТ 8240-97", W: 93800},
+            {name: "Швеллер 18П ГОСТ 8240-97", W: 121000},
+            {name: "Швеллер 20П ГОСТ 8240-97", W: 153000},
+            {name: "Швеллер 22П ГОСТ 8240-97", W: 193000},
+            {name: "Швеллер 24П ГОСТ 8240-97", W: 243000},
+            {name: "Швеллер 27П ГОСТ 8240-97", W: 310000},
+            {name: "Швеллер 30П ГОСТ 8240-97", W: 389000},
+            {name: "Швеллер 33П ГОСТ 8240-97", W: 486000},
+            {name: "Швеллер 36П ГОСТ 8240-97", W: 603000}
+        ],
+        "angle": [
+            // Уголки по ГОСТ 8509-93
+            {name: "Уголок 20x20x3 ГОСТ 8509-93", W: 280},
+            {name: "Уголок 25x25x3 ГОСТ 8509-93", W: 460},
+            {name: "Уголок 30x30x4 ГОСТ 8509-93", W: 870},
+            {name: "Уголок 35x35x4 ГОСТ 8509-93", W: 1210},
+            {name: "Уголок 40x40x4 ГОСТ 8509-93", W: 1600},
+            {name: "Уголок 45x45x5 ГОСТ 8509-93", W: 2510},
+            {name: "Уголок 50x50x5 ГОСТ 8509-93", W: 3130},
+            {name: "Уголок 63x63x6 ГОСТ 8509-93", W: 5980},
+            {name: "Уголок 70x70x7 ГОСТ 8509-93", W: 8570},
+            {name: "Уголок 80x80x8 ГОСТ 8509-93", W: 12800},
+            {name: "Уголок 90x90x9 ГОСТ 8509-93", W: 18290},
+            {name: "Уголок 100x100x10 ГОСТ 8509-93", W: 24970},
+            {name: "Уголок 125x125x12 ГОСТ 8509-93", W: 47060},
+            {name: "Уголок 140x140x12 ГОСТ 8509-93", W: 59660},
+            {name: "Уголок 160x160x16 ГОСТ 8509-93", W: 102640}
+        ],
+        "rectangle": [
+            // Пиломатериалы по ГОСТ 24454-80 (b x h)
+            {name: "40x75 ГОСТ 24454-80", W: Math.round((40 * Math.pow(75, 2)) / 6)},
+            {name: "50x100 ГОСТ 24454-80", W: Math.round((50 * Math.pow(100, 2)) / 6)},
+            {name: "50x150 ГОСТ 24454-80", W: Math.round((50 * Math.pow(150, 2)) / 6)},
+            {name: "60x125 ГОСТ 24454-80", W: Math.round((60 * Math.pow(125, 2)) / 6)},
+            {name: "75x150 ГОСТ 24454-80", W: Math.round((75 * Math.pow(150, 2)) / 6)},
+            {name: "75x175 ГОСТ 24454-80", W: Math.round((75 * Math.pow(175, 2)) / 6)},
+            {name: "100x150 ГОСТ 24454-80", W: Math.round((100 * Math.pow(150, 2)) / 6)},
+            {name: "100x200 ГОСТ 24454-80", W: Math.round((100 * Math.pow(200, 2)) / 6)},
+            {name: "125x175 ГОСТ 24454-80", W: Math.round((125 * Math.pow(175, 2)) / 6)},
+            {name: "125x250 ГОСТ 24454-80", W: Math.round((125 * Math.pow(250, 2)) / 6)},
+            {name: "150x200 ГОСТ 24454-80", W: Math.round((150 * Math.pow(200, 2)) / 6)},
+            {name: "150x300 ГОСТ 24454-80", W: Math.round((150 * Math.pow(300, 2)) / 6)},
+            {name: "175x225 ГОСТ 24454-80", W: Math.round((175 * Math.pow(225, 2)) / 6)},
+            {name: "200x250 ГОСТ 24454-80", W: Math.round((200 * Math.pow(250, 2)) / 6)},
+            {name: "250x250 ГОСТ 24454-80", W: Math.round((250 * Math.pow(250, 2)) / 6)}
+        ].map(p => ({...p, W: Math.round(p.W)})),
+        "square_tube": [
+            // Квадратные трубы по ГОСТ 8639-82 (Bx t)
+            {name: "10x1 ГОСТ 8639-82", W: 90},
+            {name: "15x1 ГОСТ 8639-82", W: 233},
+            {name: "20x2 ГОСТ 8639-82", W: 723},
+            {name: "25x2 ГОСТ 8639-82", W: 1220},
+            {name: "30x3 ГОСТ 8639-82", W: 2440},
+            {name: "35x3 ГОСТ 8639-82", W: 3520},
+            {name: "40x3 ГОСТ 8639-82", W: 4810},
+            {name: "45x5 ГОСТ 8639-82", W: 8380},
+            {name: "40x3 ГОСТ 8639-82", W: 4810},
+            {name: "50x4 ГОСТ 8639-82", W: 9820},
+            {name: "60x5 ГОСТ 8639-82", W: 17430},
+            {name: "70x6 ГОСТ 8639-82", W: 28200},
+            {name: "80x6 ГОСТ 8639-82", W: 38460},
+            {name: "90x6 ГОСТ 8639-82", W: 50320},
+            {name: "100x7 ГОСТ 8639-82", W: 71520},
+            {name: "110x7 ГОСТ 8639-82", W: 88750},
+            {name: "120x8 ГОСТ 8639-82", W: 119280},
+            {name: "140x8 ГОСТ 8639-82", W: 168550},
+            {name: "110x7 ГОСТ 8639-82", W: 88750},
+            {name: "150x10 ГОСТ 8639-82", W: 232960},
+            {name: "180x14 ГОСТ 8639-82", W: 449270}
+        ].map(p => ({...p, W: Math.round(p.W)})),
+        "rect_tube": [
+            // Прямоугольные трубы по ГОСТ 8645-88 (BxHx t)
+            {name: "15x10x2 ГОСТ 8645-88", W: 239},
+            {name: "20x15x2 ГОСТ 8645-88", W: 561},
+            {name: "25x15x2 ГОСТ 8645-88", W: 803},
+            {name: "30x20x2 ГОСТ 8645-88", W: 1340},
+            {name: "35x25x2 ГОСТ 8645-88", W: 2010},
+            {name: "40x25x3 ГОСТ 8645-88", W: 2640},
+            {name: "45x30x3 ГОСТ 8645-88", W: 4520},
+            {name: "50x30x3 ГОСТ 8645-88", W: 5320},
+            {name: "60x30x3 ГОСТ 8645-88", W: 7060},
+            {name: "70x40x4 ГОСТ 8645-88", W: 13590},
+            {name: "80x50x4 ГОСТ 8645-88", W: 19620},
+            {name: "90x40x5 ГОСТ 8645-88", W: 23710},
+            {name: "100x50x5 ГОСТ 8645-88", W: 32670},
+            {name: "110x50x5 ГОСТ 8645-88", W: 37950},
+            {name: "120x60x6 ГОСТ 8645-88", W: 56460},
+            {name: "140x80x6 ГОСТ 8645-88", W: 87390},
+            {name: "150x100x8 ГОСТ 8645-88", W: 142500},
+            {name: "180x100x10 ГОСТ 8645-88", W: 221800},
+            {name: "180x150x12 ГОСТ 8645-88", W: 346000}
+        ].map(p => ({...p, W: Math.round(p.W)}))
+    },
+
+    // Параметрические профили
+    parametric: {
+        "circle": {
+            formula: d => Math.PI*d**3/32,
+            sizes: Array.from({length: 20}, (_,i) => 10 + i*5)
+        },
+        "square": {
+            formula: b => b**3/6,
+            sizes: Array.from({length: 20}, (_,i) => 10 + i*5)
+        }
+    }
+};
+
+// Основные расчетные функции
+function calculate() {
+    if (!validateInputs()) return;
+
+    // Получение входных данных
+    const inputs = getInputValues();
+    const M = calculateBendingMoment(inputs);
+    const sigma_allow = getAllowableStress(inputs.material, inputs.safetyFactor);
+    const W_required = M / sigma_allow;
+
+    // Подбор профиля
+    const profiles = getProfiles(inputs.sectionType);
+    const selectedProfile = profiles.find(p => p.Wx >= W_required || p.W >= W_required);
+
+    // Вывод результатов
+    displayResults(selectedProfile, W_required, inputs);
+}
+
+// Вспомогательные функции
+function validateInputs() {
+    const required = ['load', 'length', 'safetyFactor', 'distance'];
+    return required.every(id => {
+        const el = document.getElementById(id);
+        if (!el.value || isNaN(el.value)) {
+            alert(`Поле "${el.previousElementSibling.textContent.trim()}" заполнено неверно`);
+            return false;
+        }
+        return true;
+    });
+}
+
+function getInputValues() {
+    return {
+        supportType: document.getElementById('supportType').value,
+        loadType: document.getElementById('loadType').value,
+        loadValue: parseFloat(document.getElementById('load').value),
+        length: parseFloat(document.getElementById('length').value),
+        sectionType: document.getElementById('sectionType').value,
+        material: document.getElementById('material').value,
+        safetyFactor: parseFloat(document.getElementById('safetyFactor').value),
+        distance: parseFloat(document.getElementById('distance').value)
+    };
+}
+
+function calculateBendingMoment(inputs) {
+    const L = inputs.length * 1000; // в мм
+    const a = inputs.distance * 1000; // в мм
+
+    let M = 0;
+    const P = inputs.loadValue * 9.81; // в Н
+    const q = (inputs.loadValue * 9.81) / 1000; // Н/мм
+
+    switch(inputs.supportType) {
+        case 'simply-supported':
+            M = inputs.loadType === 'concentrated'
+                ? (P * a * (L - a)) / L
+                : (q * L**2) / 8;
+            break;
+        case 'fixed':
+            if(inputs.loadType === 'concentrated') {
+                const b = L - a;
+                M = Math.max((P * a * b**2)/L**2, (P * a**2 * b)/L**2);
+            } else {
+                M = (q * L**2) / 12;
+            }
+            break;
+        case 'cantilever':
+            M = inputs.loadType === 'concentrated'
+                ? P * a
+                : (q * L**2) / 2;
+            break;
+    }
+    return M;
+}
+
+function getAllowableStress(material, safetyFactor) {
+    const baseStress = material === 'steel' ? 245 : 10; // в МПа (Н/мм²)
+    return baseStress / safetyFactor;
+}
+
+function getProfiles(type) {
+    const standard = profileData.standard[type] || [];
+    const parametric = type === 'circle' || type === 'square'
+        ? profileData.parametric[type].sizes.map(size => ({
+            name: `${type === 'circle' ? 'Круг' : 'Квадрат'} ${size}мм`,
+            W: Math.round(profileData.parametric[type].formula(size))
+        }))
+        : [];
+
+    return [...standard, ...parametric].sort((a,b) =>
+        (a.Wx || a.W) - (b.Wx || b.W)
+    );
+}
+
+function displayResults(profile, W_req, inputs) {
+    const resultDiv = document.getElementById('result');
+    if (!profile) {
+        resultDiv.innerHTML = `<div style="color: #dc3545;">Требуется профиль с W ≥ ${W_req.toFixed(0)} мм³</div>`;
+        return;
+    }
+
+    const profileInfo = getProfileInfo(profile, inputs.sectionType);
+    resultDiv.innerHTML = `
+        <div style="font-size: 1.1em; margin-bottom: 15px;">
+            <strong>Рекомендуемый профиль:</strong> ${profile.name}
+
+
+        <div style="color: #28a745;">
+            <strong>Требуемое значение момента сопротивления:</strong> ${W_req.toFixed(0)} мм³
+        </div>
+
+        <hr style="margin: 15px 0;">
+
+        <div style="font-size: 0.9em; color: #6c757d;">
+            Параметры расчета:
+            <ul>
+                <li>Материал: ${inputs.material === 'steel' ? 'Сталь' : 'Дерево'}</li>
+                <li>Коэффициент запаса: ${inputs.safetyFactor}</li>
+                <li>Тип опор: ${document.getElementById('supportType').selectedOptions[0].text}</li>
+                <li>Тип нагрузки: ${document.getElementById('loadType').selectedOptions[0].text}</li>
+                <li>Для всех профилей расчёт производится при нагружении вдоль длинной сторон</li>
+            </ul>
+        </div>
+    `;
+}
+
+function getProfileInfo(profile, type) {
+    switch(type) {
+        case 'I-beam': return {
+            dimensions: `h=${profile.h}мм, b=${profile.b}мм, t=${profile.t}мм`,
+            W: profile.Wx
+        };
+        case 'channel': return {
+            dimensions: `h=${profile.h}мм, b=${profile.b}мм, t=${profile.t}мм`,
+            W: profile.Wx
+        };
+        case 'square_tube': return {
+            dimensions: `${profile.B}x${profile.B}x${profile.t}мм`,
+            W: profile.W
+        };
+        case 'rect_tube': return {
+            dimensions: `${profile.B}x${profile.H}x${profile.t}мм`,
+            W: profile.W
+        };
+        default: return {
+            W: profile.Wx || profile.W
+        };
+    }
+}
+</script>
+</body>
+</html>
