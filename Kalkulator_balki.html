@@ -97,7 +97,7 @@
 
     <div class="input-group">
         <label>Материал:</label>
-        <select id="material">
+        <select id="material" onchange="updateSectionOptions()">
             <option value="steel">Сталь (σ=245 МПа)</option>
             <option value="wood">Дерево (σ=10 МПа)</option>
         </select>
@@ -117,9 +117,40 @@
 
     <button onclick="calculate()">Выполнить расчёт</button>
     <div id="result"></div>
-    <p class="zagolovok"><a href="https://perviyptr.github.io/uchebnik/Programmi_dla_rascheta.html">Перейти к другим расчётным програмам</a><p>
+    <h3><center><p><i><a href="https://perviyptr.github.io/uchebnik/Programmi_dla_rascheta.html">Перейти к другим расчётным програмам</a><i><p><center></h3>
 
 <script>
+// Добавляем функцию для обновления доступных опций
+function updateSectionOptions() {
+    const material = document.getElementById('material').value;
+    const sectionSelect = document.getElementById('sectionType');
+    const options = sectionSelect.options;
+
+    // Включаем/выключаем опции в зависимости от материала
+    for(let option of options) {
+        if(option.value === 'rectangle') {
+            option.disabled = material === 'steel';
+        } else {
+            option.disabled = material === 'wood';
+        }
+    }
+
+    // Сбрасываем выбор если текущий вариант недоступен
+    if(sectionSelect.options[sectionSelect.selectedIndex].disabled) {
+        for(let i = 0; i < options.length; i++) {
+            if(!options[i].disabled) {
+                sectionSelect.selectedIndex = i;
+                break;
+            }
+        }
+    }
+}
+
+// Инициализация при загрузке
+window.onload = function() {
+    updateSectionOptions();
+};
+
 // Полные данные сортаментов по ГОСТ
 const profileData = {
     standard: {
