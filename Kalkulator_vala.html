@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор диаметра вала</title>
+     <style>
+       body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #34495e;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .result input {
+            background: #ecf0f1;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="calculator">
+        <h1>Расчёт диаметра вала</h1>
+        <div class="input-group">
+            <label>Мощность, кВт:</label>
+            <input type="number" id="power" step="0.1" required>
+        </div>
+        <div class="input-group">
+            <label>Число оборотов, об/мин:</label>
+            <input type="number" id="rpm" required>
+        </div>
+        <div class="input-group">
+            <label>Длина вала (между опорами), мм:</label>
+            <input type="number" id="length" required>
+        </div>
+        <div class="input-group">
+            <label>Расстояние до точки приложения силы, мм:</label>
+            <input type="number" id="distance" required>
+        </div>
+        <div class="input-group">
+            <label>Радиальная сила, Н:</label>
+            <input type="number" id="radialForce" required>
+        </div>
+
+        <div class="input-group">
+            <label>Окружная сила, Н:</label>
+            <input type="number" id="tangentialForce" value="0">
+        </div>
+        <div class="input-group">
+            <label>Материал:</label>
+            <select id="material">
+                <option value="45">Сталь 45</option>
+                <option value="40X">40Х</option>
+                <option value="40XH">40ХН</option>
+                <option value="20X">20Х</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>Тип нагружения:</label>
+            <select id="loadType">
+                <option value="normal">Обычное</option>
+                <option value="high">Высоконагруженный</option>
+            </select>
+
+             <button onclick="calculate()">Рассчитать</button>
+
+        <div class="input-group result">
+            <label>Диаметр вала, мм:</label>
+            <input type="text" id="result" readonly>
+        </div>
+    </div>
+    <h3><center><p><i><a href="https://perviyptr.github.io/uchebnik/Programmi_dla_rascheta.html">Перейти к другим расчётным программам</a><i><p><center></h3>
+
+    <script>
+        function calculate() {
+            try {
+                const getValue = (id, isRequired = true) => {
+                    const el = document.getElementById(id);
+                    const value = parseFloat(el.value);
+                    if (isRequired && (el.value === '' || isNaN(value) || value < 0)) {
+                        throw new Error(`Проверьте поле "${el.previousElementSibling.textContent}"`);
+                    }
+                    return value || 0;
+                };
+
+                // Получение значений
+                const P = getValue('power');
+                const n = getValue('rpm');
+                const L = getValue('length') / 1000;
+                const a = getValue('distance') / 1000;
+                const Fr = getValue('radialForce');
+                const Ft = getValue('tangentialForce', false);
+                const Fa = 0;
+                const material = document.getElementById('material').value;
+                const loadType = document.getElementById('loadType').value;
+
+                // Параметры материалов (МПа)
+                const materials = {
+                    '45': 360,
+                    '40X': 800,
+                    '40XH': 850,
+                    '20X': 650
+                };
+
+                // Коэффициенты запаса
+                const safetyFactor = loadType === 'normal' ? 2.0 : 3.0;
+
+                // 1. Расчёт моментов
+                const T = (P * 9550) / n + Ft * a; // Крутящий
+                const M = Math.sqrt((Fr * a)**2 + (Ft * a)**2); // Изгибающий
+
+                // 2. Начальное приближение диаметра
+                let d = 0.01; // Начальный диаметр в метрах
+
+                // 3. Итеративный расчет с учетом осевой силы
+                let iterations = 0;
+                let delta;
+                do {
+                    const prevD = d;
+
+                    // Площадь сечения
+                    const A = Math.PI * (d/2)**2;
+
+                    // Осевое напряжение
+                    const sigmaA = Fa / (A || 1e-6); // Защита от деления на ноль
+
+                    // Эквивалентное напряжение
+                    const sigmaE = Math.sqrt(
+                        (M / (Math.PI * d**3 / 32))**2 +
+                        0.75 * (T / (Math.PI * d**3 / 16))**2 +
+                        sigmaA**2
+                    );
+
+                    // Новый диаметр
+                    d = Math.cbrt(
+                        (32 * Math.sqrt(M**2 + 0.75*T**2)) /
+                        (Math.PI * materials[material] * 1e6 / safetyFactor)
+                    );
+
+                    delta = Math.abs(d - prevD);
+                    iterations++;
+                } while (delta > 1e-6 && iterations < 100);
+
+                // Результат в мм
+                const result = Math.round(d * 1000 * 10)/10;
+
+                document.getElementById('result').value = `${result.toFixed(1)} мм`;
+            } catch (e) {
+                alert(e.message);
+                document.getElementById('result').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
