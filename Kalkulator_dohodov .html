@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Финансовый калькулятор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px 0;
+        }
+
+        .block {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .input-group {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 5px;
+            color: green;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            align-self: flex-end;
+            height: 38px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        p {
+            text-align: center;
+            color: #333;
+            margin: 0 0 25px 0;
+            font-size: 16px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 0 0 20px 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin: 0 0 20px 0;
+            cursor: pointer;
+        }
+
+        .history {
+            display: none;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор доходов и расходов</h1>
+        <!-- Блок месяца -->
+        <div class="block">
+            <div class="input-row" style="justify-content: center;">
+                <div class="input-group" style="max-width: 200px;">
+                    <label>Месяц</label>
+                    <select id="monthSelect">
+                        <option value="0">Январь</option>
+                        <option value="1">Февраль</option>
+                        <option value="2">Март</option>
+                        <option value="3">Апрель</option>
+                        <option value="4">Май</option>
+                        <option value="5">Июнь</option>
+                        <option value="6">Июль</option>
+                        <option value="7">Август</option>
+                        <option value="8">Сентябрь</option>
+                        <option value="9">Октябрь</option>
+                        <option value="10">Ноябрь</option>
+                        <option value="11">Декабрь</option>
+                    </select>
+                </div>
+                <button onclick="updateMonth()">Обновить</button>
+            </div>
+        </div>
+
+        <!-- Блок доходов -->
+        <div class="block">
+            <h2 onclick="toggleHistory('income')">Доходы<p>(История по клику-сохраняется до обновления)</p></h2>
+            <div class="input-row">
+                <div class="input-group">
+                    <p class ="label">Дата</p>
+                    <input type="date" id="incomeDate">
+                </div>
+                <div class="input-group">
+                    <p class ="label">Сумма дохода, руб</p>
+                    <input type="number" id="incomeAmount">
+                </div>
+                <div class="input-group">
+                    <label>Итого доходов, руб</label>
+                    <input type="number" id="incomeTotal" readonly>
+                </div>
+                <button onclick="addIncome()">Ввод</button>
+            </div>
+            <div id="incomeHistory" class="history"></div>
+        </div>
+
+        <!-- Блок расходов -->
+        <div class="block">
+            <h2 onclick="toggleHistory('expense')">Расходы<p>(История по клику-сохраняется до обновления)</p></h2>
+            <div class="input-row">
+                <div class="input-group">
+                    <p class ="label">Дата</p>
+                    <input type="date" id="expenseDate">
+                </div>
+                <div class="input-group">
+                    <p class ="label">Магазин</p>
+                    <input type="text" id="expenseShop" list="shopList">
+                     <datalist id="shopList"></datalist>
+                </div>
+                 <div id="expenseHistory" class="history"></div>
+                <div class="input-group">
+                   <p class ="label">Сумма расхода, руб</p>
+                    <input type="number" id="expenseAmount">
+                </div>
+                <div class="input-group">
+                    <label>Итого расходов, руб</label>
+                    <input type="number" id="expenseTotal" readonly>
+                </div>
+                <button onclick="addExpense()">Ввод</button>
+            </div>
+            <div id="expenseHistory" class="history"></div>
+        </div>
+
+        <!-- Блок остатков -->
+        <div class="block" style="overflow: hidden;">
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Остаток в текущем месяце, руб</label>
+                    <input type="number" id="currentRemainder" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Общий остаток, руб (Сохраняется в течение года)</label>
+                    <input type="number" id="generalRemainder" readonly>
+                </div>
+            </div>
+            <button onclick="resetGeneralRemainder()" style="margin-top: 10px; float: right;">Обнулить общий остаток</button>
+        </div>
+        <h3><center><p><i><a href="https://perviyptr.github.io/uchebnik/Programmi_dla_rascheta.html">Перейти к другим программам для расчёта</a><i><p><center></h3>
+    </div>
+
+    <script>
+        let shops = []; // Новый массив для хранения магазинов
+        let currentMonth = {
+            incomeEntries: [],
+            expenseEntries: [],
+            incomeTotal: 0,
+            expenseTotal: 0
+        };
+
+        let allTime = {
+        income: 0,
+        expenses: 0
+    };
+
+        let history = [];
+
+
+        // Инициализация при загрузке
+       window.onload = () => {
+            const now = new Date();
+            const today = now.toISOString().split('T')[0];
+            document.getElementById('incomeDate').value = today;
+            document.getElementById('expenseDate').value = today;
+
+            loadData();
+            updateShopList(); // Инициализация списка магазинов
+            updateDisplay();
+        };
+
+        function loadData() {
+        const data = JSON.parse(localStorage.getItem('financeData'));
+        if (data) {
+            currentMonth = data.currentMonth || currentMonth;
+
+            // Гарантируем корректную структуру allTime
+            allTime = {
+                income: data.allTime?.income || 0,
+                expenses: data.allTime?.expenses || 0
+            };
+
+            history = data.history || [];
+            shops = data.shops || [];
+                // Фильтрация истории
+                const now = new Date();
+                history = history.filter(entry =>
+                    (now - new Date(entry.timestamp)) < 365 * 24 * 60 * 60 * 1000
+                );
+            }
+            updateShopList();
+        }
+
+         function addIncome() {
+        const dateInput = document.getElementById('incomeDate');
+        const amountInput = document.getElementById('incomeAmount');
+
+        const date = dateInput.value;
+        const amount = parseFloat(amountInput.value);
+
+        if (date && !isNaN(amount)) {
+            currentMonth.incomeEntries.push({ date, amount });
+            currentMonth.incomeTotal += amount;
+            allTime.income += amount;
+
+            // Очистка полей
+            amountInput.value = '';
+
+            updateDisplay();
+            saveData();
+        } else {
+            alert("Пожалуйста, заполните все поля корректно!");
+        }
+    }
+
+     window.onload = () => {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const today = `${year}-${month}-${day}`;
+
+        document.getElementById('incomeDate').value = today;
+        document.getElementById('expenseDate').value = today;
+
+        loadData();
+        updateShopList();
+        updateDisplay();
+    };
+
+        function saveData() {
+            const data = {
+                currentMonth,
+                allTime,
+                history,
+                shops // Сохраняем список магазинов
+            };
+            localStorage.setItem('financeData', JSON.stringify(data));
+        }
+
+        function addExpense() {
+            const date = document.getElementById('expenseDate').value;
+            const shop = document.getElementById('expenseShop').value.trim();
+            const amount = parseFloat(document.getElementById('expenseAmount').value);
+
+            if (date && shop && amount) {
+                // Добавляем магазин в список если его нет
+                if (!shops.includes(shop)) {
+                    shops.push(shop);
+                    updateShopList();
+                }
+
+                currentMonth.expenseEntries.push({ date, shop, amount });
+                currentMonth.expenseTotal += amount;
+                allTime.expenses += amount;
+
+                // Очистка полей
+                document.getElementById('expenseShop').value = '';
+                document.getElementById('expenseAmount').value = '';
+
+                updateDisplay();
+                saveData();
+            }
+        }
+
+
+
+   function updateMonth() {
+    const monthIndex = document.getElementById('monthSelect').value;
+    const monthName = document.getElementById('monthSelect').options[monthIndex].text;
+
+    // Сохранение истории
+    history.push({
+        month: monthName,
+        income: currentMonth.incomeTotal,
+        expenses: currentMonth.expenseTotal,
+        timestamp: new Date().getTime()
+    });
+
+    // Сброс данных текущего месяца
+    currentMonth = {
+        incomeEntries: [],
+        expenseEntries: [],
+        incomeTotal: 0,
+        expenseTotal: 0
+    };
+
+    // Очистка полей ввода
+    document.getElementById('incomeAmount').value = ''; // Очищаем сумму дохода
+    document.getElementById('expenseShop').value = '';
+    document.getElementById('expenseAmount').value = '';
+
+    // Очистка списка магазинов
+    shops = [];
+    updateShopList();
+
+    // Обновление отображения
+    updateDisplay();
+    saveData();
+}    const now = new Date();
+    document.getElementById('monthSelect').value = now.getMonth();
+
+    updateDisplay();
+    saveData();
+
+    document.getElementById('expenseShop').value = '';
+            document.getElementById('expenseAmount').value = '';
+
+            updateDisplay();
+            saveData();
+
+
+function resetGeneralRemainder() {
+            allTime.income = 0;
+            allTime.expenses = 0;
+            history = [];
+            shops = []; // Очищаем список магазинов
+            updateShopList();
+            updateDisplay();
+            saveData();
+        }
+
+        // Новый метод для обновления списка магазинов
+        function updateShopList() {
+            const datalist = document.getElementById('shopList');
+            datalist.innerHTML = shops
+                .map(shop => `<option value="${shop}">${shop}</option>`)
+                .join('');
+        }
+
+        function resetGeneralRemainder() {
+            allTime.income = 0;
+            allTime.expenses = 0;
+            shops = []; // Очищаем список магазинов
+            updateShopList();
+            history = [];
+            updateDisplay();
+            saveData();
+        }
+
+        function toggleHistory(type) {
+            const historyDiv = document.getElementById(`${type}History`);
+            const entries = type === 'income' ?
+                currentMonth.incomeEntries :
+                currentMonth.expenseEntries;
+
+            historyDiv.innerHTML = entries.map(entry =>
+                type === 'income' ?
+                `Дата: ${entry.date}, Сумма: ${entry.amount} руб` :
+                `Дата: ${entry.date}, Магазин: ${entry.shop}, Сумма: ${entry.amount} руб`
+            ).join('<br>');
+
+            historyDiv.style.display = historyDiv.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function updateDisplay() {
+            document.getElementById('incomeTotal').value = currentMonth.incomeTotal.toFixed(2);
+            document.getElementById('expenseTotal').value = currentMonth.expenseTotal.toFixed(2);
+
+            const currentRemainder = currentMonth.incomeTotal - currentMonth.expenseTotal;
+            const generalRemainder = allTime.income - allTime.expenses;
+
+            document.getElementById('currentRemainder').value = currentRemainder.toFixed(2);
+            document.getElementById('generalRemainder').value = generalRemainder.toFixed(2);
+        }
+
+    </script>
+</body>
+</html>
